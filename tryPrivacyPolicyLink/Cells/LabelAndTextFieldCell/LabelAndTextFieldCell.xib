@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="159" id="Vmh-kt-zrf" customClass="LabelAndTextFieldCell" customModule="tryPrivacyPolicyLink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vmh-kt-zrf" id="iIN-OR-VCa">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4w-GY-LJe" customClass="LabelAndTextField" customModule="tryPrivacyPolicyLink" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="398" height="143"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="b4w-GY-LJe" firstAttribute="top" secondItem="iIN-OR-VCa" secondAttribute="top" constant="8" id="9jZ-cy-WzU"/>
+                    <constraint firstAttribute="bottom" secondItem="b4w-GY-LJe" secondAttribute="bottom" constant="8" id="ieI-Se-bhJ"/>
+                    <constraint firstAttribute="trailing" secondItem="b4w-GY-LJe" secondAttribute="trailing" constant="8" id="jdS-ig-7Pb"/>
+                    <constraint firstItem="b4w-GY-LJe" firstAttribute="leading" secondItem="iIN-OR-VCa" secondAttribute="leading" constant="8" id="mlF-Xt-a9f"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="childView" destination="b4w-GY-LJe" id="Jgy-96-0cI"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="110.15625"/>
+        </tableViewCell>
+    </objects>
+</document>
