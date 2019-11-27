@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1C7764238EC3C90011DA1F /* CodeLabelAndTextViewDropdownFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */; };
 		7C1D999C2387F1B5003ED654 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */; };
-		7C1D999F238808E6003ED654 /* CodeViewAndLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999E238808E6003ED654 /* CodeViewAndLabel.swift */; };
+		7C1D999F238808E6003ED654 /* CodeViewAndLabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */; };
 		7C1D99A123880BFB003ED654 /* CodeLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A023880BFB003ED654 /* CodeLabelAndTextField.swift */; };
 		7C1D99A323880DA6003ED654 /* CodeLabelAndTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A223880DA6003ED654 /* CodeLabelAndTextView.swift */; };
 		7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkView.swift */; };
@@ -59,8 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextViewDropdownFactory.swift; sourceTree = "<group>"; };
 		7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
-		7C1D999E238808E6003ED654 /* CodeViewAndLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAndLabel.swift; sourceTree = "<group>"; };
+		7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAndLabelFactory.swift; sourceTree = "<group>"; };
 		7C1D99A023880BFB003ED654 /* CodeLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextField.swift; sourceTree = "<group>"; };
 		7C1D99A223880DA6003ED654 /* CodeLabelAndTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextView.swift; sourceTree = "<group>"; };
 		7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSingleCheckmarkView.swift; sourceTree = "<group>"; };
@@ -128,10 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				7C1D99A823881641003ED654 /* Stackers */,
-				7C1D999E238808E6003ED654 /* CodeViewAndLabel.swift */,
+				7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */,
 				7C1D99A023880BFB003ED654 /* CodeLabelAndTextField.swift */,
 				7C1D99A223880DA6003ED654 /* CodeLabelAndTextView.swift */,
 				7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkView.swift */,
+				7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -436,11 +439,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C1D999F238808E6003ED654 /* CodeViewAndLabel.swift in Sources */,
+				7C1D999F238808E6003ED654 /* CodeViewAndLabelFactory.swift in Sources */,
 				7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkView.swift in Sources */,
 				7CA27B9E2386A01C008A8CE4 /* CheckboxView.swift in Sources */,
 				7CA27B9723869C57008A8CE4 /* LabelAndTextViewCell.swift in Sources */,
 				7CA27B8723868BAF008A8CE4 /* LabelAndPhoneTextField.swift in Sources */,
+				7C1C7764238EC3C90011DA1F /* CodeLabelAndTextViewDropdownFactory.swift in Sources */,
 				7CA27BA32386A0B4008A8CE4 /* CheckboxViewCell.swift in Sources */,
 				7CA27B8C23869334008A8CE4 /* DescriptionCell.swift in Sources */,
 				7C1D99A123880BFB003ED654 /* CodeLabelAndTextField.swift in Sources */,
@@ -631,6 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJZMY6T4V6;
 				INFOPLIST_FILE = tryPrivacyPolicyLink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,6 +654,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJZMY6T4V6;
 				INFOPLIST_FILE = tryPrivacyPolicyLink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

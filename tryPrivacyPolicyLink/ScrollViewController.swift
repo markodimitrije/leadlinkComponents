@@ -10,20 +10,41 @@ import UIKit
 
 var screenWidth = CGFloat(0)
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UIViewController, UITextViewDelegate {
     
-    let textViewDelegate = MyTextViewDelegate()
+    private var textViewDelegate: MyTextViewDelegate!
+    private var dropDownDelegate: UITextViewDelegate!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var subviews = [UIView]()
+    
+    override func viewDidLoad() { super.viewDidLoad()
+        
+        hookUpDelegates()
         screenWidth = self.view.bounds.width
         
 //        insertColorViewAndLabel()
 //        insertLabelAndTextFieldView()
-        insertCodeLabelAndTextView()
+//        insertCodeLabelAndTextView()
+        insertCodeLabelAndTextViewDropdown()
 //        insertCodeSingleCheckmarkView()
 //        insertCodeMultipleCheckmarkView()
 //        insertHorizontalLabelTextFieldViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
+        subviews.first { view -> Bool in
+            view.tag == 0
+        }.map { view in
+            let textView = view.subviews.first { view -> Bool in
+                view is UITextView
+            }
+            (textView as! UITextView).text = (textView as! UITextView).text + (textView as! UITextView).text + (textView as! UITextView).text
+        }
+    }
+    
+    private func hookUpDelegates() {
+        textViewDelegate = MyTextViewDelegate()
+        dropDownDelegate = self
     }
     
     private func insertView() {
@@ -33,16 +54,15 @@ class ScrollViewController: UIViewController {
         childView.backgroundColor = .red
         childView.update(headlineText: "sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d", inputTxt: "sc dsa fdcx ads  ads d", placeholderTxt: "sc dsa fdcx ads  ads d")
         self.view.addSubview(childView)
-//        childView.sizeToFit()
     }
     
     private func insertColorViewAndLabel() {
     
-        let childView = CodeViewAndLabel(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
+        let childView = CodeViewAndLabelFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
 //        childView.update(headlineText: headlineText, inputTxt: inputText, placeholderTxt: placeholderText)
         self.view.addSubview(childView)
 
-        }
+    }
     
     private func insertLabelAndTextFieldView() {
         
@@ -53,10 +73,21 @@ class ScrollViewController: UIViewController {
     
     private func insertCodeLabelAndTextView() {
     
-        let childView = CodeLabelAndTextView(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: textViewDelegate).myView!
+        let childView = CodeLabelAndTextViewFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: textViewDelegate).myView!
         self.view.addSubview(childView)
     }
     
+    private func insertCodeLabelAndTextViewDropdown() {
+    
+        let childView = CodeLabelAndTextViewDropdownFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: self).myView!
+        
+        childView.tag = 0 // questionId
+        
+        subviews.append(childView)
+        
+        self.view.addSubview(childView)
+        
+    }
     
     private func insertCodeSingleCheckmarkView() {
         
@@ -101,17 +132,30 @@ class MyTextViewDelegate: NSObject, UITextViewDelegate {
             textView.textColor = .black
         }
     }
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text.isEmpty {
-//            textView.text = placeholderText
-//            textView.textColor = .lightGray
-//        }
-//    }
     
     func textViewDidChange(_ textView: UITextView) {
         if textView.text != placeholderText || textView.text != "" {
             textView.textColor = .black
         }
     }
+}
+
+extension ScrollViewController {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let optionsVC = sb.instantiateViewController(identifier: "OptionsVC")
+        self.navigationController?.pushViewController(optionsVC, animated: true)
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text != placeholderText || textView.text != "" {
+            textView.textColor = .black
+        }
+    }
+}
+
+protocol QuestionViewProvidingProtocol {
+    var myView: UIView {get set}
 }
