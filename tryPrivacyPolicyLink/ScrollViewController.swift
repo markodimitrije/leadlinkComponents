@@ -12,13 +12,14 @@ var screenWidth = CGFloat(0)
 
 class ScrollViewController: UIViewController, UITextViewDelegate {
     
-    //@IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     
     private var textViewDelegate: MyTextViewDelegate!
     private var dropDownDelegate: UITextViewDelegate!
     
     var subviews = [UIView]()
-    
+     
     override func viewDidLoad() { super.viewDidLoad()
         
         hookUpDelegates()
@@ -110,21 +111,33 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    
     private func insertMultipleObjects() {
        
-        let viewA = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
-        let viewB = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        let viewA = CodeLabelAndTextField(headlineText: largeHeadlineText, inputText: largeInputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        let viewB = CodeLabelAndTextField(headlineText: largeHeadlineText, inputText: largeInputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
         
 // moras posebne views, ne moze da se isti (viewA, viewB) ubace u novi stackView (viewCD); moraju posebni viewC i viewD !!!
-        let viewC = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
-        let viewD = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        let viewC = CodeLabelAndTextField(headlineText: largeHeadlineText, inputText: largeInputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        let viewD = CodeLabelAndTextField(headlineText: headlineText, inputText: largeInputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
         
         let viewAB = CodeVerticalStacker(views: [viewA, viewB]).myView!
         let viewCD = CodeVerticalStacker(views: [viewC, viewD]).myView!
         
-        let compositeView = CodeVerticalStacker(views: [viewAB, viewCD]).myView!
+        //let compositeView = CodeVerticalStacker(views: [viewAB, viewCD]).myView!
+        let compositeView = UILabel()
+        compositeView.numberOfLines = 0
+        compositeView.text = largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText
 
-        self.view.addSubview(compositeView)
+        print("compositeView.frame = \(compositeView.frame)")
+        //self.view.addSubview(compositeView)
+        //self.view.addSubview(compositeView)
+//        self.stackView.addArrangedSubview(compositeView)
+//        
+//        print("self.stackView.frame = \(stackView.frame)")
+//        print("self.scrollView.frame = \(scrollView.frame)")
+//        print("compositeView.frame.AGAIN = \(compositeView.frame)")
+        
     }
     
     private func insertCodeSingleCheckmarkView() {
@@ -161,6 +174,12 @@ let headlineText = "sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads 
 let inputText = "sc dsa fdcx ads  ads d sc dsa fdcx ads  ads d"
 let placeholderText = "sc dsa fdcx ads  ads d"
 
+
+
+
+let largeHeadlineText = "sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads AAA"
+
+let largeInputText = "sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads AAA"
 
 protocol QuestionViewProvidingProtocol {
     var myView: UIView {get set}
