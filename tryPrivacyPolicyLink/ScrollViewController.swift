@@ -132,8 +132,8 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
         print("compositeView.frame = \(compositeView.frame)")
         //self.view.addSubview(compositeView)
         //self.view.addSubview(compositeView)
-//        self.stackView.addArrangedSubview(compositeView)
-//        
+        self.stackView.addArrangedSubview(compositeView)
+//
 //        print("self.stackView.frame = \(stackView.frame)")
 //        print("self.scrollView.frame = \(scrollView.frame)")
 //        print("compositeView.frame.AGAIN = \(compositeView.frame)")
