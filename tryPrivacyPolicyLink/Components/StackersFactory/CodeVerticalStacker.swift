@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CodeVerticalStacker {
+class CodeVerticalStacker: MakeViewProtocol {
     
-    var myView: UIView!
+    var myView: UIView
+    
+    func getView() -> UIView {
+        return myView
+    }
     
     init(views: [UIView]) {
 

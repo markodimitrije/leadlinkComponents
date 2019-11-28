@@ -1,5 +1,5 @@
 //
-//  CodeLabelAndTextView.swift
+//  CodeLabelAndTextFieldFactory.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 22/11/2019.
@@ -8,23 +8,22 @@
 
 import UIKit
 
-class CodeLabelAndTextViewFactory {
+class CodeLabelAndTextFieldFactory: MakeViewProtocol {
     
+    var resultView: LabelAndTextField!
     var myView: UIView!
     
-    weak var delegate: UITextViewDelegate?
+    func getView() -> UIView {
+        return myView
+    }
     
-    init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat, delegate: UITextViewDelegate?) {
+    init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat) {
         
         //textField
-        let textView             = UITextView()
-        textView.isScrollEnabled = false
-        textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
-        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44.0).isActive = true
-        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
-        
-        textView.text = placeholderText
-        textView.textColor = .lightGray
+        let textField               = UITextField()
+        textField.backgroundColor   = .cyan
+        textField.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        textField.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
 
         //Text Label
         let textLabel               = UILabel()
@@ -42,14 +41,11 @@ class CodeLabelAndTextViewFactory {
         stackView.spacing   = 8.0
 
         stackView.addArrangedSubview(textLabel)
-        stackView.addArrangedSubview(textView)
+        stackView.addArrangedSubview(textField)
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false;
 
-        textView.delegate = delegate
         myView = stackView
-        
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
     }
-    
 }
-

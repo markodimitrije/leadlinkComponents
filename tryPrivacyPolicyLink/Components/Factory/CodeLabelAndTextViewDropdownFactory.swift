@@ -10,10 +10,13 @@ import UIKit
 
 class CodeLabelAndTextViewDropdownFactory {
     
-    var resultView: LabelAndTextField!
-    var myView: UIView!
+    private var myView: UIView
     
     weak var delegate: UITextViewDelegate?
+    
+    func getView() -> UIView {
+        return myView
+    }
     
     init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat, delegate: UITextViewDelegate?) {
         

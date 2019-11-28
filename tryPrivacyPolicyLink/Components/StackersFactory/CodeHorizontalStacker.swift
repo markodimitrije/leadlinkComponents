@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CodeHorizontalStacker {
+class CodeHorizontalStacker: MakeViewProtocol {
     
-    var myView: UIView!
+    var myView: UIView
+    
+    func getView() -> UIView {
+        return myView
+    }
     
     init(views: [UIView], width: CGFloat) {
         

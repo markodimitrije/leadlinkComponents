@@ -1,16 +1,20 @@
 //
-//  CodeSingleCheckmarkView.swift
+//  CodeSingleRadioBtnViewFactory.swift
 //  tryPrivacyPolicyLink
 //
-//  Created by Marko Dimitrijevic on 22/11/2019.
+//  Created by Marko Dimitrijevic on 28/11/2019.
 //  Copyright © 2019 Marko Dimitrijevic. All rights reserved.
 //
 
 import UIKit
 
-class CodeSingleCheckmarkView {
-    
+class CodeSingleRadioBtnViewFactory: MakeViewProtocol {
+   
     var myView: UIView!
+    
+    func getView() -> UIView {
+        return myView
+    }
     
     init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat) {
         
@@ -44,5 +48,3 @@ class CodeSingleCheckmarkView {
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
     }
 }
-
-

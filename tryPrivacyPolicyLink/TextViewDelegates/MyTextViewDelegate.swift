@@ -14,7 +14,10 @@ class MyTextViewDelegate: NSObject, UITextViewDelegate {
         if textView.text == placeholderText {
             textView.text = nil
             textView.textColor = .black
+        } else {
+            print("dssjbddjbds")
         }
+        
     }
     
     func textViewDidChange(_ textView: UITextView) {
