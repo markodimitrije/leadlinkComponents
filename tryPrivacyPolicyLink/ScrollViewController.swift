@@ -125,18 +125,7 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
         let viewCD = CodeVerticalStacker(views: [viewC, viewD]).myView!
         
         let compositeView = CodeVerticalStacker(views: [viewAB, viewCD]).myView!
-//        let compositeView = UILabel()
-//        compositeView.numberOfLines = 0
-//        compositeView.text = largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText + largeHeadlineText
-
-        print("compositeView.frame = \(compositeView.frame)")
-        //self.view.addSubview(compositeView)
-        //self.view.addSubview(compositeView)
         self.stackView.addArrangedSubview(compositeView)
-//
-//        print("self.stackView.frame = \(stackView.frame)")
-//        print("self.scrollView.frame = \(scrollView.frame)")
-//        print("compositeView.frame.AGAIN = \(compositeView.frame)")
         
     }
     
