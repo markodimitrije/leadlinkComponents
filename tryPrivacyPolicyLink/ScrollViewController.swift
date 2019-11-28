@@ -12,6 +12,8 @@ var screenWidth = CGFloat(0)
 
 class ScrollViewController: UIViewController, UITextViewDelegate {
     
+    //@IBOutlet weak var stackView: UIStackView!
+    
     private var textViewDelegate: MyTextViewDelegate!
     private var dropDownDelegate: UITextViewDelegate!
     
@@ -25,21 +27,23 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
 //        insertColorViewAndLabel()
 //        insertLabelAndTextFieldView()
 //        insertCodeLabelAndTextView()
-        insertCodeLabelAndTextViewDropdown()
+//        insertCodeLabelAndTextViewDropdown()
+//        insertTwoCheckboxGroupViews()
+        insertMultipleObjects()
 //        insertCodeSingleCheckmarkView()
 //        insertCodeMultipleCheckmarkView()
 //        insertHorizontalLabelTextFieldViews()
     }
     
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated)
-        subviews.first { view -> Bool in
-            view.tag == 0
-        }.map { view in
-            let textView = view.subviews.first { view -> Bool in
-                view is UITextView
-            }
-            (textView as! UITextView).text = (textView as! UITextView).text + (textView as! UITextView).text + (textView as! UITextView).text
-        }
+//        subviews.first { view -> Bool in
+//            view.tag == 0
+//        }.map { view in
+//            let textView = view.subviews.first { view -> Bool in
+//                view is UITextView
+//            }
+//            (textView as! UITextView).text = (textView as! UITextView).text + (textView as! UITextView).text + (textView as! UITextView).text
+//        }
     }
     
     private func hookUpDelegates() {
@@ -86,7 +90,41 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
         subviews.append(childView)
         
         self.view.addSubview(childView)
+    
+    }
+    
+    private func insertTwoCheckboxGroupViews() {
         
+        let checkmarkA = CodeSingleCheckmarkView(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
+        let checkmarkB = CodeSingleCheckmarkView(headlineText: inputText+inputText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
+        let checkmarkC = CodeSingleCheckmarkView(headlineText: inputText+inputText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
+        let checkmarkD = CodeSingleCheckmarkView(headlineText: inputText+inputText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
+        let checkmarkE = CodeSingleCheckmarkView(headlineText: inputText+inputText+inputText, inputText: inputText, placeholderText: placeholderText, width: screenWidth).myView!
+        
+        let checkmarksViewABC = CodeVerticalStacker(views: [checkmarkA, checkmarkB, checkmarkC]).myView!
+        let checkmarksViewDE = CodeVerticalStacker(views: [checkmarkD, checkmarkE]).myView!
+
+        let multipleCheckbox = CodeVerticalStacker(views: [checkmarksViewDE, checkmarksViewABC]).myView!
+        
+        self.view.addSubview(multipleCheckbox)
+        
+    }
+    
+    private func insertMultipleObjects() {
+       
+        let viewA = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        let viewB = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        
+// moras posebne views, ne moze da se isti (viewA, viewB) ubace u novi stackView (viewCD); moraju posebni viewC i viewD !!!
+        let viewC = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        let viewD = CodeLabelAndTextField(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: self.view.bounds.width).myView!
+        
+        let viewAB = CodeVerticalStacker(views: [viewA, viewB]).myView!
+        let viewCD = CodeVerticalStacker(views: [viewC, viewD]).myView!
+        
+        let compositeView = CodeVerticalStacker(views: [viewAB, viewCD]).myView!
+
+        self.view.addSubview(compositeView)
     }
     
     private func insertCodeSingleCheckmarkView() {
@@ -120,41 +158,9 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
 
 
 let headlineText = "sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d"
-let inputText = "sc dsa fdcx ads  ads d"
+let inputText = "sc dsa fdcx ads  ads d sc dsa fdcx ads  ads d"
 let placeholderText = "sc dsa fdcx ads  ads d"
 
-
-class MyTextViewDelegate: NSObject, UITextViewDelegate {
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeholderText {
-            textView.text = nil
-            textView.textColor = .black
-        }
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        if textView.text != placeholderText || textView.text != "" {
-            textView.textColor = .black
-        }
-    }
-}
-
-extension ScrollViewController {
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.resignFirstResponder()
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let optionsVC = sb.instantiateViewController(identifier: "OptionsVC")
-        self.navigationController?.pushViewController(optionsVC, animated: true)
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        if textView.text != placeholderText || textView.text != "" {
-            textView.textColor = .black
-        }
-    }
-}
 
 protocol QuestionViewProvidingProtocol {
     var myView: UIView {get set}

@@ -44,7 +44,8 @@ class CodeLabelAndTextViewDropdownFactory {
 
         stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(textView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
         textView.delegate = delegate
         myView = stackView

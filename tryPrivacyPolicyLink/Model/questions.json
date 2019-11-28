@@ -1,0 +1,215 @@
+"questions": [
+    {
+        "id": 236,
+        "campaign_id": 39,
+        "title": "Barcode / code à barres",
+        "type": "text",
+        "group": "Barcode",
+        "required": false,
+        "description": null,
+        "order": 1,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "barcode"
+            ],
+            "identity": true
+        }
+    },
+    {
+        "id": 237,
+        "campaign_id": 39,
+        "title": "Frau, Herr / Madame, Monsieur",
+        "type": "text",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 2,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "first_name"
+            ]
+        }
+    },
+    {
+        "id": 238,
+        "campaign_id": 39,
+        "title": "Firma / Société",
+        "type": "text",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 3,
+        "element_id": null,
+        "settings": {}
+    },
+    {
+        "id": 239,
+        "campaign_id": 39,
+        "title": "Adresse",
+        "type": "text",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 4,
+        "element_id": null,
+        "settings": {}
+    },
+    {
+        "id": 240,
+        "campaign_id": 39,
+        "title": "PLZ, Ort / Code postal, lieu",
+        "type": "text",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 5,
+        "element_id": null,
+        "settings": {}
+    },
+    {
+        "id": 241,
+        "campaign_id": 39,
+        "title": "Position des Besuchers / Position du visiteur",
+        "type": "text",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 6,
+        "element_id": null,
+        "settings": {}
+    },
+    {
+        "id": 242,
+        "campaign_id": 39,
+        "title": "E-mail Adresse / Adresse e-mail",
+        "type": "text",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 7,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "email"
+            ]
+        }
+    },
+    {
+        "id": 243,
+        "campaign_id": 39,
+        "title": "",
+        "type": "checkbox_with_input",
+        "group": "Besucher / Visiteur",
+        "required": false,
+        "description": null,
+        "order": 8,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "Ernährungsberater(in) \nDiététicien(ne)",
+                "Arzt \nMédecin",
+                "Apotheker(in) oder Drogist(in) \nPharmacien(ne) ou droguiste",
+                "Student(in) \nEtudiant(e)",
+                "Pflegefachperson \nPersonnel de soin",
+                "Arztassistent(in) \nAssistant(e) médical(e)",
+                "Autre"
+            ]
+        }
+    },
+    {
+        "id": 244,
+        "campaign_id": 39,
+        "title": "",
+        "type": "checkbox_with_input",
+        "group": "Anfrage / Demande",
+        "required": false,
+        "description": null,
+        "order": 9,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "Informationsmaterial \nMatériel d’information",
+                "Muster \nEchantillons",
+                "Besuch am Arbeitsort \nVisite de l’ établissement",
+                "Schriftliches Angebot \nOffre écrite",
+                "Andere \nAutre"
+            ]
+        }
+    },
+    {
+        "id": 245,
+        "campaign_id": 39,
+        "title": "Auswählen Lernmaterial",
+        "type": "dropdown",
+        "group": "Anfrage / Demande",
+        "required": false,
+        "description": null,
+        "order": 10,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "Lernmaterial A",
+                "Lernmaterial B",
+                "Lernmaterial C",
+                "Lernmaterial D",
+                "Lernmaterial E",
+                "Lernmaterial F",
+                "Lernmaterial G",
+                "Lernmaterial H",
+                "Lernmaterial I",
+                "Lernmaterial J",
+                "Lernmaterial K",
+                "Lernmaterial L",
+                "Lernmaterial M",
+                "Lernmaterial N",
+                "Lernmaterial O",
+                "Lernmaterial P",
+                "Lernmaterial Q",
+                "Lernmaterial R",
+                "Lernmaterial S",
+                "Lernmaterial T",
+                "Lernmaterial U",
+                "Lernmaterial V",
+                "Lernmaterial Z",
+                "Lernmaterial AA",
+                "Lernmaterial BB",
+                "Lernmaterial CC",
+                "Lernmaterial DD",
+                "Lernmaterial EE",
+                "Lernmaterial FF",
+                "Lernmaterial GG"
+            ]
+        }
+    },
+    {
+        "id": 246,
+        "campaign_id": 39,
+        "title": "Notizen / Notes",
+        "type": "textarea",
+        "group": "Notizen / Notes",
+        "required": false,
+        "description": null,
+        "order": 11,
+        "element_id": null,
+        "settings": {}
+    },
+    {
+        "id": 247,
+        "campaign_id": 39,
+        "title": "",
+        "type": "termsSwitchBtn",
+        "group": "Begriffe / Termes",
+        "required": false,
+        "description": null,
+        "order": 12,
+        "element_id": null,
+        "settings": {
+            "options": [
+                "Ich habe die gelesen und akzeptiere sie \n(J'ai lu et accepte le)",
+                "Begriffe & Bedingungen \n(Termes et Conditions)"
+            ]
+        }
+    }
+]
