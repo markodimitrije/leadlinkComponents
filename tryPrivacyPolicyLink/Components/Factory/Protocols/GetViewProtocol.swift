@@ -8,10 +8,10 @@
 
 import UIKit
 
-protocol MakeViewProtocol {
+protocol GetViewProtocol {
     func getView() -> UIView
 }
 
-protocol ViewProtocol {
+protocol HasViewPropertyProtocol {
     var view: UIView {get}
 }

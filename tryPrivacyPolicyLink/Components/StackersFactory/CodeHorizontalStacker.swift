@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeHorizontalStacker: MakeViewProtocol {
+class CodeHorizontalStacker: GetViewProtocol {
     
     var myView: UIView
     

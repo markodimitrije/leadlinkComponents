@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeSingleCheckmarkViewFactory: MakeViewProtocol {
+class CodeSingleCheckmarkViewFactory: GetViewProtocol {
     
     var myView: UIView!
     

@@ -15,7 +15,7 @@ protocol LabelTextViewProtocol {
     func setText(_ text: String)
 }
 
-class LabelTextView: ViewProtocol, LabelTextViewProtocol {
+class LabelTextView: HasViewPropertyProtocol, LabelTextViewProtocol {
     
     var view: UIView
     

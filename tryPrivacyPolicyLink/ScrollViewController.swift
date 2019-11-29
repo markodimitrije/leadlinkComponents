@@ -28,7 +28,7 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
     private var dropDownDelegate: UITextViewDelegate!
     
     //var subviews = [UIView]()
-    var subviews = [ViewProtocol]()
+    var subviews = [HasViewPropertyProtocol]()
      
     override func viewDidLoad() { super.viewDidLoad()
         

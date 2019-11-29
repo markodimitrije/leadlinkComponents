@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeVerticalStacker: MakeViewProtocol {
+class CodeVerticalStacker: GetViewProtocol {
     
     var myView: UIView
     

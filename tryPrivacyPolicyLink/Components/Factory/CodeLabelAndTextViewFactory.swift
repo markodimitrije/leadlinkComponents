@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeLabelAndTextViewFactory: MakeViewProtocol {
+class CodeLabelAndTextViewFactory: GetViewProtocol {
     
     var myView: UIView!
     

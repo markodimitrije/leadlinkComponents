@@ -15,7 +15,7 @@ protocol CheckboxOptionProtocol {
     func setText(_ text: String)
 }
 
-class CheckboxOptionView: ViewProtocol, CheckboxOptionProtocol {
+class CheckboxOptionView: HasViewPropertyProtocol, CheckboxOptionProtocol {
     
     var view: UIView
     

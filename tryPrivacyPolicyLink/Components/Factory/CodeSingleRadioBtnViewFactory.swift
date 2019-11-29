@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeSingleRadioBtnViewFactory: MakeViewProtocol {
+class CodeSingleRadioBtnViewFactory: GetViewProtocol {
    
     var myView: UIView!
     
