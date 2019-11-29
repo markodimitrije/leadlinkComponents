@@ -50,6 +50,14 @@
 		7CDDA9B6239141A600CC1D85 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9B5239141A600CC1D85 /* QuestionsViewController.swift */; };
 		7CDDA9B82391481800CC1D85 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9B72391481800CC1D85 /* ScannerVC.swift */; };
 		7CDDA9BA23915FAE00CC1D85 /* CodeLabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9B923915FAE00CC1D85 /* CodeLabelFactory.swift */; };
+		7CDDA9BF2391616C00CC1D85 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9BE2391616C00CC1D85 /* Question.swift */; };
+		7CDDA9C12391617A00CC1D85 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C02391617A00CC1D85 /* Answer.swift */; };
+		7CDDA9C32391619A00CC1D85 /* GlobalVarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */; };
+		7CDDA9C72391620800CC1D85 /* QuestionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C62391620800CC1D85 /* QuestionsViewControllerFactory.swift */; };
+		7CDDA9CA2391623300CC1D85 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C92391623300CC1D85 /* QuestionsViewModel.swift */; };
+		7CDDA9CD2391633600CC1D85 /* QuestionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9CC2391633600CC1D85 /* QuestionViewItem.swift */; };
+		7CDDA9D02391636600CC1D85 /* GroupViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */; };
+		7CDDA9D32391639000CC1D85 /* DropdownWebViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9D22391639000CC1D85 /* DropdownWebViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +127,14 @@
 		7CDDA9B5239141A600CC1D85 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		7CDDA9B72391481800CC1D85 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 		7CDDA9B923915FAE00CC1D85 /* CodeLabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelFactory.swift; sourceTree = "<group>"; };
+		7CDDA9BE2391616C00CC1D85 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		7CDDA9C02391617A00CC1D85 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVarsData.swift; sourceTree = "<group>"; };
+		7CDDA9C62391620800CC1D85 /* QuestionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewControllerFactory.swift; sourceTree = "<group>"; };
+		7CDDA9C92391623300CC1D85 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
+		7CDDA9CC2391633600CC1D85 /* QuestionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewItem.swift; sourceTree = "<group>"; };
+		7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewItem.swift; sourceTree = "<group>"; };
+		7CDDA9D22391639000CC1D85 /* DropdownWebViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownWebViewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +174,7 @@
 		7C1C776A238ED06D0011DA1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7CDDA9BD2391616000CC1D85 /* Questions */,
 				7C1C776B238ED0BA0011DA1F /* questions.json */,
 			);
 			path = Model;
@@ -185,13 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				7C27FC1123901C3C00BB67D9 /* Protocols */,
-				7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */,
-				7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */,
-				7C1D99A223880DA6003ED654 /* CodeLabelAndTextViewFactory.swift */,
-				7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */,
-				7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift */,
-				7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */,
-				7CDDA9B923915FAE00CC1D85 /* CodeLabelFactory.swift */,
+				7CDDA9BB239160D100CC1D85 /* SingleViewFactory */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -362,11 +373,88 @@
 		7CDDA9B42391419000CC1D85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7CDDA9C4239161E100CC1D85 /* QuestionsScene */,
 				7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */,
-				7CDDA9B5239141A600CC1D85 /* QuestionsViewController.swift */,
 				7CDDA9B72391481800CC1D85 /* ScannerVC.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7CDDA9BB239160D100CC1D85 /* SingleViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */,
+				7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */,
+				7C1D99A223880DA6003ED654 /* CodeLabelAndTextViewFactory.swift */,
+				7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */,
+				7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift */,
+				7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */,
+				7CDDA9B923915FAE00CC1D85 /* CodeLabelFactory.swift */,
+			);
+			path = SingleViewFactory;
+			sourceTree = "<group>";
+		};
+		7CDDA9BD2391616000CC1D85 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9BE2391616C00CC1D85 /* Question.swift */,
+				7CDDA9C02391617A00CC1D85 /* Answer.swift */,
+				7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		7CDDA9C4239161E100CC1D85 /* QuestionsScene */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9C82391622900CC1D85 /* ViewModel */,
+				7CDDA9C5239161F400CC1D85 /* View */,
+			);
+			path = QuestionsScene;
+			sourceTree = "<group>";
+		};
+		7CDDA9C5239161F400CC1D85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9CB2391630800CC1D85 /* QuestionViewItem */,
+				7CDDA9B5239141A600CC1D85 /* QuestionsViewController.swift */,
+				7CDDA9C62391620800CC1D85 /* QuestionsViewControllerFactory.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CDDA9C82391622900CC1D85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9C92391623300CC1D85 /* QuestionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7CDDA9CB2391630800CC1D85 /* QuestionViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9CC2391633600CC1D85 /* QuestionViewItem.swift */,
+				7CDDA9CE2391635300CC1D85 /* Implementations */,
+			);
+			path = QuestionViewItem;
+			sourceTree = "<group>";
+		};
+		7CDDA9CE2391635300CC1D85 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */,
+				7CDDA9D12391637F00CC1D85 /* WebViewItem */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		7CDDA9D12391637F00CC1D85 /* WebViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9D22391639000CC1D85 /* DropdownWebViewItem.swift */,
+			);
+			path = WebViewItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,7 +601,9 @@
 				7C1D999F238808E6003ED654 /* CodeViewAndLabelFactory.swift in Sources */,
 				7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift in Sources */,
 				7CA27B9E2386A01C008A8CE4 /* CheckboxView.swift in Sources */,
+				7CDDA9BF2391616C00CC1D85 /* Question.swift in Sources */,
 				7CDDA9B82391481800CC1D85 /* ScannerVC.swift in Sources */,
+				7CDDA9CD2391633600CC1D85 /* QuestionViewItem.swift in Sources */,
 				7CDDA9BA23915FAE00CC1D85 /* CodeLabelFactory.swift in Sources */,
 				7CA27B9723869C57008A8CE4 /* LabelAndTextViewCell.swift in Sources */,
 				7CDDA9B6239141A600CC1D85 /* QuestionsViewController.swift in Sources */,
@@ -526,6 +616,7 @@
 				7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */,
 				7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */,
 				7C1D99A123880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift in Sources */,
+				7CDDA9C72391620800CC1D85 /* QuestionsViewControllerFactory.swift in Sources */,
 				7C3A3F8A22ACEB1B003C079E /* ViewController.swift in Sources */,
 				7CA27BB42386BB1B008A8CE4 /* LabelAndTextField.swift in Sources */,
 				7C1D99A323880DA6003ED654 /* CodeLabelAndTextViewFactory.swift in Sources */,
@@ -536,8 +627,13 @@
 				7C3A3FB622ACEBCA003C079E /* Extensions.swift in Sources */,
 				7CA27B9123869B71008A8CE4 /* LabelAndTextView.swift in Sources */,
 				7CA27BBA2386BB5A008A8CE4 /* LabelAndTextFieldCell.swift in Sources */,
+				7CDDA9D32391639000CC1D85 /* DropdownWebViewItem.swift in Sources */,
+				7CDDA9C32391619A00CC1D85 /* GlobalVarsData.swift in Sources */,
+				7CDDA9C12391617A00CC1D85 /* Answer.swift in Sources */,
 				7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */,
 				7C3A3F8822ACEB1B003C079E /* AppDelegate.swift in Sources */,
+				7CDDA9CA2391623300CC1D85 /* QuestionsViewModel.swift in Sources */,
+				7CDDA9D02391636600CC1D85 /* GroupViewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
