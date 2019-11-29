@@ -17,7 +17,7 @@ class QuestionsViewControllerFactory {
         return vc
     }
     
-    private func makeViewModel() -> QuestionsViewItemSupplying {
+    private func makeViewModel() -> QuestionsViewItemManaging {
         let viewmodel = QuestionsViewModel()
         return viewmodel
     }
