@@ -18,15 +18,27 @@ class CodeButtonFactory {
     
     init(title: String, width: CGFloat) {
         
-        //Button
-        let rect = CGRect(origin: CGPoint.zero, size: CGSize.init(width: 0.8*width, height: 280))
-        let button = UIButton(frame: rect)
+        let button = UIButton()
+        button.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+        button.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
+        
         button.backgroundColor = .green
         button.setTitle(title, for: .normal)
         button.isUserInteractionEnabled = true
         
-        myView = button
+        //Stack View
+        let stackView   = UIStackView()
+        stackView.axis  = .vertical
+        stackView.distribution  = .equalSpacing
+        stackView.alignment = .center
+        stackView.spacing   = 8.0
+
+        stackView.addArrangedSubview(button)
         
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        //textView.delegate = delegate
+        myView = stackView
     }
     
 }

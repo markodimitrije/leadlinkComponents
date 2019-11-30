@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UoW-uG-DHb" firstAttribute="centerX" secondItem="hjs-3q-f47" secondAttribute="centerX" id="5GO-lO-puk"/>
                             <constraint firstItem="f0O-gy-RYC" firstAttribute="bottom" secondItem="UoW-uG-DHb" secondAttribute="bottom" constant="8" id="Bf7-u7-bYA"/>
@@ -109,7 +109,7 @@
                     <view key="view" contentMode="scaleToFill" id="Dky-Uf-1pP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gQd-L5-CUV"/>
                     </view>
                 </viewController>

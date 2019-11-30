@@ -25,8 +25,8 @@ class QuestionsViewController: UIViewController {
     }
     
     private func hookUpSaveEvent(items: [QuestionViewItem]) {
-        
-        self.saveBtn = items.first(where: {$0 is SaveBtnViewItem})!.getView() as? UIButton
+        let stackView = items.first(where: {$0 is SaveBtnViewItem})!.getView() as! UIStackView
+        self.saveBtn = stackView.subviews.first(where: {$0 is UIButton})! as? UIButton
         saveBtn.addTarget(self, action: #selector(saveBtnTapped), for: .touchUpInside)
     }
     
