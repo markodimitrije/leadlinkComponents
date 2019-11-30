@@ -14,4 +14,5 @@ class ScannerVC: UIViewController {
         let questionsVC = QuestionsViewControllerFactory().make()
         self.navigationController?.pushViewController(questionsVC, animated: true)
     }
+    
 }

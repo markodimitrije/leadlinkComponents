@@ -18,7 +18,7 @@ protocol SaveBtnListening {
 
 protocol QuestionsViewItemManaging: QuestionsViewItemSupplying, SaveBtnListening {}
 
-class QuestionsViewModel: QuestionsViewItemManaging {
+class QuestionsViewModel : QuestionsViewItemManaging {
     
     var viewItems: [QuestionViewItem] = []
     
@@ -32,10 +32,20 @@ class QuestionsViewModel: QuestionsViewItemManaging {
         viewItems.append(dropdownItem)
         viewItems.append(saveButtonItem)
         
+        hookUpSaveEvent()
+        
         return viewItems
     }
     
-    func saveBtnTapped() { // javice ti vc
+    private func hookUpSaveEvent() {
+        
+        let saveBtnViewItem = viewItems.last(where: {$0 is SaveBtnViewItem}) as! SaveBtnViewItem
+        let btn = saveBtnViewItem.getView().subviews.first! as! UIButton
+        btn.addTarget(self, action: #selector(saveBtnTapped), for: .touchUpInside)
+        
+    }
+    
+    @objc internal func saveBtnTapped() { // javice ti vc
         print("saveBtnTapped. save answers")
     }
     

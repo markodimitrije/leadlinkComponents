@@ -9,8 +9,15 @@
 import UIKit
 
 class SaveBtnViewItem: QuestionViewItem {
-    func getView() -> UIView {
+    
+    private var view: UIView
+    
+    init() {
         let saveBtnView = CodeButtonFactory(title: "Save", width: 414.0).getView()
-        return saveBtnView
+        self.view = saveBtnView
+    }
+    
+    func getView() -> UIView {
+        return self.view
     }
 }
