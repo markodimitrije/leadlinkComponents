@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuestionsViewItemSupplying {
-    func getQuestionViewItems() -> [QuestionViewItem]
+    func getQuestionViewItems() -> [QuestionViewItemProtocol]
 }
 
 protocol SaveBtnListening {
@@ -20,17 +20,17 @@ protocol QuestionsViewItemManaging: QuestionsViewItemSupplying, SaveBtnListening
 
 class QuestionsViewModel : QuestionsViewItemManaging {
     
-    var viewItems: [QuestionViewItem] = []
+    var viewItems: [QuestionViewItemProtocol] = []
     
-    func getQuestionViewItems() -> [QuestionViewItem] {
+    func getQuestionViewItems() -> [QuestionViewItemProtocol] {
         
         let groupItem = GroupViewItem()
-        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: nil)
+        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: dropdownAnswer)
+//        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: nil)
         let saveButtonItem = SaveBtnViewItem()
         
-        viewItems.append(groupItem)
-        viewItems.append(dropdownItem)
-        viewItems.append(saveButtonItem)
+        let items: [QuestionViewItemProtocol] = [groupItem, dropdownItem, saveButtonItem]
+        viewItems.append(contentsOf: items)
         
         hookUpSaveEvent()
         
@@ -45,8 +45,12 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         
     }
     
-    @objc internal func saveBtnTapped() { // javice ti vc
-        print("saveBtnTapped. save answers")
+    @objc internal func saveBtnTapped() { print("saveBtnTapped. save answers")
+        
+        let itemsWithAnswer: [QuestionItemProtocol] = viewItems.filter {$0 is QuestionItemProtocol} as! [QuestionItemProtocol]
+        let answers: [[String]] = itemsWithAnswer.map {$0.getActualAnswer()}
+        print("save answers:")
+        print(answers)
     }
     
 }

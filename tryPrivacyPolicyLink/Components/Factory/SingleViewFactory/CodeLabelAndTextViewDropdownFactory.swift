@@ -20,16 +20,6 @@ class CodeLabelAndTextViewDropdownFactory {
     
     init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat, delegate: UITextViewDelegate?) {
         
-        //textField
-        let textView             = UITextView()
-        textView.isScrollEnabled = false
-        textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
-        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200.0).isActive = true
-        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
-        
-        textView.text = placeholderText
-        textView.textColor = .lightGray
-        
         //Text Label
         let textLabel               = UILabel()
         textLabel.backgroundColor   = .yellow
@@ -37,7 +27,17 @@ class CodeLabelAndTextViewDropdownFactory {
         textLabel.numberOfLines = 0
         textLabel.text  = headlineText
         textLabel.textAlignment = .center
-
+        
+        //textView
+        let textView             = UITextView()
+        textView.isScrollEnabled = false
+        textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
+        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200.0).isActive = true
+        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
+        
+        textView.text = (inputText != "") ? inputText : placeholderText
+        textView.textColor = .lightGray
+        
         //Stack View
         let stackView   = UIStackView()
         stackView.axis  = .vertical

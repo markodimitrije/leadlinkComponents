@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SaveBtnViewItem: QuestionViewItem {
+class SaveBtnViewItem: QuestionViewItemProtocol {
     
     private var view: UIView
     

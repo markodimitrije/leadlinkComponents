@@ -55,7 +55,7 @@
 		7CDDA9C32391619A00CC1D85 /* GlobalVarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */; };
 		7CDDA9C72391620800CC1D85 /* QuestionsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C62391620800CC1D85 /* QuestionsViewControllerFactory.swift */; };
 		7CDDA9CA2391623300CC1D85 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9C92391623300CC1D85 /* QuestionsViewModel.swift */; };
-		7CDDA9CD2391633600CC1D85 /* QuestionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9CC2391633600CC1D85 /* QuestionViewItem.swift */; };
+		7CDDA9CD2391633600CC1D85 /* QuestionItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9CC2391633600CC1D85 /* QuestionItemProtocol.swift */; };
 		7CDDA9D02391636600CC1D85 /* GroupViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */; };
 		7CDDA9D32391639000CC1D85 /* DropdownWebViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9D22391639000CC1D85 /* DropdownWebViewItem.swift */; };
 		7CDDA9D62391651500CC1D85 /* SaveBtnViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDA9D52391651500CC1D85 /* SaveBtnViewItem.swift */; };
@@ -134,7 +134,7 @@
 		7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVarsData.swift; sourceTree = "<group>"; };
 		7CDDA9C62391620800CC1D85 /* QuestionsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewControllerFactory.swift; sourceTree = "<group>"; };
 		7CDDA9C92391623300CC1D85 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
-		7CDDA9CC2391633600CC1D85 /* QuestionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewItem.swift; sourceTree = "<group>"; };
+		7CDDA9CC2391633600CC1D85 /* QuestionItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemProtocol.swift; sourceTree = "<group>"; };
 		7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewItem.swift; sourceTree = "<group>"; };
 		7CDDA9D22391639000CC1D85 /* DropdownWebViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownWebViewItem.swift; sourceTree = "<group>"; };
 		7CDDA9D52391651500CC1D85 /* SaveBtnViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveBtnViewItem.swift; sourceTree = "<group>"; };
@@ -439,7 +439,7 @@
 		7CDDA9CB2391630800CC1D85 /* QuestionViewItem */ = {
 			isa = PBXGroup;
 			children = (
-				7CDDA9CC2391633600CC1D85 /* QuestionViewItem.swift */,
+				7CDDA9CC2391633600CC1D85 /* QuestionItemProtocol.swift */,
 				7CDDA9CE2391635300CC1D85 /* Implementations */,
 			);
 			path = QuestionViewItem;
@@ -617,7 +617,7 @@
 				7CA27B9E2386A01C008A8CE4 /* CheckboxView.swift in Sources */,
 				7CDDA9BF2391616C00CC1D85 /* Question.swift in Sources */,
 				7CDDA9B82391481800CC1D85 /* ScannerVC.swift in Sources */,
-				7CDDA9CD2391633600CC1D85 /* QuestionViewItem.swift in Sources */,
+				7CDDA9CD2391633600CC1D85 /* QuestionItemProtocol.swift in Sources */,
 				7CDDA9BA23915FAE00CC1D85 /* CodeLabelFactory.swift in Sources */,
 				7CA27B9723869C57008A8CE4 /* LabelAndTextViewCell.swift in Sources */,
 				7CDDA9B6239141A600CC1D85 /* QuestionsViewController.swift in Sources */,

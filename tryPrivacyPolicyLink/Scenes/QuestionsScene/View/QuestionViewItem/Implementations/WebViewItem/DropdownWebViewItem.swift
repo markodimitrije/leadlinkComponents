@@ -8,17 +8,52 @@
 
 import UIKit
 
-class DropdownWebViewItem: QuestionViewItem {
+//class DropdownWebViewItem: QuestionViewItemProtocol {
+//
+//    private var question: Question
+//    private var answer: Answer?
+//
+//    init(question: Question, answer: Answer?) {
+//        self.question = question
+//        self.answer = answer
+//    }
+//
+//    func getView() -> UIView {
+//        let inputText = answer?.content.first ?? ""
+//        let placeholderText = self.question.description ?? ""
+//        let view = CodeLabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: nil).getView()
+//        view.backgroundColor = .green
+//        return view
+//    }
+//}
+
+class DropdownWebViewItem: QuestionItemProtocol {
+    
     private var question: Question
     private var answer: Answer?
+    
+    private var view: UIView!
+    
     init(question: Question, answer: Answer?) {
         self.question = question
+        self.answer = answer
+        loadView()
     }
-    func getView() -> UIView {
-        let inputText = "ddsacz\nddsacz\nddsacz\nddsacz\nddsacz\nddsacz"
-        let placeholderText = "ddsacz\nddsacz\nddsacz\nddsacz\nddsacz\nddsacz"
-        let view = CodeLabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: nil).getView()
+    
+    private func loadView() {
+        let inputText = answer?.content.first ?? ""
+        let placeholderText = self.question.description ?? ""
+        self.view = CodeLabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: nil).getView()
         view.backgroundColor = .green
-        return view
+    }
+    
+    func getView() -> UIView {
+        return self.view
+    }
+    
+    func getActualAnswer() -> [String] {
+        let text = (view.subviews.first(where: {$0 is UITextView}) as! UITextView).text
+        let result = (text != self.question.description ?? "") ? text : ""
+        return [result ?? ""]
     }
 }
