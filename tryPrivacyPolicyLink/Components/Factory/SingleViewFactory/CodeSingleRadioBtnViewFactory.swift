@@ -76,6 +76,7 @@ class CodeSingleRadioBtnViewFactory: GetViewProtocol {
         button.addTarget(delegate, action: #selector(RadioBtnsWebViewItem.btnTapped), for: .touchUpInside)
 
         myView = stackView
+        myView.tag = tag
 
     }
     

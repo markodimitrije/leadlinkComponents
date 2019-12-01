@@ -51,15 +51,40 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
         return self.view
     }
     
-    func getActualAnswer() -> Answer? { // hard-coded
-        return nil
-//        let text = (view.subviews.first(where: {$0 is UITextView}) as! UITextView).text
-//        let result = (text != self.question.description ?? "") ? text : ""
+//    func getActualAnswer() -> Answer? { // single selection - not tested !!
+//
+//        guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
+//            return nil
+//        }
+//
+//        let selected = (singleFactories.first(where: {$0.isOn}))!.getView().tag
+//        let content = [questionOptions[selected]]
+//
 //        if answer != nil {
-//            answer?.content = [result ?? ""]
+//            answer!.content = content
+//            answer!.optionIds = [selected]
 //        } else {
-//            answer = Answer(question: question, code: code, content: [result ?? ""], optionIds: nil)
+//            answer = Answer(question: question, code: code, content: content, optionIds: [selected])
 //        }
 //        return answer
+//    }
+    
+    func getActualAnswer() -> Answer? { // multiple selection
+        
+        guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
+            return nil
+        }
+        
+        let selectedViewModels = singleFactories.filter {$0.isOn}
+        let selectedTags = selectedViewModels.map {$0.getView().tag}
+        let content = selectedTags.map {questionOptions[$0]}
+            
+        if answer != nil {
+            answer!.content = content
+            answer!.optionIds = selectedTags
+        } else {
+            answer = Answer(question: question, code: code, content: content, optionIds: selectedTags)
+        }
+        return answer
     }
 }
