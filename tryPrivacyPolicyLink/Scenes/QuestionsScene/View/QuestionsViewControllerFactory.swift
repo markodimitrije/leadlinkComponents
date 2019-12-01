@@ -9,15 +9,17 @@
 import UIKit
 
 class QuestionsViewControllerFactory {
-    func make(code: String) -> QuestionsViewController {
+    func make(viewmodel: QuestionsViewItemSupplying) -> QuestionsViewController {
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "QuestionsViewController") as! QuestionsViewController
-        let viewmodel = makeViewModel(code: code)
+        let viewmodel = viewmodel
         vc.viewmodel = viewmodel
         return vc
     }
-    
-    private func makeViewModel(code: String) -> QuestionsViewItemManaging {
+}
+
+class QuestionsViewModelFactory {
+    func makeViewModel(code: String) -> QuestionsViewItemManaging {
         let viewmodel = QuestionsViewModel(code: code)
         return viewmodel
     }

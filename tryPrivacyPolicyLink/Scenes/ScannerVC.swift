@@ -13,8 +13,14 @@ class ScannerVC: UIViewController {
     private var code = "12"
     
     @IBAction func openNextVCbtnTapped(_ sender: UIButton) {
-        let questionsVC = QuestionsViewControllerFactory().make(code: code)
+        let questionsVC = makeQuestionsViewController(code: code)
         self.navigationController?.pushViewController(questionsVC, animated: true)
+    }
+    
+    private func makeQuestionsViewController(code: String) -> UIViewController {
+        let viewmodel = QuestionsViewModelFactory().makeViewModel(code: code)
+        let questionsVC = QuestionsViewControllerFactory().make(viewmodel: viewmodel)
+        return questionsVC
     }
     
 }
