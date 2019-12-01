@@ -32,7 +32,9 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
     
     private func loadView() {
         let titles = question.settings.options ?? [ ]
-        let selected = answer?.content.map {titles.contains($0)} ?? titles.map {_ in return false}
+        
+        let selected = titles.map {(answer?.content ?? [ ]).contains($0)}
+        
         let singleFactories = titles.enumerated().map { (index, title) -> CodeSingleRadioBtnViewFactory in
             let radioBtnFactory = CodeSingleRadioBtnViewFactory(tag: index,
                                                                 isOn: selected[index],

@@ -35,7 +35,8 @@ class QuestionsViewModel : QuestionsViewItemManaging {
 //        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: nil, code: code)
         //let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: dropdownAnswer, code: code)
         //let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: nil, code: code)
-        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: nil, code: code)
+//        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: nil, code: code)
+        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: radioAnswer, code: code)
         let saveButtonItem = SaveBtnViewItem()
         
         //let items: [QuestionPageViewProtocol] = [groupItem, dropdownItem, textAreaItem, saveButtonItem]
