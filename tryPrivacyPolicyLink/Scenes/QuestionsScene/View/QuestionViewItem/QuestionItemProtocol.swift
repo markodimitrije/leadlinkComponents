@@ -13,7 +13,7 @@ protocol QuestionViewItemProtocol {
 }
 
 protocol ActualAnswerProtocol {
-    func getActualAnswer() -> [String]
+    func getActualAnswer() -> Answer?
 }
 
 protocol QuestionItemProtocol: QuestionViewItemProtocol, ActualAnswerProtocol {}

@@ -48,7 +48,8 @@ class QuestionsViewModel : QuestionsViewItemManaging {
     @objc internal func saveBtnTapped() { print("saveBtnTapped. save answers")
         
         let itemsWithAnswer: [QuestionItemProtocol] = viewItems.filter {$0 is QuestionItemProtocol} as! [QuestionItemProtocol]
-        let answers: [[String]] = itemsWithAnswer.map {$0.getActualAnswer()}
+        //let answers: [[String]] = itemsWithAnswer.map {$0.getActualAnswer()}
+        let answers: [[String]] = itemsWithAnswer.compactMap {$0.getActualAnswer()}.map {$0.content}
         print("save answers:")
         print(answers)
     }

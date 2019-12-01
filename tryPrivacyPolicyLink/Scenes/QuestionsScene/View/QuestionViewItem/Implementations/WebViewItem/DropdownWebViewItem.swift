@@ -51,9 +51,15 @@ class DropdownWebViewItem: QuestionItemProtocol {
         return self.view
     }
     
-    func getActualAnswer() -> [String] {
+//    func getActualAnswer() -> [String] {
+//        let text = (view.subviews.first(where: {$0 is UITextView}) as! UITextView).text
+//        let result = (text != self.question.description ?? "") ? text : ""
+//        return [result ?? ""]
+//    }
+    func getActualAnswer() -> Answer? {
         let text = (view.subviews.first(where: {$0 is UITextView}) as! UITextView).text
         let result = (text != self.question.description ?? "") ? text : ""
-        return [result ?? ""]
+        answer?.content = [result ?? ""]
+        return answer
     }
 }
