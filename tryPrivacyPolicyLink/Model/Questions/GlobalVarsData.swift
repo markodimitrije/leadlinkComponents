@@ -16,7 +16,17 @@ let dropdownQuestion = Question(id: 1,
                                 required: false,
                                 description: longDescription,
                                 order: 1, element_id: nil,
-                                settings: QuestionSettings(options: ["A","B","C","D","E"]))
+                                settings: QuestionSettings(options: []))
+
+let radioQuestion = Question(id: 1,
+                            campaign_id: 7520,
+                            title: longTitle,
+                            type: "radio",
+                            group: "Profesional Interest",
+                            required: false,
+                            description: longDescription,
+                            order: 1, element_id: nil,
+                            settings: QuestionSettings(options: ["OptionA","OptionB","OptionC","OptionD","OptionE"]))
 
 let dropdownAnswer = Answer(question: dropdownQuestion, code: "12", content:  [longTitle], optionIds: nil)
 
