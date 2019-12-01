@@ -10,8 +10,10 @@ import UIKit
 
 class ScannerVC: UIViewController {
     
+    private var code = "12"
+    
     @IBAction func openNextVCbtnTapped(_ sender: UIButton) {
-        let questionsVC = QuestionsViewControllerFactory().make()
+        let questionsVC = QuestionsViewControllerFactory().make(code: code)
         self.navigationController?.pushViewController(questionsVC, animated: true)
     }
     

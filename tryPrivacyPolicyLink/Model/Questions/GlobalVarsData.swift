@@ -17,13 +17,8 @@ let dropdownQuestion = Question(id: 1,
                                 description: longDescription,
                                 order: 1, element_id: nil,
                                 settings: QuestionSettings(options: ["A","B","C","D","E"]))
-let dropdownAnswer = Answer(campaignId: 7520,
-                            questionId: 1,
-                            code: "12",
-                            id: "1",
-                            content: [longTitle],
-                            optionIds: nil,
-                            questionType: "dropdown")
+
+let dropdownAnswer = Answer(question: dropdownQuestion, code: "12", content:  [longTitle], optionIds: nil)
 
 let longTitle = "acshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachas WWWW"
 

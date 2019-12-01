@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupViewItem: QuestionViewItemProtocol {
+class GroupViewItem: QuestionPageViewProtocol {
 
     private var view: UIView
 

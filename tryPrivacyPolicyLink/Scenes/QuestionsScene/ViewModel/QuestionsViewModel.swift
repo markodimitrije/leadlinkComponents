@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuestionsViewItemSupplying {
-    func getQuestionViewItems() -> [QuestionViewItemProtocol]
+    func getQuestionViewItems() -> [QuestionPageViewProtocol]
 }
 
 protocol SaveBtnListening {
@@ -20,16 +20,24 @@ protocol QuestionsViewItemManaging: QuestionsViewItemSupplying, SaveBtnListening
 
 class QuestionsViewModel : QuestionsViewItemManaging {
     
-    var viewItems: [QuestionViewItemProtocol] = []
+    private var code = ""
     
-    func getQuestionViewItems() -> [QuestionViewItemProtocol] {
+    init(code: String) {
+        self.code = code
+    }
+    
+    var viewItems: [QuestionPageViewProtocol] = []
+    
+    func getQuestionViewItems() -> [QuestionPageViewProtocol] {
         
         let groupItem = GroupViewItem()
-        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: dropdownAnswer)
-//        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: nil)
+        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+//        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: nil, code: code)
+        //let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+        let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: nil, code: code)
         let saveButtonItem = SaveBtnViewItem()
         
-        let items: [QuestionViewItemProtocol] = [groupItem, dropdownItem, saveButtonItem]
+        let items: [QuestionPageViewProtocol] = [groupItem, dropdownItem, textAreaItem, saveButtonItem]
         viewItems.append(contentsOf: items)
         
         hookUpSaveEvent()
@@ -47,8 +55,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
     
     @objc internal func saveBtnTapped() { print("saveBtnTapped. save answers")
         
-        let itemsWithAnswer: [QuestionItemProtocol] = viewItems.filter {$0 is QuestionItemProtocol} as! [QuestionItemProtocol]
-        //let answers: [[String]] = itemsWithAnswer.map {$0.getActualAnswer()}
+        let itemsWithAnswer: [QuestionPageViewModelProtocol] = viewItems.filter {$0 is QuestionPageViewModelProtocol} as! [QuestionPageViewModelProtocol]
         let answers: [[String]] = itemsWithAnswer.compactMap {$0.getActualAnswer()}.map {$0.content}
         print("save answers:")
         print(answers)

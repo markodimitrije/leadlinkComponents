@@ -13,7 +13,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     private var saveBtn: UIButton!
-    private var items = [QuestionViewItemProtocol]()
+    private var items = [QuestionPageViewProtocol]()
     
     var viewmodel: QuestionsViewItemManaging!
     override func viewDidLoad() {

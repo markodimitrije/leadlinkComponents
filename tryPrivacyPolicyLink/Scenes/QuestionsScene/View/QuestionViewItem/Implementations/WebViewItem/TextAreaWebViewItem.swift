@@ -1,14 +1,14 @@
 //
-//  DropdownWebViewItem.swift
+//  TextAreaWebViewItem.swift
 //  tryPrivacyPolicyLink
 //
-//  Created by Marko Dimitrijevic on 29/11/2019.
+//  Created by Marko Dimitrijevic on 01/12/2019.
 //  Copyright © 2019 Marko Dimitrijevic. All rights reserved.
 //
 
 import UIKit
 
-class DropdownWebViewItem: NSObject, QuestionPageViewModelProtocol {
+class TextAreaWebViewItem: NSObject, QuestionPageViewModelProtocol {
     
     private var question: Question
     private var answer: Answer?
@@ -27,8 +27,8 @@ class DropdownWebViewItem: NSObject, QuestionPageViewModelProtocol {
     private func loadView() {
         let inputText = answer?.content.first ?? ""
         let placeholderText = self.question.description ?? ""
-        self.view = CodeLabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self).getView()
-        view.backgroundColor = .green
+        self.view = CodeLabelAndTextViewFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self).getView()
+        view.backgroundColor = .red
     }
     
     func getView() -> UIView {
@@ -47,7 +47,7 @@ class DropdownWebViewItem: NSObject, QuestionPageViewModelProtocol {
     }
 }
 
-extension DropdownWebViewItem: UITextViewDelegate {
+extension TextAreaWebViewItem: UITextViewDelegate {
      
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == question.description ?? "" {
