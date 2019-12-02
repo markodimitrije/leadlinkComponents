@@ -12,7 +12,10 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
     
     @objc func btnTapped(_ sender: UIButton) {
 //        print("RadioBtnsWebViewItem.btnTapped - IMPLEMENT ME, sender.tag = \(sender.tag)")
-        singleRadioBtnViewModel[sender.tag].isOn = !singleRadioBtnViewModel[sender.tag].isOn
+        singleRadioBtnViewModels[sender.tag].isOn = !singleRadioBtnViewModels[sender.tag].isOn
+        print("sve ostale setuj na false")
+        let toDisable = singleRadioBtnViewModels.filter {$0.getView().tag != sender.tag}
+        _ = toDisable.map {$0.isOn = false}
     }
     
     private var question: Question
@@ -20,7 +23,7 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
     private var code: String = ""
     
     private var view: UIView!
-    private var singleRadioBtnViewModel = [CodeSingleRadioBtnViewModel]()
+    private var singleRadioBtnViewModels = [SingleRadioBtnViewModel]()
     
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
@@ -35,17 +38,17 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
         
         let selected = titles.map {(answer?.content ?? [ ]).contains($0)}
         
-        let singleRadioBtnViewModel = titles.enumerated().map { (index, title) -> CodeSingleRadioBtnViewModel in
-            let radioBtnFactory = CodeSingleRadioBtnViewFactory(tag: index,
+        let singleRadioBtnViewModels = titles.enumerated().map { (index, title) -> SingleRadioBtnViewModel in
+            let radioBtnFactory = SingleRadioBtnViewFactory(tag: index,
                                                                 isOn: selected[index],
                                                                 titleText: title,
                                                                 width: 414.0,
                                                                 delegate: self)
-            let radioBtnViewModel = CodeSingleRadioBtnViewModel(viewFactory: radioBtnFactory, isOn: selected[index])
+            let radioBtnViewModel = SingleRadioBtnViewModel(viewFactory: radioBtnFactory, isOn: selected[index])
             return radioBtnViewModel
         }
-        self.singleRadioBtnViewModel = singleRadioBtnViewModel
-        let singleViews = singleRadioBtnViewModel.map {$0.getView()}
+        self.singleRadioBtnViewModels = singleRadioBtnViewModels
+        let singleViews = singleRadioBtnViewModels.map {$0.getView()}
         let verticalStackerFactory = CodeVerticalStacker(views: singleViews)
         self.view = verticalStackerFactory.getView()
     }
@@ -54,34 +57,16 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
         return self.view
     }
     
-//    func getActualAnswer() -> Answer? { // single selection - not tested !!
-//
-//        guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
-//            return nil
-//        }
-//
-//        let selected = (singleFactories.first(where: {$0.isOn}))!.getView().tag
-//        let content = [questionOptions[selected]]
-//
-//        if answer != nil {
-//            answer!.content = content
-//            answer!.optionIds = [selected]
-//        } else {
-//            answer = Answer(question: question, code: code, content: content, optionIds: [selected])
-//        }
-//        return answer
-//    }
-    
-    func getActualAnswer() -> Answer? { // multiple selection
-        
+    func getActualAnswer() -> Answer? { // single selection - not tested !!
+
         guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
             return nil
         }
-        
-        let selectedViewModels = singleRadioBtnViewModel.filter {$0.isOn}
+
+        let selectedViewModels = singleRadioBtnViewModels.filter {$0.isOn}
         let selectedTags = selectedViewModels.map {$0.getView().tag}
         let content = selectedTags.map {questionOptions[$0]}
-            
+
         if answer != nil {
             answer!.content = content
             answer!.optionIds = selectedTags
@@ -90,4 +75,23 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
         }
         return answer
     }
+    
+//    func getActualAnswer() -> Answer? { // multiple selection
+//
+//        guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
+//            return nil
+//        }
+//
+//        let selectedViewModels = singleRadioBtnViewModel.filter {$0.isOn}
+//        let selectedTags = selectedViewModels.map {$0.getView().tag}
+//        let content = selectedTags.map {questionOptions[$0]}
+//
+//        if answer != nil {
+//            answer!.content = content
+//            answer!.optionIds = selectedTags
+//        } else {
+//            answer = Answer(question: question, code: code, content: content, optionIds: selectedTags)
+//        }
+//        return answer
+//    }
 }

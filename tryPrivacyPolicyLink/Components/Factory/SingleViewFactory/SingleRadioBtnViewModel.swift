@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeSingleRadioBtnViewModel: GetViewProtocol {
+class SingleRadioBtnViewModel: GetViewProtocol {
    
     var myView: UIView!
     
@@ -31,7 +31,7 @@ class CodeSingleRadioBtnViewModel: GetViewProtocol {
         }
     }
     
-    init(viewFactory: CodeSingleRadioBtnViewFactory, isOn: Bool) {
+    init(viewFactory: SingleRadioBtnViewFactory, isOn: Bool) {
         self.myView = viewFactory.getView()
         let buttons = self.myView.subviews.filter {$0 is UIButton} as! [UIButton]
         let imgButton = buttons.first(where: {$0.backgroundImage(for: .normal) != nil})

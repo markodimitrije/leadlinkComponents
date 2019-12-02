@@ -1,5 +1,5 @@
 //
-//  CodeSingleRadioBtnViewFactory.swift
+//  SingleCheckboxBtnViewFactory.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 02/12/2019.
@@ -8,22 +8,29 @@
 
 import UIKit
 
-class CodeSingleRadioBtnViewFactory: GetViewProtocol {
+class SingleCheckboxBtnViewFactory: GetViewProtocol {
    
     var myView: UIView!
 
-    private var radioBtnOnImg = RadioBtnImage.init().onImage
-    private var radioBtnOffImg = RadioBtnImage.init().offImage
+    private var checkboxBtnOnImg = CheckboxBtnImage().onImage
+    private var checkboxBtnOffImg = CheckboxBtnImage().offImage
     
     func getView() -> UIView {
         return myView
+    }
+    
+    private func hookUpButtonTapEventWithMultipleCheckboxInstance(btns: [UIButton],
+                                                                  delegate: BtnTapListening?) {
+        _ = btns.map {
+            $0.addTarget(delegate, action: #selector(CheckboxBtnsWebViewItem.btnTapped), for: .touchUpInside)
+        }
     }
     
     init(tag: Int, isOn: Bool, titleText: String, width: CGFloat, delegate: BtnTapListening?) {
         
         let radioButton               = UIButton()
         radioButton.backgroundColor   = .blue
-        let img = isOn ? radioBtnOnImg : radioBtnOffImg
+        let img = isOn ? checkboxBtnOnImg : checkboxBtnOffImg
         radioButton.setBackgroundImage(img, for: .normal)
         
         radioButton.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
@@ -31,7 +38,7 @@ class CodeSingleRadioBtnViewFactory: GetViewProtocol {
         
         //Big Button (View size)
         let button               = UIButton()
-        button.backgroundColor   = .yellow
+        button.backgroundColor   = .orange
         
         //Text Label
         button.titleLabel!.numberOfLines = 0
@@ -61,10 +68,9 @@ class CodeSingleRadioBtnViewFactory: GetViewProtocol {
             $0.tag = tag
         }
         
-        _ = [radioButton, button].map {
-            $0.addTarget(delegate, action: #selector(RadioBtnsWebViewItem.btnTapped), for: .touchUpInside)
-        }
+        hookUpButtonTapEventWithMultipleCheckboxInstance(btns:  [radioButton, button], delegate: delegate)
 
     }
     
 }
+

@@ -28,6 +28,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
     
     var viewItems: [QuestionPageViewProtocol] = []
     
+    // particular questionViewmodel ima i view (getView) i model (answer)
     func getQuestionViewItems() -> [QuestionPageViewProtocol] {
         
         //let groupItem = GroupViewItem()
@@ -37,10 +38,13 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         //let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: nil, code: code)
 //        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: nil, code: code)
         let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: radioAnswer, code: code)
+//        let checkboxBtnsItem = CheckboxBtnsWebViewItem(question: checkboxQuestion, answer: nil, code: code)
+        let checkboxBtnsItem = CheckboxBtnsWebViewItem(question: checkboxQuestion, answer: checkboxAnswer, code: code)
+        
         let saveButtonItem = SaveBtnViewItem()
         
-        //let items: [QuestionPageViewProtocol] = [groupItem, dropdownItem, textAreaItem, saveButtonItem]
-        let items: [QuestionPageViewProtocol] = [radioBtnsItem, saveButtonItem]
+        //let items: [QuestionPageViewProtocol] = [groupItem, dropdownItem, textAreaItem, radioBtnsItem, saveButtonItem]
+        let items: [QuestionPageViewProtocol] = [radioBtnsItem, checkboxBtnsItem, saveButtonItem]
         viewItems.append(contentsOf: items)
         
         hookUpSaveEvent()
