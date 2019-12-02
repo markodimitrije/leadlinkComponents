@@ -26,7 +26,7 @@ let radioQuestion = Question(id: 1,
                             required: false,
                             description: longDescription,
                             order: 1, element_id: nil,
-                            settings: QuestionSettings(options: ["OptionA","OptionB","OptionC","OptionD","OptionE"]))
+                            settings: QuestionSettings(options: ["OptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionA","OptionB","OptionC","OptionD","OptionE"]))
 
 let dropdownAnswer = Answer(question: dropdownQuestion, code: "12", content:  [longTitle], optionIds: nil)
 let radioAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionA","OptionB","OptionC"], optionIds: [0,1,2])
