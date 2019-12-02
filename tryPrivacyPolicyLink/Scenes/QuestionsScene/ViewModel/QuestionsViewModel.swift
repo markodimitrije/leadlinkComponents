@@ -40,8 +40,8 @@ class QuestionsViewModel : QuestionsViewItemManaging {
 //        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: radioAnswer, code: code)
 //        let checkboxBtnsItem = CheckboxBtnsWebViewItem(question: checkboxQuestion, answer: nil, code: code)
 //        let checkboxBtnsItem = CheckboxBtnsWebViewItem(question: checkboxQuestion, answer: checkboxAnswer, code: code)
-        let radioBtnsWithInputItem = RadioBtnsWithInputWebViewItem(question: radioQuestion, answer: nil, code: code)
-        //let radioBtnsWithInputItem = RadioBtnsWebViewItem(question: radioQuestion, answer: radioAnswer, code: code)
+        let radioBtnsWithInputItem = RadioBtnsWithInputWebViewItem(question: radioWithInputQuestion, answer: nil, code: code)
+//        let radioBtnsWithInputItem = RadioBtnsWithInputWebViewItem(question: radioWithInputQuestion, answer: radioWithInputAnswer, code: code)
         
         let saveButtonItem = SaveBtnViewItem()
         

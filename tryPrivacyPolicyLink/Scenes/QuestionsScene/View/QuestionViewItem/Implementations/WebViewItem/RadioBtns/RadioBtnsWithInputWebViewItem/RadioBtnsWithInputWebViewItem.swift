@@ -17,6 +17,16 @@ class RadioBtnsWithInputWebViewItem: NSObject, QuestionPageViewModelProtocol {
     private var view: UIView!
     private var singleRadioBtnViewModels = [SingleRadioBtnViewModel]()
     
+    private var radioBtnViewModelAttachedToText: SingleRadioBtnViewModel {
+        return singleRadioBtnViewModels.last!
+    }
+    private var nonTextRadioBtnViewModels: [SingleRadioBtnViewModel] {
+        return singleRadioBtnViewModels.dropLast()
+    }
+    private var textView: UITextView {
+        return view.locateClosestChild(ofType: UITextView.self)!
+    }
+    
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
         self.answer = answer
@@ -25,53 +35,12 @@ class RadioBtnsWithInputWebViewItem: NSObject, QuestionPageViewModelProtocol {
         loadView()
     }
     
-//    private func loadView() {
-//
-//        let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer, delegate: self)
-//
-//        self.singleRadioBtnViewModels = radioBtnsFactory.getViewModels()
-//        self.view = radioBtnsFactory.getView()
-//    }
-    
     private func loadView() {
         
-        let radioBtnsFactory = RadioBtnsWithInputFactory(question: question, answer: answer, delegate: self)
+        let radioBtnsFactory = RadioBtnsWithInputFactory(question: question, answer: answer, delegate: self, textViewDelegate: self)
         self.singleRadioBtnViewModels = radioBtnsFactory.getViewModels()
         self.view = radioBtnsFactory.getView()
 
-        
-        
-        
-//        let titles = question.settings.options ?? [ ]
-//
-//        let selected = titles.map {(answer?.content ?? [ ]).contains($0)}
-//
-//        var singleRadioBtnViewModels = titles.enumerated().map { (index, title) -> SingleRadioBtnViewModel in
-//            let radioBtnFactory = SingleRadioBtnViewFactory(tag: index,
-//                                                            isOn: selected[index],
-//                                                            titleText: title,
-//                                                            width: 414.0,
-//                                                            delegate: self)
-//            let radioBtnViewModel = SingleRadioBtnViewModel(viewFactory: radioBtnFactory, isOn: selected[index])
-//            return radioBtnViewModel
-//        }
-//
-//        let lastRadioBtnViewModel = singleRadioBtnViewModels.removeLast()
-//        let singleTextView = UITextView()//SingleTextViewFactory().getView
-//
-//        let radioBtnWithTextView = CodeHorizontalStacker(views: [lastRadioBtnViewModel.getView(), singleTextView], width: 414.0)
-//
-//        let allRadioBtnViewModels = singleRadioBtnViewModels + [lastRadioBtnViewModel]
-//
-//        let singleRadioBtnViews = singleRadioBtnViewModels.map {$0.getView()}
-//        let verticalStackerFactory = CodeVerticalStacker(views: singleRadioBtnViews)
-//
-//
-//        self.view = verticalStackerFactory.getView()
-//
-//        self.singleRadioBtnViewModels = allRadioBtnViewModels
-        
-        
     }
     
     func getView() -> UIView {
@@ -104,6 +73,8 @@ extension RadioBtnsWithInputWebViewItem: BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
         setSelectedRadioBtnAndClearOthers(sender: sender)
+        setTextViewTextToPlaceholderText()
+        setTextViewUnfocused()
     }
     
     private func setSelectedRadioBtnAndClearOthers(sender: UIButton) {
@@ -113,14 +84,30 @@ extension RadioBtnsWithInputWebViewItem: BtnTapListening {
         _ = toDisable.map {$0.isOn = false}
     }
     
+    private func setTextViewTextToPlaceholderText() {
+        textView.text = question.description ?? ""
+        textView.textColor = .lightGray
+    }
+    
+    private func setTextViewUnfocused() {
+        textView.resignFirstResponder()
+    }
+    
 }
 
 extension RadioBtnsWithInputWebViewItem: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        if textView.text != question.description ?? "" {
-            print("setuj odg. btn")
-        } else {
-            print("reset odg. btn")
+        if textView.text != question.description ?? "" { print("setuj odg. btn, sve ostale reset")
+            textView.textColor = .black
+            radioBtnViewModelAttachedToText.isOn = true
+            _ = nonTextRadioBtnViewModels.map {$0.isOn = false}
+        } else if textView.text == "" {
+            _ = singleRadioBtnViewModels.map {$0.isOn = false}
+        }
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == question.description ?? "" {
+            textView.text = ""
         }
     }
 }
