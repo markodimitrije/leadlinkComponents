@@ -11,8 +11,8 @@ import UIKit
 class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
-        print("RadioBtnsWebViewItem.btnTapped - IMPLEMENT ME, sender.tag = \(sender.tag)")
-        singleFactories[sender.tag].isOn = !singleFactories[sender.tag].isOn
+//        print("RadioBtnsWebViewItem.btnTapped - IMPLEMENT ME, sender.tag = \(sender.tag)")
+        singleRadioBtnViewModel[sender.tag].isOn = !singleRadioBtnViewModel[sender.tag].isOn
     }
     
     private var question: Question
@@ -20,7 +20,7 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
     private var code: String = ""
     
     private var view: UIView!
-    private var singleFactories = [CodeSingleRadioBtnViewFactory]()
+    private var singleRadioBtnViewModel = [CodeSingleRadioBtnViewModel]()
     
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
@@ -35,16 +35,17 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
         
         let selected = titles.map {(answer?.content ?? [ ]).contains($0)}
         
-        let singleFactories = titles.enumerated().map { (index, title) -> CodeSingleRadioBtnViewFactory in
+        let singleRadioBtnViewModel = titles.enumerated().map { (index, title) -> CodeSingleRadioBtnViewModel in
             let radioBtnFactory = CodeSingleRadioBtnViewFactory(tag: index,
                                                                 isOn: selected[index],
                                                                 titleText: title,
                                                                 width: 414.0,
                                                                 delegate: self)
-            return radioBtnFactory
+            let radioBtnViewModel = CodeSingleRadioBtnViewModel(viewFactory: radioBtnFactory, isOn: selected[index])
+            return radioBtnViewModel
         }
-        self.singleFactories = singleFactories
-        let singleViews = singleFactories.map {$0.getView()}
+        self.singleRadioBtnViewModel = singleRadioBtnViewModel
+        let singleViews = singleRadioBtnViewModel.map {$0.getView()}
         let verticalStackerFactory = CodeVerticalStacker(views: singleViews)
         self.view = verticalStackerFactory.getView()
     }
@@ -77,7 +78,7 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
             return nil
         }
         
-        let selectedViewModels = singleFactories.filter {$0.isOn}
+        let selectedViewModels = singleRadioBtnViewModel.filter {$0.isOn}
         let selectedTags = selectedViewModels.map {$0.getView().tag}
         let content = selectedTags.map {questionOptions[$0]}
             

@@ -19,7 +19,7 @@
 		7C1D99A723881439003ED654 /* CodeVerticalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A623881439003ED654 /* CodeVerticalStacker.swift */; };
 		7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */; };
 		7C27FC0E2390161300BB67D9 /* GetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */; };
-		7C27FC102390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift */; };
+		7C27FC102390178300BB67D9 /* CodeSingleRadioBtnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewModel.swift */; };
 		7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */; };
 		7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */; };
 		7C374B902393BFBB002D4892 /* TextAreaWebViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B8F2393BFBB002D4892 /* TextAreaWebViewItem.swift */; };
@@ -31,6 +31,7 @@
 		7C374B9D23941461002D4892 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B9C23941461002D4892 /* UIColor+Extension.swift */; };
 		7C374B9F2394149F002D4892 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B9E2394149F002D4892 /* UIImage+Extension.swift */; };
 		7C374BA12394155F002D4892 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374BA02394155F002D4892 /* UIView+Extension.swift */; };
+		7C374BA623950D40002D4892 /* CodeSingleRadioBtnViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374BA523950D40002D4892 /* CodeSingleRadioBtnViewFactory.swift */; };
 		7C3A3F8822ACEB1B003C079E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A3F8722ACEB1B003C079E /* AppDelegate.swift */; };
 		7C3A3F8A22ACEB1B003C079E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A3F8922ACEB1B003C079E /* ViewController.swift */; };
 		7C3A3F8D22ACEB1B003C079E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3A3F8B22ACEB1B003C079E /* Main.storyboard */; };
@@ -101,7 +102,7 @@
 		7C1D99A623881439003ED654 /* CodeVerticalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerticalStacker.swift; sourceTree = "<group>"; };
 		7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHorizontalStacker.swift; sourceTree = "<group>"; };
 		7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewProtocol.swift; sourceTree = "<group>"; };
-		7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSingleRadioBtnViewFactory.swift; sourceTree = "<group>"; };
+		7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CodeSingleRadioBtnViewModel.swift; path = ../../../../../../../Components/Factory/SingleViewFactory/CodeSingleRadioBtnViewModel.swift; sourceTree = "<group>"; };
 		7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxOptionProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextViewProtocol.swift; sourceTree = "<group>"; };
 		7C374B8F2393BFBB002D4892 /* TextAreaWebViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaWebViewItem.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		7C374B9C23941461002D4892 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7C374B9E2394149F002D4892 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7C374BA02394155F002D4892 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		7C374BA523950D40002D4892 /* CodeSingleRadioBtnViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSingleRadioBtnViewFactory.swift; sourceTree = "<group>"; };
 		7C3A3F8422ACEB1B003C079E /* tryPrivacyPolicyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryPrivacyPolicyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3A3F8722ACEB1B003C079E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3A3F8922ACEB1B003C079E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,16 @@
 				7C374BA02394155F002D4892 /* UIView+Extension.swift */,
 			);
 			path = "UIKit+Extension";
+			sourceTree = "<group>";
+		};
+		7C374BA423950D20002D4892 /* RadioBtnsWebViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				7C374B95239410E8002D4892 /* RadioBtnsWebViewItem.swift */,
+				7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewModel.swift */,
+				7C374BA523950D40002D4892 /* CodeSingleRadioBtnViewFactory.swift */,
+			);
+			path = RadioBtnsWebViewItem;
 			sourceTree = "<group>";
 		};
 		7C3A3F7B22ACEB1B003C079E = {
@@ -430,7 +442,6 @@
 				7C1D99A223880DA6003ED654 /* CodeLabelAndTextViewFactory.swift */,
 				7C374B972394117E002D4892 /* CodeRadioBtnsViewFactory.swift */,
 				7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */,
-				7C27FC0F2390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift */,
 				7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */,
 				7CDDA9B923915FAE00CC1D85 /* CodeLabelFactory.swift */,
 				7CDDA9D72391654400CC1D85 /* CodeButtonFactory.swift */,
@@ -501,7 +512,7 @@
 			children = (
 				7CDDA9D22391639000CC1D85 /* DropdownWebViewItem.swift */,
 				7C374B8F2393BFBB002D4892 /* TextAreaWebViewItem.swift */,
-				7C374B95239410E8002D4892 /* RadioBtnsWebViewItem.swift */,
+				7C374BA423950D20002D4892 /* RadioBtnsWebViewItem */,
 			);
 			path = WebViewItem;
 			sourceTree = "<group>";
@@ -685,7 +696,7 @@
 				7C1D999C2387F1B5003ED654 /* ScrollViewController.swift in Sources */,
 				7C374BA12394155F002D4892 /* UIView+Extension.swift in Sources */,
 				7C1C7767238ECFE90011DA1F /* DropDownTextViewDelegate.swift in Sources */,
-				7C27FC102390178300BB67D9 /* CodeSingleRadioBtnViewFactory.swift in Sources */,
+				7C27FC102390178300BB67D9 /* CodeSingleRadioBtnViewModel.swift in Sources */,
 				7C374B96239410E8002D4892 /* RadioBtnsWebViewItem.swift in Sources */,
 				7C1D99A723881439003ED654 /* CodeVerticalStacker.swift in Sources */,
 				7C3A3FB622ACEBCA003C079E /* Extensions.swift in Sources */,
@@ -696,6 +707,7 @@
 				7CDDA9C32391619A00CC1D85 /* GlobalVarsData.swift in Sources */,
 				7CDDA9C12391617A00CC1D85 /* Answer.swift in Sources */,
 				7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */,
+				7C374BA623950D40002D4892 /* CodeSingleRadioBtnViewFactory.swift in Sources */,
 				7C374B9D23941461002D4892 /* UIColor+Extension.swift in Sources */,
 				7C374B902393BFBB002D4892 /* TextAreaWebViewItem.swift in Sources */,
 				7C3A3F8822ACEB1B003C079E /* AppDelegate.swift in Sources */,
