@@ -17,7 +17,36 @@ class CodeHorizontalStacker: GetViewProtocol {
     }
     
     init(views: [UIView], width: CGFloat) {
-        
+
+        //Stack View
+        let stackView   = UIStackView()
+        stackView.axis  = .horizontal
+        stackView.distribution  = .fill
+        stackView.alignment = .center
+        stackView.spacing   = 8.0
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false;
+
+        _ = views.map { subview -> () in
+            stackView.addArrangedSubview(subview)
+        }
+
+        myView = stackView
+        //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
+    }
+    
+}
+
+class CodeHorizontalEqualComponentWidthStacker: GetViewProtocol {
+    
+    var myView: UIView
+    
+    func getView() -> UIView {
+        return myView
+    }
+    
+    init(views: [UIView], width: CGFloat) {
+
         let numOfViews = CGFloat(views.count)
         let singleViewWidth = width/numOfViews
 
@@ -27,14 +56,13 @@ class CodeHorizontalStacker: GetViewProtocol {
         stackView.distribution  = .fill
         stackView.alignment = .center
         stackView.spacing   = 8.0
-        
+
         stackView.widthAnchor.constraint(equalToConstant: width).isActive = true
-        
+
         stackView.translatesAutoresizingMaskIntoConstraints = false;
-        
+
         _ = views.map { subview -> () in
             let recalcView = subview
-//            recalcView.constraints.first(where: {$0.identifier == "textLabelWidthConstraint" || $0.identifier == "textFieldWidthConstraint"})?.isActive = false
             recalcView.widthAnchor.constraint(equalToConstant: singleViewWidth).isActive = true
             stackView.addArrangedSubview(recalcView)
         }
@@ -42,4 +70,5 @@ class CodeHorizontalStacker: GetViewProtocol {
         myView = stackView
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
     }
+    
 }

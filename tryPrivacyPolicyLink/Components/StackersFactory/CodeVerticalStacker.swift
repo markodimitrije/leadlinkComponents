@@ -22,7 +22,7 @@ class CodeVerticalStacker: GetViewProtocol {
         let stackView   = UIStackView(arrangedSubviews: views)
         stackView.axis  = .vertical
         stackView.distribution  = .fill
-        stackView.alignment = .center
+        stackView.alignment = .leading
         stackView.spacing   = 8.0
         
         stackView.translatesAutoresizingMaskIntoConstraints = false;
