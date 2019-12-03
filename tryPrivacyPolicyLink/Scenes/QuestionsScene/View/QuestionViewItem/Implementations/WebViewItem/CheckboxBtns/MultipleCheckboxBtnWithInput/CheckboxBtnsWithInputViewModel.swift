@@ -75,19 +75,25 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
 extension CheckboxBtnsWithInputViewModel: BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
+        
         toggleSelectedCheckboxBtn(sender: sender)
-        manageTextViewIfAttachedCheckmarkIsTapped(sender: sender)
-        resignKeyboardIfRegularChecboxTapped(sender: sender)
+        
+        if isSelectedCheckboxBtnAttachedToTextView(sender: sender) {
+            manageTextViewIfAttachedCheckmarkIsTapped(sender: sender)
+        } else {
+            setTextViewUnfocused()
+        }
     }
     
     private func toggleSelectedCheckboxBtn(sender: UIButton) {
         singleCheckboxBtnViewModels[sender.tag].isOn = !singleCheckboxBtnViewModels[sender.tag].isOn
     }
     
+    private func isSelectedCheckboxBtnAttachedToTextView(sender: UIButton) -> Bool {
+        return sender.tag == checkboxBtnViewModelAttachedToText.getView().tag
+    }
+    
     private func manageTextViewIfAttachedCheckmarkIsTapped(sender: UIButton) {
-        if sender.tag != checkboxBtnViewModelAttachedToText.getView().tag {
-            return
-        }
         if !checkboxBtnViewModelAttachedToText.isOn {
             textView.text = ""
             self.textView.resignFirstResponder()
@@ -95,12 +101,6 @@ extension CheckboxBtnsWithInputViewModel: BtnTapListening {
             delay(0.01) {
                 self.textView.becomeFirstResponder()
             }
-        }
-    }
-    
-    private func resignKeyboardIfRegularChecboxTapped(sender: UIButton) {
-        if sender.tag != checkboxBtnViewModelAttachedToText.getView().tag {
-            setTextViewUnfocused()
         }
     }
     
