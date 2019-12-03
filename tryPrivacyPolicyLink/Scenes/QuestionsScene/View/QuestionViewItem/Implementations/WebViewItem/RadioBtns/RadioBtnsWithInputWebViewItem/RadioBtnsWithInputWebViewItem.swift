@@ -27,6 +27,35 @@ class RadioBtnsWithInputWebViewItem: NSObject, QuestionPageViewModelProtocol {
         return view.locateClosestChild(ofType: UITextView.self)!
     }
     
+    func getView() -> UIView {
+        return self.view
+    }
+    func getActualAnswer() -> Answer? { // single selection - not tested !!
+
+        guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
+            return nil
+        }
+
+        let selectedViewModels = singleRadioBtnViewModels.filter {$0.isOn}
+        let selectedTags = selectedViewModels.map {$0.getView().tag}
+        var content = selectedTags.map {questionOptions[$0]}
+        
+        if radioBtnViewModelAttachedToText.isOn && textView.text != question.description {
+            content.append(textView.text)
+        } else {
+            let questionOptions = question.settings.options!
+            content.removeAll(where: {!questionOptions.contains($0)})
+        }
+
+        if answer != nil {
+            answer!.content = content
+            answer!.optionIds = selectedTags
+        } else {
+            answer = Answer(question: question, code: code, content: content, optionIds: selectedTags)
+        }
+        return answer
+    }
+    
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
         self.answer = answer
@@ -43,30 +72,6 @@ class RadioBtnsWithInputWebViewItem: NSObject, QuestionPageViewModelProtocol {
 
     }
     
-    func getView() -> UIView {
-        return self.view
-    }
-    
-    func getActualAnswer() -> Answer? { // single selection - not tested !!
-
-        guard let questionOptions = question.settings.options else { // glupo, resi mnogo ranije...
-            return nil
-        }
-
-        let selectedViewModels = singleRadioBtnViewModels.filter {$0.isOn}
-        let selectedTags = selectedViewModels.map {$0.getView().tag}
-        let content = selectedTags.map {questionOptions[$0]}
-
-        if answer != nil {
-            answer!.content = content
-            answer!.optionIds = selectedTags
-        } else {
-            answer = Answer(question: question, code: code, content: content, optionIds: selectedTags)
-        }
-        return answer
-    }
-    
-    
 }
 
 extension RadioBtnsWithInputWebViewItem: BtnTapListening {
@@ -79,7 +84,7 @@ extension RadioBtnsWithInputWebViewItem: BtnTapListening {
     
     private func setSelectedRadioBtnAndClearOthers(sender: UIButton) {
         singleRadioBtnViewModels[sender.tag].isOn = !singleRadioBtnViewModels[sender.tag].isOn
-        print("sve ostale setuj na false")
+        //print("sve ostale setuj na false")
         let toDisable = singleRadioBtnViewModels.filter {$0.getView().tag != sender.tag}
         _ = toDisable.map {$0.isOn = false}
     }
@@ -97,7 +102,7 @@ extension RadioBtnsWithInputWebViewItem: BtnTapListening {
 
 extension RadioBtnsWithInputWebViewItem: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        if textView.text != question.description ?? "" { print("setuj odg. btn, sve ostale reset")
+        if textView.text != question.description ?? "" { //print("setuj odg. btn, sve ostale reset")
             textView.textColor = .black
             radioBtnViewModelAttachedToText.isOn = true
             _ = nonTextRadioBtnViewModels.map {$0.isOn = false}
