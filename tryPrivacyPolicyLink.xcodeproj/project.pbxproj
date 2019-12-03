@@ -25,6 +25,7 @@
 		7C3044F32396868B00BA640D /* CheckboxBtnsWithInputFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F22396868B00BA640D /* CheckboxBtnsWithInputFactory.swift */; };
 		7C3044F52396882500BA640D /* CheckboxBtnsWithInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F42396882500BA640D /* CheckboxBtnsWithInputViewModel.swift */; };
 		7C3044F723968B6700BA640D /* CheckboxBtnsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F623968B6700BA640D /* CheckboxBtnsFactory.swift */; };
+		7C3044FA2396A69A00BA640D /* GlobalFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F92396A69A00BA640D /* GlobalFuncs.swift */; };
 		7C374B902393BFBB002D4892 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */; };
 		7C374B922393CBEA002D4892 /* PresentQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B912393CBEA002D4892 /* PresentQuestion.swift */; };
 		7C374B942393CC45002D4892 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B932393CC45002D4892 /* QuestionType.swift */; };
@@ -119,6 +120,7 @@
 		7C3044F22396868B00BA640D /* CheckboxBtnsWithInputFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnsWithInputFactory.swift; sourceTree = "<group>"; };
 		7C3044F42396882500BA640D /* CheckboxBtnsWithInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnsWithInputViewModel.swift; sourceTree = "<group>"; };
 		7C3044F623968B6700BA640D /* CheckboxBtnsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnsFactory.swift; sourceTree = "<group>"; };
+		7C3044F92396A69A00BA640D /* GlobalFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFuncs.swift; sourceTree = "<group>"; };
 		7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		7C374B912393CBEA002D4892 /* PresentQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestion.swift; sourceTree = "<group>"; };
 		7C374B932393CC45002D4892 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
@@ -316,6 +318,14 @@
 			path = MultipleCheckboxBtnWithInput;
 			sourceTree = "<group>";
 		};
+		7C3044F82396A68B00BA640D /* GlobalFuncs */ = {
+			isa = PBXGroup;
+			children = (
+				7C3044F92396A69A00BA640D /* GlobalFuncs.swift */,
+			);
+			path = GlobalFuncs;
+			sourceTree = "<group>";
+		};
 		7C374B9923941408002D4892 /* CodeAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +387,7 @@
 		7C3A3F8622ACEB1B003C079E /* tryPrivacyPolicyLink */ = {
 			isa = PBXGroup;
 			children = (
+				7C3044F82396A68B00BA640D /* GlobalFuncs */,
 				7C374BA22394156E002D4892 /* UIKit+Extension */,
 				7C374B9923941408002D4892 /* CodeAssets */,
 				7C1C776A238ED06D0011DA1F /* Model */,
@@ -801,6 +812,7 @@
 				7C3044F52396882500BA640D /* CheckboxBtnsWithInputViewModel.swift in Sources */,
 				7CEB33A8239551CD0038C26A /* SingleRadioBtnViewModel.swift in Sources */,
 				7C374B9B23941416002D4892 /* RadioBtnImage.swift in Sources */,
+				7C3044FA2396A69A00BA640D /* GlobalFuncs.swift in Sources */,
 				7C1D99A123880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift in Sources */,
 				7CDDA9C72391620800CC1D85 /* QuestionsViewControllerFactory.swift in Sources */,
 				7C3A3F8A22ACEB1B003C079E /* ViewController.swift in Sources */,
@@ -1007,7 +1019,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJZMY6T4V6;
 				INFOPLIST_FILE = tryPrivacyPolicyLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1026,7 +1038,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJZMY6T4V6;
 				INFOPLIST_FILE = tryPrivacyPolicyLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

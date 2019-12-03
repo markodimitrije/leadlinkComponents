@@ -10,7 +10,7 @@ import UIKit
 
 class SingleCheckboxBtnViewModel: GetViewProtocol {
    
-    var myView: UIView!
+    private var myView: UIView!
     
     private var _isOn: Bool = false
     private var button: UIButton!
@@ -37,6 +37,7 @@ class SingleCheckboxBtnViewModel: GetViewProtocol {
         let imgButton = buttons.first(where: {$0.backgroundImage(for: .normal) != nil})
         self.button = imgButton
         self.isOn = isOn
+        self.myView.tag = self.button.tag
     }
     
     func getView() -> UIView {

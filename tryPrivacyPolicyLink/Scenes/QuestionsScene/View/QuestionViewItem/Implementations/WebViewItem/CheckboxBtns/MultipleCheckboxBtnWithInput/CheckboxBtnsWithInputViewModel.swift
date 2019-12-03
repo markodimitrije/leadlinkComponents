@@ -20,9 +20,7 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
     private var checkboxBtnViewModelAttachedToText: SingleCheckboxBtnViewModel {
         return singleCheckboxBtnViewModels.last!
     }
-    private var nonTextCheckboxBtnViewModels: [SingleCheckboxBtnViewModel] {
-        return singleCheckboxBtnViewModels.dropLast()
-    }
+    
     private var textView: UITextView {
         return view.locateClosestChild(ofType: UITextView.self)!
     }
@@ -77,21 +75,33 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
 extension CheckboxBtnsWithInputViewModel: BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
-        setSelectedCheckboxBtnAndClearOthers(sender: sender)
-        setTextViewTextToPlaceholderText()
-        setTextViewUnfocused()
+        toggleSelectedCheckboxBtn(sender: sender)
+        manageTextViewIfAttachedCheckmarkIsTapped(sender: sender)
+        resignKeyboardIfRegularChecboxTapped(sender: sender)
     }
     
-    private func setSelectedCheckboxBtnAndClearOthers(sender: UIButton) {
+    private func toggleSelectedCheckboxBtn(sender: UIButton) {
         singleCheckboxBtnViewModels[sender.tag].isOn = !singleCheckboxBtnViewModels[sender.tag].isOn
-        //print("sve ostale setuj na false")
-        let toDisable = singleCheckboxBtnViewModels.filter {$0.getView().tag != sender.tag}
-        _ = toDisable.map {$0.isOn = false}
     }
     
-    private func setTextViewTextToPlaceholderText() {
-        textView.text = question.description ?? ""
-        textView.textColor = .lightGray
+    private func manageTextViewIfAttachedCheckmarkIsTapped(sender: UIButton) {
+        if sender.tag != checkboxBtnViewModelAttachedToText.getView().tag {
+            return
+        }
+        if !checkboxBtnViewModelAttachedToText.isOn {
+            textView.text = ""
+            self.textView.resignFirstResponder()
+        } else if !textView.isFirstResponder {
+            delay(0.01) {
+                self.textView.becomeFirstResponder()
+            }
+        }
+    }
+    
+    private func resignKeyboardIfRegularChecboxTapped(sender: UIButton) {
+        if sender.tag != checkboxBtnViewModelAttachedToText.getView().tag {
+            setTextViewUnfocused()
+        }
     }
     
     private func setTextViewUnfocused() {
@@ -105,7 +115,6 @@ extension CheckboxBtnsWithInputViewModel: UITextViewDelegate {
         if textView.text != question.description ?? "" { //print("setuj odg. btn, sve ostale reset")
             textView.textColor = .black
             checkboxBtnViewModelAttachedToText.isOn = true
-            _ = nonTextCheckboxBtnViewModels.map {$0.isOn = false}
         } else if textView.text == "" {
             _ = singleCheckboxBtnViewModels.map {$0.isOn = false}
         }
