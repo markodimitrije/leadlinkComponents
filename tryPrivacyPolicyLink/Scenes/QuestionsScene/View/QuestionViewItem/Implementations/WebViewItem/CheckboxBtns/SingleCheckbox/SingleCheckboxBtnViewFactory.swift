@@ -1,5 +1,5 @@
 //
-//  CodeSingleRadioBtnViewFactory.swift
+//  SingleCheckboxBtnViewFactory.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 02/12/2019.
@@ -8,22 +8,29 @@
 
 import UIKit
 
-class SingleRadioBtnViewFactory: GetViewProtocol {
+class SingleCheckboxBtnViewFactory: GetViewProtocol {
    
     var myView: UIView!
 
-    private var radioBtnOnImg = RadioBtnImage.init().onImage
-    private var radioBtnOffImg = RadioBtnImage.init().offImage
+    private var checkboxBtnOnImg = CheckboxBtnImage().onImage
+    private var checkboxBtnOffImg = CheckboxBtnImage().offImage
     
     func getView() -> UIView {
         return myView
+    }
+    
+    private func hookUpButtonTapEventWithMultipleCheckboxInstance(btns: [UIButton],
+                                                                  delegate: BtnTapListening?) {
+        _ = btns.map {
+            $0.addTarget(delegate, action: #selector(CheckboxBtnsViewModel.btnTapped), for: .touchUpInside)
+        }
     }
     
     init(tag: Int, isOn: Bool, titleText: String, width: CGFloat, delegate: BtnTapListening?) {
         
         let radioButton               = UIButton()
         radioButton.backgroundColor   = .blue
-        let img = isOn ? radioBtnOnImg : radioBtnOffImg
+        let img = isOn ? checkboxBtnOnImg : checkboxBtnOffImg
         radioButton.setBackgroundImage(img, for: .normal)
         
         radioButton.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
@@ -31,18 +38,16 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
         
         //Big Button (View size)
         let button               = UIButton()
-        button.backgroundColor   = .yellow
+        button.backgroundColor   = .orange
         
         //Text Label
         button.titleLabel!.numberOfLines = 0
         button.setTitleColor(.black, for: .normal)
         button.setTitle(titleText, for: .normal)
-        button.contentHorizontalAlignment = .left
+        button.titleLabel!.textAlignment = .center
         
-        let labelWidth = width - 38.0
+        let labelWidth = width - 68.0
         button.widthAnchor.constraint(equalToConstant: labelWidth).isActive = true
-        button.constraints.first?.identifier = "width"
-        
         button.heightAnchor.constraint(equalTo: button.titleLabel!.heightAnchor, multiplier: 1.0).isActive = true
         
         //Stack View
@@ -55,7 +60,7 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
         stackView.addArrangedSubview(radioButton)
         stackView.addArrangedSubview(button)
         
-//        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        stackView.translatesAutoresizingMaskIntoConstraints = false;
         
         myView = stackView
         
@@ -63,10 +68,9 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
             $0.tag = tag
         }
         
-        _ = [radioButton, button].map {
-            $0.addTarget(delegate, action: #selector(RadioBtnsWebViewItem.btnTapped), for: .touchUpInside)
-        }
+        hookUpButtonTapEventWithMultipleCheckboxInstance(btns:  [radioButton, button], delegate: delegate)
 
     }
     
 }
+

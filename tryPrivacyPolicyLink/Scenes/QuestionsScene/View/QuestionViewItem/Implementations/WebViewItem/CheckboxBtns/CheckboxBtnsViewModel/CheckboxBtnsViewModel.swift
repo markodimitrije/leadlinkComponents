@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckboxBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListening {
+class CheckboxBtnsViewModel: NSObject, QuestionPageViewModelProtocol, BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
         singleCheckboxBtnViewModel[sender.tag].isOn = !singleCheckboxBtnViewModel[sender.tag].isOn
@@ -72,4 +72,3 @@ class CheckboxBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapLi
         return answer
     }
 }
-

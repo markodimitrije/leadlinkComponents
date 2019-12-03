@@ -1,5 +1,5 @@
 //
-//  RadioBtnsWebViewItem.swift
+//  RadioBtnsViewModel.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 01/12/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListening {
+class RadioBtnsViewModel: NSObject, QuestionPageViewModelProtocol, BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
         setSelectedRadioBtnAndClearOthers(sender: sender)
@@ -61,7 +61,7 @@ class RadioBtnsWebViewItem: NSObject, QuestionPageViewModelProtocol, BtnTapListe
     }
     
     private func setSelectedRadioBtnAndClearOthers(sender: UIButton) {
-        //        print("RadioBtnsWebViewItem.btnTapped - IMPLEMENT ME, sender.tag = \(sender.tag)")
+        //        print("RadioBtnsViewModel.btnTapped - IMPLEMENT ME, sender.tag = \(sender.tag)")
         singleRadioBtnViewModels[sender.tag].isOn = !singleRadioBtnViewModels[sender.tag].isOn
         print("sve ostale setuj na false")
         let toDisable = singleRadioBtnViewModels.filter {$0.getView().tag != sender.tag}

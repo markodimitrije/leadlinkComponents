@@ -1,5 +1,5 @@
 //
-//  QuestionPageViewProtocol.swift
+//  QuestionPageGetViewProtocol.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 29/11/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol QuestionPageViewProtocol {
+protocol QuestionPageGetViewProtocol {
     func getView() -> UIView
 }
 
@@ -16,4 +16,4 @@ protocol ActualAnswerProtocol {
     func getActualAnswer() -> Answer?
 }
 
-protocol QuestionPageViewModelProtocol: QuestionPageViewProtocol, ActualAnswerProtocol {}
+protocol QuestionPageViewModelProtocol: QuestionPageGetViewProtocol, ActualAnswerProtocol {}

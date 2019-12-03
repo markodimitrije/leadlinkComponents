@@ -1,5 +1,5 @@
 //
-//  DropdownWebViewItem.swift
+//  DropdownViewModel.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 29/11/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DropdownWebViewItem: NSObject, QuestionPageViewModelProtocol {
+class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
     
     private var question: Question
     private var answer: Answer?
@@ -47,7 +47,7 @@ class DropdownWebViewItem: NSObject, QuestionPageViewModelProtocol {
     }
 }
 
-extension DropdownWebViewItem: UITextViewDelegate {
+extension DropdownViewModel: UITextViewDelegate {
      
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == question.description ?? "" {

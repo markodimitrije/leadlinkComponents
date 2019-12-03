@@ -20,7 +20,7 @@ class QuestionsViewController: UIViewController {
     }
         
     private func displayQuestions() {
-        let items = viewmodel.getQuestionViewItems()
+        let items = viewmodel.getQuestionPageViewItems()
         let views = items.map({$0.getView()})
         _ = views.map(stackView.addArrangedSubview(_:))
     }

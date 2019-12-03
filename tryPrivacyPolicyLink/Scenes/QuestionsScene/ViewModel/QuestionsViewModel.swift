@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuestionsViewItemSupplying {
-    func getQuestionViewItems() -> [QuestionPageViewProtocol]
+    func getQuestionPageViewItems() -> [QuestionPageGetViewProtocol]
 }
 
 protocol BtnTapListening {
@@ -26,28 +26,28 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         self.code = code
     }
     
-    var viewItems: [QuestionPageViewProtocol] = []
+    var viewItems: [QuestionPageGetViewProtocol] = []
     
     // particular questionViewmodel ima i view (getView) i model (answer)
-    func getQuestionViewItems() -> [QuestionPageViewProtocol] {
+    func getQuestionPageViewItems() -> [QuestionPageGetViewProtocol] {
         
         //let groupItem = GroupViewItem()
-        //let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: dropdownAnswer, code: code)
-//        let dropdownItem = DropdownWebViewItem(question: dropdownQuestion, answer: nil, code: code)
-        //let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: dropdownAnswer, code: code)
-        //let textAreaItem = TextAreaWebViewItem(question: dropdownQuestion, answer: nil, code: code)
-//        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: nil, code: code)
-//        let radioBtnsItem = RadioBtnsWebViewItem(question: radioQuestion, answer: radioAnswer, code: code)
-//        let checkboxBtnsItem = CheckboxBtnsWebViewItem(question: checkboxQuestion, answer: nil, code: code)
-//        let checkboxBtnsItem = CheckboxBtnsWebViewItem(question: checkboxQuestion, answer: checkboxAnswer, code: code)
-        let radioBtnsWithInputItem = RadioBtnsWithInputWebViewItem(question: radioWithInputQuestion, answer: nil, code: code)
-//        let radioBtnsWithInputItem = RadioBtnsWithInputWebViewItem(question: radioWithInputQuestion, answer: radioWithInputAnswer, code: code)
+        //let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+//        let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: nil, code: code)
+        //let textAreaItem = TextAreaViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+        //let textAreaItem = TextAreaViewModel(question: dropdownQuestion, answer: nil, code: code)
+//        let radioBtnsItem = RadioBtnsViewModel(question: radioQuestion, answer: nil, code: code)
+//        let radioBtnsItem = RadioBtnsViewModel(question: radioQuestion, answer: radioAnswer, code: code)
+//        let checkboxBtnsViewModel = CheckboxBtnsViewModel(question: checkboxQuestion, answer: nil, code: code)
+//        let checkboxBtnsViewModel = CheckboxBtnsViewModel(question: checkboxQuestion, answer: checkboxAnswer, code: code)
+        let radioBtnsWithInputViewModel = RadioBtnsWithInputViewModel(question: radioWithInputQuestion, answer: nil, code: code)
+//        let radioBtnsWithInputItem = RadioBtnsWithInputViewModel(question: radioWithInputQuestion, answer: radioWithInputAnswer, code: code)
         
         let saveButtonItem = SaveBtnViewItem()
         
-        //let items: [QuestionPageViewProtocol] = [groupItem, dropdownItem, textAreaItem, radioBtnsItem, saveButtonItem]
-        //let items: [QuestionPageViewProtocol] = [radioBtnsItem, checkboxBtnsItem, saveButtonItem]
-        let items: [QuestionPageViewProtocol] = [radioBtnsWithInputItem, saveButtonItem]
+        //let items: [QuestionPageGetViewProtocol] = [groupItem, dropdownItem, textAreaItem, radioBtnsItem, saveButtonItem]
+        //let items: [QuestionPageGetViewProtocol] = [radioBtnsItem, checkboxBtnsViewModel, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, saveButtonItem]
         viewItems.append(contentsOf: items)
         
         hookUpSaveEvent()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioBtnsWithInputWebViewItem: NSObject, QuestionPageViewModelProtocol {
+class RadioBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
     
     private var question: Question
     private var answer: Answer?
@@ -74,7 +74,7 @@ class RadioBtnsWithInputWebViewItem: NSObject, QuestionPageViewModelProtocol {
     
 }
 
-extension RadioBtnsWithInputWebViewItem: BtnTapListening {
+extension RadioBtnsWithInputViewModel: BtnTapListening {
     
     @objc func btnTapped(_ sender: UIButton) {
         setSelectedRadioBtnAndClearOthers(sender: sender)
@@ -100,7 +100,7 @@ extension RadioBtnsWithInputWebViewItem: BtnTapListening {
     
 }
 
-extension RadioBtnsWithInputWebViewItem: UITextViewDelegate {
+extension RadioBtnsWithInputViewModel: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if textView.text != question.description ?? "" { //print("setuj odg. btn, sve ostale reset")
             textView.textColor = .black

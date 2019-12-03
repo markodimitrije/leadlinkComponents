@@ -1,5 +1,5 @@
 //
-//  TextAreaWebViewItem.swift
+//  TextAreaViewModel.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 01/12/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextAreaWebViewItem: NSObject, QuestionPageViewModelProtocol {
+class TextAreaViewModel: NSObject, QuestionPageViewModelProtocol {
     
     private var question: Question
     private var answer: Answer?
@@ -47,7 +47,7 @@ class TextAreaWebViewItem: NSObject, QuestionPageViewModelProtocol {
     }
 }
 
-extension TextAreaWebViewItem: UITextViewDelegate {
+extension TextAreaViewModel: UITextViewDelegate {
      
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == question.description ?? "" {

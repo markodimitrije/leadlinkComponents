@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SaveBtnViewItem: QuestionPageViewProtocol {
+class SaveBtnViewItem: QuestionPageGetViewProtocol {
     
     private var view: UIView
     
