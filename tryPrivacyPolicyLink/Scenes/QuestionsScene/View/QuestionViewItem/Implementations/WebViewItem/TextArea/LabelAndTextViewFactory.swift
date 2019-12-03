@@ -1,16 +1,16 @@
 //
-//  CodeLabelAndTextViewDropdownFactory.swift
+//  CodeLabelAndTextView.swift
 //  tryPrivacyPolicyLink
 //
-//  Created by Marko Dimitrijevic on 27/11/2019.
+//  Created by Marko Dimitrijevic on 22/11/2019.
 //  Copyright © 2019 Marko Dimitrijevic. All rights reserved.
 //
 
 import UIKit
 
-class CodeLabelAndTextViewDropdownFactory {
+class LabelAndTextViewFactory: GetViewProtocol {
     
-    private var myView: UIView
+    var myView: UIView!
     
     weak var delegate: UITextViewDelegate?
     
@@ -32,14 +32,6 @@ class CodeLabelAndTextViewDropdownFactory {
             return inputText
         }
         
-        //Text Label
-        let textLabel               = UILabel()
-        textLabel.backgroundColor   = .yellow
-        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
-        textLabel.numberOfLines = 0
-        textLabel.text  = headlineText
-        textLabel.textAlignment = .center
-        
         //textField
         let textView             = UITextView()
         textView.isScrollEnabled = false
@@ -49,7 +41,15 @@ class CodeLabelAndTextViewDropdownFactory {
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)
-        
+
+        //Text Label
+        let textLabel               = UILabel()
+        textLabel.backgroundColor   = .yellow
+        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+        textLabel.numberOfLines = 0
+        textLabel.text  = headlineText
+        textLabel.textAlignment = .center
+
         //Stack View
         let stackView   = UIStackView()
         stackView.axis  = .vertical
@@ -59,8 +59,7 @@ class CodeLabelAndTextViewDropdownFactory {
 
         stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(textView)
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false;
 
         textView.delegate = delegate
         myView = stackView
@@ -69,3 +68,4 @@ class CodeLabelAndTextViewDropdownFactory {
     }
     
 }
+

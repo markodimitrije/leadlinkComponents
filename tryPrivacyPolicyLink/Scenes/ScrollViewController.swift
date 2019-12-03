@@ -90,13 +90,13 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
     
     private func insertCodeLabelAndTextView() {
     
-        let childView = CodeLabelAndTextViewFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: textViewDelegate).myView!
+        let childView = LabelAndTextViewFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: textViewDelegate).myView!
         self.view.addSubview(childView)
     }
     
     private func insertCodeLabelAndTextViewImproved() {
     
-        let factoryA = CodeLabelAndTextViewFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: textViewDelegate)
+        let factoryA = LabelAndTextViewFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: textViewDelegate)
         let labelTextViewA = LabelTextView(factory: factoryA)
         
         labelTextViewA.view.tag = 1
@@ -111,7 +111,7 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
     
     private func insertCodeLabelAndTextViewDropdown() {
     
-//        let childView = CodeLabelAndTextViewDropdownFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: self).getView()
+//        let childView = LabelAndTextViewDropdownFactory(headlineText: headlineText, inputText: inputText, placeholderText: placeholderText, width: screenWidth, delegate: self).getView()
 //
 //        childView.tag = 0 // questionId
 //

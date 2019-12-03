@@ -27,7 +27,7 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
     private func loadView() {
         let inputText = answer?.content.first ?? ""
         let placeholderText = self.question.description ?? ""
-        self.view = CodeLabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self).getView()
+        self.view = LabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self).getView()
         view.backgroundColor = .green
     }
     

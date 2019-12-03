@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C1C7764238EC3C90011DA1F /* CodeLabelAndTextViewDropdownFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */; };
+		7C1C7764238EC3C90011DA1F /* LabelAndTextViewDropdownFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7763238EC3C80011DA1F /* LabelAndTextViewDropdownFactory.swift */; };
 		7C1C7767238ECFE90011DA1F /* DropDownTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7766238ECFE90011DA1F /* DropDownTextViewDelegate.swift */; };
 		7C1C7769238ED0050011DA1F /* MyTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7768238ED0050011DA1F /* MyTextViewDelegate.swift */; };
 		7C1C776C238ED0BA0011DA1F /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C776B238ED0BA0011DA1F /* questions.json */; };
 		7C1D999C2387F1B5003ED654 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */; };
 		7C1D999F238808E6003ED654 /* CodeViewAndLabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */; };
 		7C1D99A123880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */; };
-		7C1D99A323880DA6003ED654 /* CodeLabelAndTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A223880DA6003ED654 /* CodeLabelAndTextViewFactory.swift */; };
+		7C1D99A323880DA6003ED654 /* LabelAndTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */; };
 		7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */; };
 		7C1D99A723881439003ED654 /* CodeVerticalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A623881439003ED654 /* CodeVerticalStacker.swift */; };
 		7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */; };
@@ -26,11 +26,15 @@
 		7C3044F52396882500BA640D /* CheckboxBtnsWithInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F42396882500BA640D /* CheckboxBtnsWithInputViewModel.swift */; };
 		7C3044F723968B6700BA640D /* CheckboxBtnsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F623968B6700BA640D /* CheckboxBtnsFactory.swift */; };
 		7C3044FA2396A69A00BA640D /* GlobalFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044F92396A69A00BA640D /* GlobalFuncs.swift */; };
+		7C3044FD2396C09300BA640D /* OptInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044FC2396C09300BA640D /* OptInViewModel.swift */; };
+		7C3045002396C4C300BA640D /* OptInViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3044FF2396C4C300BA640D /* OptInViewFactory.swift */; };
+		7C3045022396C5A900BA640D /* OptIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3045012396C5A900BA640D /* OptIn.swift */; };
+		7C3045042396C83400BA640D /* ColoredViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3045032396C83400BA640D /* ColoredViewFactory.swift */; };
+		7C3045062396D09D00BA640D /* CodeTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3045052396D09D00BA640D /* CodeTextViewFactory.swift */; };
 		7C374B902393BFBB002D4892 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */; };
 		7C374B922393CBEA002D4892 /* PresentQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B912393CBEA002D4892 /* PresentQuestion.swift */; };
 		7C374B942393CC45002D4892 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B932393CC45002D4892 /* QuestionType.swift */; };
 		7C374B96239410E8002D4892 /* RadioBtnsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B95239410E8002D4892 /* RadioBtnsViewModel.swift */; };
-		7C374B982394117E002D4892 /* CodeRadioBtnsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B972394117E002D4892 /* CodeRadioBtnsViewFactory.swift */; };
 		7C374B9B23941416002D4892 /* RadioBtnImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B9A23941416002D4892 /* RadioBtnImage.swift */; };
 		7C374B9D23941461002D4892 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B9C23941461002D4892 /* UIColor+Extension.swift */; };
 		7C374B9F2394149F002D4892 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B9E2394149F002D4892 /* UIImage+Extension.swift */; };
@@ -102,14 +106,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextViewDropdownFactory.swift; sourceTree = "<group>"; };
+		7C1C7763238EC3C80011DA1F /* LabelAndTextViewDropdownFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAndTextViewDropdownFactory.swift; sourceTree = "<group>"; };
 		7C1C7766238ECFE90011DA1F /* DropDownTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextViewDelegate.swift; sourceTree = "<group>"; };
 		7C1C7768238ED0050011DA1F /* MyTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextViewDelegate.swift; sourceTree = "<group>"; };
 		7C1C776B238ED0BA0011DA1F /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAndLabelFactory.swift; sourceTree = "<group>"; };
 		7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextFieldFactory.swift; sourceTree = "<group>"; };
-		7C1D99A223880DA6003ED654 /* CodeLabelAndTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextViewFactory.swift; sourceTree = "<group>"; };
+		7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAndTextViewFactory.swift; sourceTree = "<group>"; };
 		7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSingleCheckmarkViewFactory.swift; sourceTree = "<group>"; };
 		7C1D99A623881439003ED654 /* CodeVerticalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerticalStacker.swift; sourceTree = "<group>"; };
 		7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHorizontalStacker.swift; sourceTree = "<group>"; };
@@ -121,11 +125,15 @@
 		7C3044F42396882500BA640D /* CheckboxBtnsWithInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnsWithInputViewModel.swift; sourceTree = "<group>"; };
 		7C3044F623968B6700BA640D /* CheckboxBtnsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnsFactory.swift; sourceTree = "<group>"; };
 		7C3044F92396A69A00BA640D /* GlobalFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFuncs.swift; sourceTree = "<group>"; };
+		7C3044FC2396C09300BA640D /* OptInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInViewModel.swift; sourceTree = "<group>"; };
+		7C3044FF2396C4C300BA640D /* OptInViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInViewFactory.swift; sourceTree = "<group>"; };
+		7C3045012396C5A900BA640D /* OptIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptIn.swift; sourceTree = "<group>"; };
+		7C3045032396C83400BA640D /* ColoredViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredViewFactory.swift; sourceTree = "<group>"; };
+		7C3045052396D09D00BA640D /* CodeTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextViewFactory.swift; sourceTree = "<group>"; };
 		7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		7C374B912393CBEA002D4892 /* PresentQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestion.swift; sourceTree = "<group>"; };
 		7C374B932393CC45002D4892 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
 		7C374B95239410E8002D4892 /* RadioBtnsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBtnsViewModel.swift; sourceTree = "<group>"; };
-		7C374B972394117E002D4892 /* CodeRadioBtnsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeRadioBtnsViewFactory.swift; sourceTree = "<group>"; };
 		7C374B9A23941416002D4892 /* RadioBtnImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBtnImage.swift; sourceTree = "<group>"; };
 		7C374B9C23941461002D4892 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7C374B9E2394149F002D4892 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -279,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				7CDDA9D22391639000CC1D85 /* DropdownViewModel.swift */,
+				7C1C7763238EC3C80011DA1F /* LabelAndTextViewDropdownFactory.swift */,
 			);
 			path = Dropdown;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */,
+				7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */,
 			);
 			path = TextArea;
 			sourceTree = "<group>";
@@ -324,6 +334,15 @@
 				7C3044F92396A69A00BA640D /* GlobalFuncs.swift */,
 			);
 			path = GlobalFuncs;
+			sourceTree = "<group>";
+		};
+		7C3044FE2396C1D300BA640D /* OptInViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				7C3044FC2396C09300BA640D /* OptInViewModel.swift */,
+				7C3044FF2396C4C300BA640D /* OptInViewFactory.swift */,
+			);
+			path = OptInViewItem;
 			sourceTree = "<group>";
 		};
 		7C374B9923941408002D4892 /* CodeAssets */ = {
@@ -554,12 +573,11 @@
 			children = (
 				7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */,
 				7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */,
-				7C1D99A223880DA6003ED654 /* CodeLabelAndTextViewFactory.swift */,
-				7C374B972394117E002D4892 /* CodeRadioBtnsViewFactory.swift */,
 				7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */,
-				7C1C7763238EC3C80011DA1F /* CodeLabelAndTextViewDropdownFactory.swift */,
 				7CDDA9B923915FAE00CC1D85 /* CodeLabelFactory.swift */,
+				7C3045052396D09D00BA640D /* CodeTextViewFactory.swift */,
 				7CDDA9D72391654400CC1D85 /* CodeButtonFactory.swift */,
+				7C3045032396C83400BA640D /* ColoredViewFactory.swift */,
 			);
 			path = SingleViewFactory;
 			sourceTree = "<group>";
@@ -572,6 +590,7 @@
 				7CDDA9C02391617A00CC1D85 /* Answer.swift */,
 				7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */,
 				7C374B932393CC45002D4892 /* QuestionType.swift */,
+				7C3045012396C5A900BA640D /* OptIn.swift */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -637,6 +656,7 @@
 			children = (
 				7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */,
 				7CDDA9D52391651500CC1D85 /* SaveBtnViewItem.swift */,
+				7C3044FE2396C1D300BA640D /* OptInViewItem */,
 			);
 			path = LocalViewItem;
 			sourceTree = "<group>";
@@ -788,8 +808,8 @@
 				7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift in Sources */,
 				7C374BAD2395174C002D4892 /* SingleCheckboxBtnViewFactory.swift in Sources */,
 				7CA27B9E2386A01C008A8CE4 /* CheckboxView.swift in Sources */,
-				7C374B982394117E002D4892 /* CodeRadioBtnsViewFactory.swift in Sources */,
 				7C3044F723968B6700BA640D /* CheckboxBtnsFactory.swift in Sources */,
+				7C3045062396D09D00BA640D /* CodeTextViewFactory.swift in Sources */,
 				7CDDA9BF2391616C00CC1D85 /* Question.swift in Sources */,
 				7CDDA9B82391481800CC1D85 /* ScannerVC.swift in Sources */,
 				7CDDA9CD2391633600CC1D85 /* QuestionPageViewModelProtocol.swift in Sources */,
@@ -800,7 +820,7 @@
 				7CDDA9B6239141A600CC1D85 /* QuestionsViewController.swift in Sources */,
 				7C27FC0E2390161300BB67D9 /* GetViewProtocol.swift in Sources */,
 				7CA27B8723868BAF008A8CE4 /* LabelAndPhoneTextField.swift in Sources */,
-				7C1C7764238EC3C90011DA1F /* CodeLabelAndTextViewDropdownFactory.swift in Sources */,
+				7C1C7764238EC3C90011DA1F /* LabelAndTextViewDropdownFactory.swift in Sources */,
 				7C1C7769238ED0050011DA1F /* MyTextViewDelegate.swift in Sources */,
 				7CA27BA32386A0B4008A8CE4 /* CheckboxViewCell.swift in Sources */,
 				7CA27B8C23869334008A8CE4 /* DescriptionCell.swift in Sources */,
@@ -808,6 +828,7 @@
 				7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */,
 				7C374BAB2395171F002D4892 /* SingleCheckboxBtnViewModel.swift in Sources */,
 				7C374BA9239516E4002D4892 /* CheckboxBtnsViewModel.swift in Sources */,
+				7C3045042396C83400BA640D /* ColoredViewFactory.swift in Sources */,
 				7CDDA9D62391651500CC1D85 /* SaveBtnViewItem.swift in Sources */,
 				7C3044F52396882500BA640D /* CheckboxBtnsWithInputViewModel.swift in Sources */,
 				7CEB33A8239551CD0038C26A /* SingleRadioBtnViewModel.swift in Sources */,
@@ -817,7 +838,8 @@
 				7CDDA9C72391620800CC1D85 /* QuestionsViewControllerFactory.swift in Sources */,
 				7C3A3F8A22ACEB1B003C079E /* ViewController.swift in Sources */,
 				7CA27BB42386BB1B008A8CE4 /* LabelAndTextField.swift in Sources */,
-				7C1D99A323880DA6003ED654 /* CodeLabelAndTextViewFactory.swift in Sources */,
+				7C3044FD2396C09300BA640D /* OptInViewModel.swift in Sources */,
+				7C1D99A323880DA6003ED654 /* LabelAndTextViewFactory.swift in Sources */,
 				7C1D999C2387F1B5003ED654 /* ScrollViewController.swift in Sources */,
 				7C374BA12394155F002D4892 /* UIView+Extension.swift in Sources */,
 				7C1C7767238ECFE90011DA1F /* DropDownTextViewDelegate.swift in Sources */,
@@ -830,6 +852,7 @@
 				7CA27BBA2386BB5A008A8CE4 /* LabelAndTextFieldCell.swift in Sources */,
 				7CDDA9D32391639000CC1D85 /* DropdownViewModel.swift in Sources */,
 				7CDDA9C32391619A00CC1D85 /* GlobalVarsData.swift in Sources */,
+				7C3045002396C4C300BA640D /* OptInViewFactory.swift in Sources */,
 				7CEB33AC2395531B0038C26A /* RadioBtnsWithInputFactory.swift in Sources */,
 				7CDDA9C12391617A00CC1D85 /* Answer.swift in Sources */,
 				7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */,
@@ -839,6 +862,7 @@
 				7C3A3F8822ACEB1B003C079E /* AppDelegate.swift in Sources */,
 				7CEB33AA239552D70038C26A /* RadioBtnsFactory.swift in Sources */,
 				7CDDA9CA2391623300CC1D85 /* QuestionsViewModel.swift in Sources */,
+				7C3045022396C5A900BA640D /* OptIn.swift in Sources */,
 				7C374BAF23952502002D4892 /* CheckboxBtnImage.swift in Sources */,
 				7CDDA9D02391636600CC1D85 /* GroupViewItem.swift in Sources */,
 				7C374B942393CC45002D4892 /* QuestionType.swift in Sources */,

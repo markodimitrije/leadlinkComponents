@@ -65,11 +65,10 @@ class CheckboxBtnsWithInputFactory: GetViewProtocol {
         textView.text = text
         textView.textColor = isPlaceholderText ? .lightGray : .black
         textView.textContainer.lineBreakMode = .byWordWrapping
-        
+
         textView.delegate = delegate
-        
+
         return textView
     }
     
 }
-

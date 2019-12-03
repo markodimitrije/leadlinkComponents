@@ -67,7 +67,6 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
         let checkboxBtnsFactory = CheckboxBtnsWithInputFactory(question: question, answer: answer, delegate: self, textViewDelegate: self)
         self.singleCheckboxBtnViewModels = checkboxBtnsFactory.getViewModels()
         self.view = checkboxBtnsFactory.getView()
-
     }
 
 }
@@ -125,4 +124,3 @@ extension CheckboxBtnsWithInputViewModel: UITextViewDelegate {
         }
     }
 }
-

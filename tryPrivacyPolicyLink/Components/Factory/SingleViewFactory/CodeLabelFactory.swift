@@ -12,8 +12,6 @@ class CodeLabelFactory {
     
     private var myView: UIView
     
-    weak var delegate: UITextViewDelegate?
-    
     func getView() -> UIView {
         return myView
     }
