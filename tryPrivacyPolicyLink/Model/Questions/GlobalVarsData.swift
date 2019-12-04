@@ -56,7 +56,7 @@ let checkboxWithInputQuestion = Question(id: 1,
                                         required: false,
                                         description: shortDescription,
                                         order: 1, element_id: nil,
-                                        settings: QuestionSettings(options: ["OptionAA","OptionBB","OptionCC"]))
+                                        settings: QuestionSettings(options: ["OptionA","OptionB","OptionCC"]))
 
 let dropdownAnswer = Answer(question: dropdownQuestion, code: "12", content:  [longTitle], optionIds: nil)
 let radioAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionC"], optionIds: [0,1,2])
@@ -64,7 +64,8 @@ let radioWithInputAnswer = Answer(question: radioQuestion, code: "12", content: 
 
 let checkboxAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionAOptionA","OptionB","OptionC"], optionIds: [0,1,2])
 
-let checkboxWithInputAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionC", "dfjkbadfewsddasddfda dfjkbad answer"], optionIds: [2])
+let checkboxWithInputAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionCC", "dfjkbadfew sddasddfda dfjkbad answer"], optionIds: [2])
+//let checkboxWithInputAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionCC", "ans"], optionIds: [2])
 
 let longTitle = "acshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachasacshghacsvhgsvdgdshhsdasdgahhvgsagdgsghdshachas WWWW"
 

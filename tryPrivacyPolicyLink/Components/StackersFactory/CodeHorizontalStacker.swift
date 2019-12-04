@@ -8,6 +8,19 @@
 
 import UIKit
 
+class AxisStackView: UIStackView {
+    init(axis: NSLayoutConstraint.Axis, spacing: CGFloat, views: [UIView]) {
+        super.init(frame: CGRect.zero)
+        self.axis = axis
+        self.spacing = spacing
+        _ = views.map {self.addArrangedSubview($0)}
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
+
 class CodeHorizontalStacker: GetViewProtocol {
     
     var myView: UIView
@@ -31,6 +44,7 @@ class CodeHorizontalStacker: GetViewProtocol {
             stackView.addArrangedSubview(subview)
         }
 
+//        stackView.widthAnchor.constraint(equalToConstant: width).isActive = true
         myView = stackView
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
     }
