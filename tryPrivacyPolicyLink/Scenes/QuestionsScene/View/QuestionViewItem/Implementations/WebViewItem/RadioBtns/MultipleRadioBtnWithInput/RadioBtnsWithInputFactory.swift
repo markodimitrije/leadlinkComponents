@@ -39,7 +39,8 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         
         let inialText = getNonOptionTextAnswer(question: question, answer: answer)
         let isPlaceholderText = inialText == question.description ?? ""
-        let textView = getTemporaryTextView(with: inialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate)
+        
+        let textView = StackViewContainingTextViewFactory(text: inialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
         
         let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 414.0).getView()
         
@@ -59,19 +60,6 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         }
         let contentNotContainedInOptions = answer.content.first(where: {!options.contains($0)})
         return contentNotContainedInOptions ?? ""
-    }
-    
-    private func getTemporaryTextView(with text: String, isPlaceholderText: Bool, delegate: UITextViewDelegate?) -> UITextView {
-        let textView             = UITextView()
-        textView.isScrollEnabled = false
-        textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
-        textView.text = text
-        textView.textColor = isPlaceholderText ? .lightGray : .black
-        textView.textContainer.lineBreakMode = .byWordWrapping
-        
-        textView.delegate = delegate
-        
-        return textView
     }
     
 }

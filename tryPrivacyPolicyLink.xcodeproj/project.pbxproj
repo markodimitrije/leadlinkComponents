@@ -18,6 +18,7 @@
 		7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */; };
 		7C1D99A723881439003ED654 /* CodeVerticalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A623881439003ED654 /* CodeVerticalStacker.swift */; };
 		7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */; };
+		7C26FFB82397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFB72397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift */; };
 		7C27FC0E2390161300BB67D9 /* GetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */; };
 		7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */; };
 		7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */; };
@@ -117,6 +118,7 @@
 		7C1D99A4238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSingleCheckmarkViewFactory.swift; sourceTree = "<group>"; };
 		7C1D99A623881439003ED654 /* CodeVerticalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerticalStacker.swift; sourceTree = "<group>"; };
 		7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHorizontalStacker.swift; sourceTree = "<group>"; };
+		7C26FFB72397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewContainingTextViewFactory.swift; sourceTree = "<group>"; };
 		7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxOptionProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextViewProtocol.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				7C3045052396D09D00BA640D /* CodeTextViewFactory.swift */,
 				7CDDA9D72391654400CC1D85 /* CodeButtonFactory.swift */,
 				7C3045032396C83400BA640D /* ColoredViewFactory.swift */,
+				7C26FFB72397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift */,
 			);
 			path = SingleViewFactory;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				7CA27BA32386A0B4008A8CE4 /* CheckboxViewCell.swift in Sources */,
 				7CA27B8C23869334008A8CE4 /* DescriptionCell.swift in Sources */,
 				7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */,
+				7C26FFB82397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift in Sources */,
 				7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */,
 				7C374BAB2395171F002D4892 /* SingleCheckboxBtnViewModel.swift in Sources */,
 				7C374BA9239516E4002D4892 /* CheckboxBtnsViewModel.swift in Sources */,
