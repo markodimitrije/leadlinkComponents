@@ -12,9 +12,6 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
    
     private var myView: UIView!
     private var singleRadioBtnViewModels: [SingleRadioBtnViewModel]!
-
-    private var radioBtnOnImg = RadioBtnImage.init().onImage
-    private var radioBtnOffImg = RadioBtnImage.init().offImage
     
     func getView() -> UIView {
         return myView
@@ -37,10 +34,11 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         bigBtnConstraint.isActive = false
         let singleRadioBtnsView = CodeVerticalStacker(views: radioBtnsViews).getView()
         
-        let inialText = getNonOptionTextAnswer(question: question, answer: answer)
-        let isPlaceholderText = inialText == question.description ?? ""
+        let initialText = getNonOptionTextAnswer(question: question, answer: answer)
+        //let isPlaceholderText = initialText == (question.description ?? "")
         
-        let textView = StackViewContainingTextViewFactory(text: inialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
+//        let textView = StackViewContainingTextViewFactory(text: initialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
+        let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText, width: 10.0, delegate: textViewDelegate).getView()
         
         let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 414.0).getView()
         

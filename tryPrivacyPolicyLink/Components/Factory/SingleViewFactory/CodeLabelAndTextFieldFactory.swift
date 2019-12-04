@@ -43,7 +43,7 @@ class CodeLabelAndTextFieldFactory: GetViewProtocol {
         stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(textField)
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
         myView = stackView
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...

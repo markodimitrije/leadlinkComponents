@@ -205,7 +205,7 @@ class ScrollViewController: UIViewController, UITextViewDelegate {
 
 let headlineText = "sc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads dsc dsa fdcx ads  ads d"
 let inputText = "sc dsa fdcx ads  ads d sc dsa fdcx ads  ads d"
-let placeholderText = "sc dsa fdcx ads  ads d"
+let placeholderText = "sc dsa fdcx ads  ads d 123"
 
 
 
