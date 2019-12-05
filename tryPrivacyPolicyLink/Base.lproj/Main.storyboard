@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xJb-Vk-RBE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -147,15 +148,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="774" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zln-3F-rhE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="8" y="0.0" width="398" height="774"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Zln-3F-rhE" firstAttribute="trailing" secondItem="awN-xR-GBy" secondAttribute="trailing" id="60g-C8-kfA"/>
+                                    <constraint firstItem="Zln-3F-rhE" firstAttribute="trailing" secondItem="awN-xR-GBy" secondAttribute="trailing" constant="8" id="60g-C8-kfA"/>
                                     <constraint firstItem="Zln-3F-rhE" firstAttribute="bottom" secondItem="awN-xR-GBy" secondAttribute="bottom" id="8bo-2W-JvC"/>
                                     <constraint firstItem="Zln-3F-rhE" firstAttribute="top" secondItem="awN-xR-GBy" secondAttribute="top" id="8zu-eO-1Nk"/>
-                                    <constraint firstItem="Zln-3F-rhE" firstAttribute="width" secondItem="dUL-B3-JRQ" secondAttribute="width" id="Q2d-kr-JhU"/>
-                                    <constraint firstItem="Zln-3F-rhE" firstAttribute="leading" secondItem="awN-xR-GBy" secondAttribute="leading" id="YPL-13-9cC"/>
+                                    <constraint firstItem="Zln-3F-rhE" firstAttribute="leading" secondItem="awN-xR-GBy" secondAttribute="leading" constant="8" id="YPL-13-9cC"/>
+                                    <constraint firstItem="Zln-3F-rhE" firstAttribute="centerX" secondItem="dUL-B3-JRQ" secondAttribute="centerX" id="cPn-iK-Esd"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="awN-xR-GBy"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="U9h-q9-d1J"/>
