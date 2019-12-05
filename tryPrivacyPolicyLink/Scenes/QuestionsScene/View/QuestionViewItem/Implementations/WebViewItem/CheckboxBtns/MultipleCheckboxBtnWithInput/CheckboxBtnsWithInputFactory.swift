@@ -31,10 +31,7 @@ class CheckboxBtnsWithInputFactory: GetViewProtocol {
         var checkboxBtnsViews: [UIView] = checkboxBtnsViewStackView.subviews
         
         let lastCheckboxBtnView = checkboxBtnsViews.removeLast()
-//        let bigBtn = (lastCheckboxBtnView.subviews.filter {$0 is UIButton} as! [UIButton]).last!
-//        let bigBtnConstraint = bigBtn.constraints.first(where: {$0.identifier == "width"})!
-//        bigBtnConstraint.isActive = false
-        
+
         let singleCheckboxBtnsView = CodeVerticalStacker(views: checkboxBtnsViews).getView()
         
         let inialText = getNonOptionTextAnswer(question: question, answer: answer)
@@ -43,8 +40,6 @@ class CheckboxBtnsWithInputFactory: GetViewProtocol {
         let textView = StackViewContainingTextViewFactory(text: inialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
         
         let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView], width: 398.0).getView()
-        
-//        lastCheckboxBtnWithInputView.widthAnchor.constraint(equalToConstant: 414.0).isActive = true
         
         self.myView = CodeVerticalStacker(views: [singleCheckboxBtnsView, lastCheckboxBtnWithInputView]).getView()
         

@@ -16,17 +16,15 @@ class CodeViewAndLabelFactory: GetViewProtocol {
         return myView
     }
     
-    init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat) {
+    init(headlineText: String, inputText: String, placeholderText: String) {
 //
         let imageView               = UIView()
         imageView.backgroundColor   = .blue
         imageView.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
 
         //Text Label
         let textLabel               = UILabel()
         textLabel.backgroundColor   = .yellow
-        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
         textLabel.numberOfLines = 0
         textLabel.text  = headlineText
         textLabel.textAlignment = .center

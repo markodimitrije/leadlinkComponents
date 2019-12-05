@@ -49,60 +49,6 @@
             </objects>
             <point key="canvasLocation" x="-820" y="21"/>
         </scene>
-        <!--Scroll View Controller-->
-        <scene sceneID="GiW-nR-uSt">
-            <objects>
-                <viewController id="lBX-aj-M8w" customClass="ScrollViewController" customModule="tryPrivacyPolicyLink" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hjs-3q-f47">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUX-Ld-dU7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="774" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m1a-Nr-rJH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="m1a-Nr-rJH" firstAttribute="width" secondItem="DUX-Ld-dU7" secondAttribute="width" id="TNP-RD-2N2"/>
-                                    <constraint firstItem="m1a-Nr-rJH" firstAttribute="leading" secondItem="o3G-vW-ZXI" secondAttribute="leading" id="VDK-n2-ISx"/>
-                                    <constraint firstItem="m1a-Nr-rJH" firstAttribute="top" secondItem="o3G-vW-ZXI" secondAttribute="top" id="aIg-57-k4H"/>
-                                    <constraint firstItem="m1a-Nr-rJH" firstAttribute="trailing" secondItem="o3G-vW-ZXI" secondAttribute="trailing" id="jAr-Mq-CjR"/>
-                                    <constraint firstItem="m1a-Nr-rJH" firstAttribute="bottom" secondItem="o3G-vW-ZXI" secondAttribute="bottom" id="w7r-mj-ilo"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="o3G-vW-ZXI"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="yAB-0c-rda"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoW-uG-DHb">
-                                <rect key="frame" x="184" y="824" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="saveBtn:" destination="lBX-aj-M8w" eventType="touchUpInside" id="Hzd-yN-fAb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="UoW-uG-DHb" firstAttribute="centerX" secondItem="hjs-3q-f47" secondAttribute="centerX" id="5GO-lO-puk"/>
-                            <constraint firstItem="f0O-gy-RYC" firstAttribute="bottom" secondItem="UoW-uG-DHb" secondAttribute="bottom" constant="8" id="Bf7-u7-bYA"/>
-                            <constraint firstItem="f0O-gy-RYC" firstAttribute="trailing" secondItem="DUX-Ld-dU7" secondAttribute="trailing" id="EdH-wB-4Y2"/>
-                            <constraint firstItem="DUX-Ld-dU7" firstAttribute="top" secondItem="f0O-gy-RYC" secondAttribute="top" id="Nj5-Vc-YNF"/>
-                            <constraint firstItem="DUX-Ld-dU7" firstAttribute="leading" secondItem="f0O-gy-RYC" secondAttribute="leading" id="TeR-Sa-TL8"/>
-                            <constraint firstItem="f0O-gy-RYC" firstAttribute="bottom" secondItem="DUX-Ld-dU7" secondAttribute="bottom" id="jBR-sQ-VEU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="f0O-gy-RYC"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="wDu-K8-fv5"/>
-                    <connections>
-                        <outlet property="scrollView" destination="DUX-Ld-dU7" id="lMK-0m-AaZ"/>
-                        <outlet property="stackView" destination="m1a-Nr-rJH" id="J2C-Tm-mHn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="heT-E5-VIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1673.913043478261" y="20.758928571428569"/>
-        </scene>
         <!--OptionsVC-->
         <scene sceneID="5kZ-Od-Xzt">
             <objects>

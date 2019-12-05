@@ -26,3 +26,5 @@ class MyTextViewDelegate: NSObject, UITextViewDelegate {
         }
     }
 }
+
+let placeholderText = "implement me"

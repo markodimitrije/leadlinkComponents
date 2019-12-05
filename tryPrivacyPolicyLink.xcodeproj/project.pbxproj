@@ -11,7 +11,6 @@
 		7C1C7767238ECFE90011DA1F /* DropDownTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7766238ECFE90011DA1F /* DropDownTextViewDelegate.swift */; };
 		7C1C7769238ED0050011DA1F /* MyTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C7768238ED0050011DA1F /* MyTextViewDelegate.swift */; };
 		7C1C776C238ED0BA0011DA1F /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C776B238ED0BA0011DA1F /* questions.json */; };
-		7C1D999C2387F1B5003ED654 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */; };
 		7C1D999F238808E6003ED654 /* CodeViewAndLabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */; };
 		7C1D99A123880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */; };
 		7C1D99A323880DA6003ED654 /* LabelAndTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */; };
@@ -20,6 +19,8 @@
 		7C1D99AA23881659003ED654 /* CodeHorizontalStacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */; };
 		7C26FFB82397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFB72397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift */; };
 		7C26FFBB2399200C00A78DB6 /* WrapIntoBorderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFBA2399200C00A78DB6 /* WrapIntoBorderFactory.swift */; };
+		7C26FFBD239939C400A78DB6 /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFBC239939C400A78DB6 /* StackViewFactory.swift */; };
+		7C26FFBF239939E700A78DB6 /* StackInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFBE239939E700A78DB6 /* StackInfoProtocol.swift */; };
 		7C27FC0E2390161300BB67D9 /* GetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */; };
 		7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */; };
 		7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */; };
@@ -112,7 +113,6 @@
 		7C1C7766238ECFE90011DA1F /* DropDownTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextViewDelegate.swift; sourceTree = "<group>"; };
 		7C1C7768238ED0050011DA1F /* MyTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextViewDelegate.swift; sourceTree = "<group>"; };
 		7C1C776B238ED0BA0011DA1F /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
-		7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		7C1D999E238808E6003ED654 /* CodeViewAndLabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAndLabelFactory.swift; sourceTree = "<group>"; };
 		7C1D99A023880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLabelAndTextFieldFactory.swift; sourceTree = "<group>"; };
 		7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAndTextViewFactory.swift; sourceTree = "<group>"; };
@@ -121,6 +121,8 @@
 		7C1D99A923881659003ED654 /* CodeHorizontalStacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeHorizontalStacker.swift; sourceTree = "<group>"; };
 		7C26FFB72397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewContainingTextViewFactory.swift; sourceTree = "<group>"; };
 		7C26FFBA2399200C00A78DB6 /* WrapIntoBorderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapIntoBorderFactory.swift; sourceTree = "<group>"; };
+		7C26FFBC239939C400A78DB6 /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
+		7C26FFBE239939E700A78DB6 /* StackInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackInfoProtocol.swift; sourceTree = "<group>"; };
 		7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxOptionProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextViewProtocol.swift; sourceTree = "<group>"; };
@@ -264,6 +266,15 @@
 				7C26FFBA2399200C00A78DB6 /* WrapIntoBorderFactory.swift */,
 			);
 			path = WrapIntoBorderFactory;
+			sourceTree = "<group>";
+		};
+		7C26FFC0239939F400A78DB6 /* StackViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				7C26FFBC239939C400A78DB6 /* StackViewFactory.swift */,
+				7C26FFBE239939E700A78DB6 /* StackInfoProtocol.swift */,
+			);
+			path = StackViewFactory;
 			sourceTree = "<group>";
 		};
 		7C27FC0C239015EE00BB67D9 /* Factory */ = {
@@ -575,7 +586,6 @@
 			isa = PBXGroup;
 			children = (
 				7CDDA9C4239161E100CC1D85 /* QuestionsScene */,
-				7C1D999B2387F1B5003ED654 /* ScrollViewController.swift */,
 				7CDDA9B72391481800CC1D85 /* ScannerVC.swift */,
 			);
 			path = Scenes;
@@ -592,6 +602,7 @@
 				7CDDA9D72391654400CC1D85 /* CodeButtonFactory.swift */,
 				7C3045032396C83400BA640D /* ColoredViewFactory.swift */,
 				7C26FFB72397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift */,
+				7C26FFC0239939F400A78DB6 /* StackViewFactory */,
 			);
 			path = SingleViewFactory;
 			sourceTree = "<group>";
@@ -848,6 +859,7 @@
 				7C3044F52396882500BA640D /* CheckboxBtnsWithInputViewModel.swift in Sources */,
 				7CEB33A8239551CD0038C26A /* SingleRadioBtnViewModel.swift in Sources */,
 				7C374B9B23941416002D4892 /* RadioBtnImage.swift in Sources */,
+				7C26FFBF239939E700A78DB6 /* StackInfoProtocol.swift in Sources */,
 				7C3044FA2396A69A00BA640D /* GlobalFuncs.swift in Sources */,
 				7C1D99A123880BFB003ED654 /* CodeLabelAndTextFieldFactory.swift in Sources */,
 				7C26FFBB2399200C00A78DB6 /* WrapIntoBorderFactory.swift in Sources */,
@@ -856,7 +868,6 @@
 				7CA27BB42386BB1B008A8CE4 /* LabelAndTextField.swift in Sources */,
 				7C3044FD2396C09300BA640D /* OptInViewModel.swift in Sources */,
 				7C1D99A323880DA6003ED654 /* LabelAndTextViewFactory.swift in Sources */,
-				7C1D999C2387F1B5003ED654 /* ScrollViewController.swift in Sources */,
 				7C374BA12394155F002D4892 /* UIView+Extension.swift in Sources */,
 				7C1C7767238ECFE90011DA1F /* DropDownTextViewDelegate.swift in Sources */,
 				7C3044F32396868B00BA640D /* CheckboxBtnsWithInputFactory.swift in Sources */,
@@ -881,6 +892,7 @@
 				7C3045022396C5A900BA640D /* OptIn.swift in Sources */,
 				7C374BAF23952502002D4892 /* CheckboxBtnImage.swift in Sources */,
 				7CDDA9D02391636600CC1D85 /* GroupViewItem.swift in Sources */,
+				7C26FFBD239939C400A78DB6 /* StackViewFactory.swift in Sources */,
 				7C374B942393CC45002D4892 /* QuestionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

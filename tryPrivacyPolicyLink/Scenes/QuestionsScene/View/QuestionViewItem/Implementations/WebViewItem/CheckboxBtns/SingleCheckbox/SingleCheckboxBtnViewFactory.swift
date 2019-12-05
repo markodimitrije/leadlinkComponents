@@ -28,7 +28,7 @@ class SingleCheckboxBtnViewFactory: GetViewProtocol {
     
     init(tag: Int, isOn: Bool, titleText: String, width: CGFloat, delegate: BtnTapListening?) {
         
-        let radioButton               = UIButton()
+        let radioButton = UIButton()
         radioButton.backgroundColor   = .blue
         let img = isOn ? checkboxBtnOnImg : checkboxBtnOffImg
         radioButton.setBackgroundImage(img, for: .normal)
@@ -46,9 +46,6 @@ class SingleCheckboxBtnViewFactory: GetViewProtocol {
         button.setTitle(titleText, for: .normal)
         button.contentHorizontalAlignment = .left
         
-//        let labelWidth = width - 38.0
-//        button.widthAnchor.constraint(equalToConstant: labelWidth).isActive = true
-//        button.constraints.first?.identifier = "width"
         button.heightAnchor.constraint(equalTo: button.titleLabel!.heightAnchor, multiplier: 1.0).isActive = true
         
         //Stack View

@@ -39,10 +39,6 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
         button.setTitle(titleText, for: .normal)
         button.contentHorizontalAlignment = .left
         
-//        let labelWidth = width - 38.0
-//        button.widthAnchor.constraint(equalToConstant: labelWidth).isActive = true
-        button.constraints.first?.identifier = "width"
-        
         button.heightAnchor.constraint(equalTo: button.titleLabel!.heightAnchor, multiplier: 1.0).isActive = true
         
         //Stack View
@@ -54,8 +50,6 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
 
         stackView.addArrangedSubview(radioButton)
         stackView.addArrangedSubview(button)
-        
-//        stackView.translatesAutoresizingMaskIntoConstraints = false;
         
         myView = stackView
         

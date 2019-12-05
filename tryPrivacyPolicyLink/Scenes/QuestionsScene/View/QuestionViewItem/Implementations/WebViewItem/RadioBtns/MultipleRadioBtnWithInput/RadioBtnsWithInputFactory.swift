@@ -23,6 +23,8 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
     
     init(question: Question, answer: Answer?, delegate: BtnTapListening?, textViewDelegate: UITextViewDelegate?) {
         
+        let placeholderText = question.description ?? ""
+        
         let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer, delegate: delegate)
         let radioBtnsViewModels: [SingleRadioBtnViewModel] = radioBtnsFactory.getViewModels()
         let radioBtnsViewStackView = radioBtnsFactory.getView()
