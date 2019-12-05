@@ -44,7 +44,6 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         
         self.singleRadioBtnViewModels = radioBtnsViewModels
         self.myView = CodeVerticalStacker(views: [singleRadioBtnsView, lastRadioBtnWithInputView]).getView()
-        
     }
     
     private func getNonOptionTextAnswer(question: Question, answer: Answer?) -> String {
