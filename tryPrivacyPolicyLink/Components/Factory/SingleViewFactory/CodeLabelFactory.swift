@@ -21,7 +21,7 @@ class CodeLabelFactory {
         //Text Label
         let textLabel               = UILabel()
         textLabel.backgroundColor   = .blue
-        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+//        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
         textLabel.numberOfLines = 0
         textLabel.text  = text
         textLabel.textAlignment = .center

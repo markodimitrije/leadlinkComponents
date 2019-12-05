@@ -27,7 +27,8 @@ class TextAreaViewModel: NSObject, QuestionPageViewModelProtocol {
     private func loadView() {
         let inputText = answer?.content.first ?? ""
         let placeholderText = self.question.description ?? ""
-        self.view = LabelAndTextViewFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self).getView()
+        self.view = LabelAndTextViewFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 398.0, delegate: self).getView()
+        
         view.backgroundColor = .red
     }
     
@@ -36,7 +37,7 @@ class TextAreaViewModel: NSObject, QuestionPageViewModelProtocol {
     }
     
     func getActualAnswer() -> Answer? {
-        let text = (view.subviews.first(where: {$0 is UITextView}) as! UITextView).text
+        let text = view.findViews(subclassOf: UITextView.self).first!.text
         let result = (text != self.question.description ?? "") ? text : ""
         if answer != nil {
             answer?.content = [result ?? ""]

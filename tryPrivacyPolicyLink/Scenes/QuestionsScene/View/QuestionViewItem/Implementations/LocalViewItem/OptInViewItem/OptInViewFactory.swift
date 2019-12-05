@@ -24,9 +24,9 @@ class OptInViewFactory: GetViewProtocol {
     }
     
     private func loadView() {
-        //self.myView = ColoredViewFactory(width: 414.0).getView()
-//        self.myView = CodeTextViewFactory(text: "", width: 414.0, delegate: nil).getView()// hard-coded
-        self.myView = CodeTextViewFactory(inputText: "", placeholderText: "", width: 414.0, delegate: nil).getView()// hard-coded
+        //self.myView = ColoredViewFactory(width: 398.0).getView()
+//        self.myView = CodeTextViewFactory(text: "", width: 398.0, delegate: nil).getView()// hard-coded
+        self.myView = CodeTextViewFactory(inputText: "", placeholderText: "", width: 398.0, delegate: nil).getView()// hard-coded
         self.textView = self.myView.subviews.first(where: {$0 is UITextView}) as? UITextView
         configureTxtViewWithHyperlinkText(tag: 4, optIn: optIn)
     }

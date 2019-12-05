@@ -13,7 +13,7 @@ class GroupViewItem: QuestionPageGetViewProtocol {
     private var view: UIView
 
     init() {
-        let groupView = CodeLabelFactory(text: longTitle, width: 414.0).getView()
+        let groupView = CodeLabelFactory(text: longTitle, width: 398.0).getView()
         self.view = groupView
     }
 

@@ -12,9 +12,6 @@ class RadioBtnsFactory: GetViewProtocol {
    
     private var myView: UIView!
     private var singleRadioBtnViewModels: [SingleRadioBtnViewModel]!
-
-    private var radioBtnOnImg = RadioBtnImage.init().onImage
-    private var radioBtnOffImg = RadioBtnImage.init().offImage
     
     func getView() -> UIView {
         return myView
@@ -34,7 +31,7 @@ class RadioBtnsFactory: GetViewProtocol {
             let radioBtnFactory = SingleRadioBtnViewFactory(tag: index,
                                                             isOn: selected[index],
                                                             titleText: title,
-                                                            width: 414.0,
+                                                            width: 398.0,
                                                             delegate: delegate)
             let radioBtnViewModel = SingleRadioBtnViewModel(viewFactory: radioBtnFactory, isOn: selected[index])
             return radioBtnViewModel

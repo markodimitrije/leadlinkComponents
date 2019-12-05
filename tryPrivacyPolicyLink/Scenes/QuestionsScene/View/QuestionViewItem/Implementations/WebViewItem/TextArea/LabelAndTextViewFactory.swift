@@ -37,7 +37,7 @@ class LabelAndTextViewFactory: GetViewProtocol {
         textView.isScrollEnabled = false
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
         textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44.0).isActive = true
-        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
+//        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)
@@ -45,7 +45,7 @@ class LabelAndTextViewFactory: GetViewProtocol {
         //Text Label
         let textLabel               = UILabel()
         textLabel.backgroundColor   = .yellow
-        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+//        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
         textLabel.numberOfLines = 0
         textLabel.text  = headlineText
         textLabel.textAlignment = .center

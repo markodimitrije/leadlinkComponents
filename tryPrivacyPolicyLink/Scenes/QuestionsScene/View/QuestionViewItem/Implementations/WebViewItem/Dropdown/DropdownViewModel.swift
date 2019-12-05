@@ -27,12 +27,19 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
     private func loadView() {
         let inputText = answer?.content.first ?? ""
         let placeholderText = self.question.description ?? ""
-        //self.view = LabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self).getView()
-        let labelFactory = CodeLabelFactory(text: question.title, width: 414.0)
-        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText, width: 414.0, delegate: self)
+        //self.view = LabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 398.0, delegate: self).getView()
+        let labelFactory = CodeLabelFactory(text: question.title, width: 398.0)
+        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText, width: 398.0, delegate: self)
 
-        self.view = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory).getView()
-        view.backgroundColor = .green
+//        self.view = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory).getView()
+//        view.backgroundColor = .green
+        
+        let embededViewFactory = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory)
+        let insets = UIEdgeInsets(top: 16, left: 8, bottom: 16, right: 8)
+        let borderLayout = BorderLayout(cornerRadius: 10.0, borderWidth: 1.0, borderColor: .green)
+
+        self.view = WrapIntoBorderFactory(embededViewFactory: embededViewFactory, insets: insets, borderLayout: borderLayout).getView()
+        
     }
     
     func getView() -> UIView {
@@ -40,7 +47,7 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
     }
     
     func getActualAnswer() -> Answer? {
-        let text = (view.subviews.first(where: {$0 is UITextView}) as! UITextView).text
+        let text = view.findViews(subclassOf: UITextView.self).first!.text
         let result = (text != self.question.description ?? "") ? text : ""
         if answer != nil {
             answer?.content = [result ?? ""]
