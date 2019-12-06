@@ -48,6 +48,8 @@ class QuestionsViewModel : QuestionsViewItemManaging {
 //        let radioBtnsItem = RadioBtnsViewModel(question: radioQuestion, answer: radioAnswer, code: code)
         
 //        let checkboxBtnsViewModel = CheckboxBtnsViewModel(question: checkboxQuestion, answer: nil, code: code)
+        let checkboxInfo = PresentQuestionInfo(question: checkboxQuestion, answer: checkboxAnswer, code: code)
+        let checkboxBtnsViewModel = CheckboxBtnsViewModelFactory(questionInfo: checkboxInfo).getViewModel()
 //        let checkboxBtnsViewModel = CheckboxBtnsViewModel(question: checkboxQuestion, answer: checkboxAnswer, code: code)
         
         let radioQuestionInfo = PresentQuestionInfo(question: radioWithInputQuestion, answer: radioWithInputAnswer, code: code)
@@ -65,7 +67,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         
 //        let items: [QuestionPageGetViewProtocol] = [groupItem, radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewModel, saveButtonItem]
         
-        let items: [QuestionPageGetViewProtocol] = [radioBtnsItem, radioBtnsWithInputViewModel, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsViewModel, checkboxBtnsWithInputViewModel, saveButtonItem]
         
 //        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, saveButtonItem]
         

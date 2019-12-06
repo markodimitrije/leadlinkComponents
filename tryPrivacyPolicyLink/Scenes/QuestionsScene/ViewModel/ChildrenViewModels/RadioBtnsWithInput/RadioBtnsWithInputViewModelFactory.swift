@@ -57,3 +57,24 @@ class RadioBtnsViewModelFactory: RadioBtns_ViewModel_FactoryProtocol {
         self.viewmodel = viewmodel
     }
 }
+
+protocol CheckboxBtns_ViewModel_FactoryProtocol: GetViewModelProtocol {}
+
+class CheckboxBtnsViewModelFactory: CheckboxBtns_ViewModel_FactoryProtocol {
+    
+    private let viewmodel: CheckboxBtnsViewModel
+    func getViewModel() -> QuestionPageViewModelProtocol {
+        return viewmodel
+    }
+    
+    init(questionInfo: PresentQuestionInfoProtocol) {
+        let question = questionInfo.getQuestion()
+        let answer = questionInfo.getAnswer()
+        
+        let checkboxBtnsFactory = CheckboxBtnsFactory(question: question, answer: answer)
+        
+        let viewmodel = CheckboxBtnsViewModel(questionInfo: questionInfo, checkboxBtnsFactory: checkboxBtnsFactory)
+        
+        self.viewmodel = viewmodel
+    }
+}

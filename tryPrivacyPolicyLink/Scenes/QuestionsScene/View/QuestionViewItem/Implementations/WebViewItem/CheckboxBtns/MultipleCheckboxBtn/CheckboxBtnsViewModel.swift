@@ -21,6 +21,19 @@ class CheckboxBtnsViewModel: NSObject, QuestionPageViewModelProtocol, BtnTapList
     private var view: UIView!
     private var singleCheckboxBtnViewModel = [SingleCheckboxBtnViewModel]()
     
+    init(questionInfo: PresentQuestionInfoProtocol, checkboxBtnsFactory: CheckboxBtnsFactory) {
+        self.question = questionInfo.getQuestion()
+        self.answer = questionInfo.getAnswer()
+        self.code = questionInfo.getCode()
+        super.init()
+        self.singleCheckboxBtnViewModel = checkboxBtnsFactory.getViewModels()
+        self.view = checkboxBtnsFactory.getView()
+        
+        _ = self.view.findViews(subclassOf: UIButton.self).map {
+            $0.addTarget(self, action: #selector(RadioBtnsViewModel.btnTapped), for: .touchUpInside)
+        }
+    }
+    
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
         self.answer = answer
