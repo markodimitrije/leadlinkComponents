@@ -54,25 +54,45 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
         return answer
     }
     
-    init(question: Question, answer: Answer?, code: String) {
-        self.question = question
-        self.answer = answer
-        self.code = code
-        super.init()
-        loadView()
-    }
-    
-    private func loadView() {
+    init(questionInfo: PresentQuestionInfoProtocol,
+         checkboxBtnsWithInputViewFactory: CheckboxBtnsWithInputFactory) {
         
-        let checkboxBtnsFactory = CheckboxBtnsWithInputFactory(question: question, answer: answer)
-        self.singleCheckboxBtnViewModels = checkboxBtnsFactory.getViewModels()
-        self.view = checkboxBtnsFactory.getView()
+        self.question = questionInfo.getQuestion()
+        self.answer = questionInfo.getAnswer()
+        self.code = questionInfo.getCode()
+        
+        super.init()
+        
+        self.singleCheckboxBtnViewModels = checkboxBtnsWithInputViewFactory.getViewModels()
+        self.view = checkboxBtnsWithInputViewFactory.getView()
         
         _ = self.view.findViews(subclassOf: UITextView.self).map {$0.delegate = self}
         _ = self.view.findViews(subclassOf: UIButton.self).map {
-            $0.addTarget(self, action: #selector(CheckboxBtnsViewModel.btnTapped), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(RadioBtnsViewModel.btnTapped), for: .touchUpInside)
         }
+        
     }
+
+    
+//    init(question: Question, answer: Answer?, code: String) {
+//        self.question = question
+//        self.answer = answer
+//        self.code = code
+//        super.init()
+//        loadView()
+//    }
+//
+//    private func loadView() {
+//
+//        let checkboxBtnsFactory = CheckboxBtnsWithInputFactory(question: question, answer: answer)
+//        self.singleCheckboxBtnViewModels = checkboxBtnsFactory.getViewModels()
+//        self.view = checkboxBtnsFactory.getView()
+//
+//        _ = self.view.findViews(subclassOf: UITextView.self).map {$0.delegate = self}
+//        _ = self.view.findViews(subclassOf: UIButton.self).map {
+//            $0.addTarget(self, action: #selector(CheckboxBtnsViewModel.btnTapped), for: .touchUpInside)
+//        }
+//    }
 
 }
 

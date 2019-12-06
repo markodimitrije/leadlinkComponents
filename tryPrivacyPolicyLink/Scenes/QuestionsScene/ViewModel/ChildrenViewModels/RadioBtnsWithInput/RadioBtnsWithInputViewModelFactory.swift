@@ -22,7 +22,7 @@ class RadioBtnsWithInputViewModelFactory: RadioBtnsWithInput_ViewModel_FactoryPr
         let answer = questionInfo.getAnswer()
         
         let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer, delegate: nil)
-        let textViewFactory = CodeTextViewFactory(inputText: answer?.content.first ?? "", placeholderText: question.description ?? "", delegate: nil)
+        let textViewFactory = CodeTextViewFactory(inputText: answer?.content.first ?? "", placeholderText: question.description ?? "")
         
         let radioBtnsWithInputFactory
             = RadioBtnsWithInputFactory(radioBtnsFactory: radioBtnsFactory,
@@ -36,3 +36,24 @@ class RadioBtnsWithInputViewModelFactory: RadioBtnsWithInput_ViewModel_FactoryPr
     
 }
 
+protocol RadioBtns_ViewModel_FactoryProtocol: GetViewModelProtocol {}
+
+class RadioBtnsViewModelFactory: RadioBtns_ViewModel_FactoryProtocol {
+    
+    private let viewmodel: RadioBtnsViewModel
+    func getViewModel() -> QuestionPageViewModelProtocol {
+        return viewmodel
+    }
+    
+    init(questionInfo: PresentQuestionInfoProtocol) {
+        let question = questionInfo.getQuestion()
+        let answer = questionInfo.getAnswer()
+        
+        let radioBtnsFactory
+            = RadioBtnsFactory(question: question, answer: answer, delegate: nil)
+        
+        let viewmodel = RadioBtnsViewModel(questionInfo: questionInfo, radioBtnsFactory: radioBtnsFactory)
+        
+        self.viewmodel = viewmodel
+    }
+}

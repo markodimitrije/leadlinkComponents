@@ -21,20 +21,17 @@ class RadioBtnsViewModel: NSObject, QuestionPageViewModelProtocol, BtnTapListeni
     private var view: UIView!
     private var singleRadioBtnViewModels = [SingleRadioBtnViewModel]()
     
-    init(question: Question, answer: Answer?, code: String) {
-        self.question = question
-        self.answer = answer
-        self.code = code
+    init(questionInfo: PresentQuestionInfoProtocol, radioBtnsFactory: RadioBtnsFactory) {
+        self.question = questionInfo.getQuestion()
+        self.answer = questionInfo.getAnswer()
+        self.code = questionInfo.getCode()
         super.init()
-        loadView()
-    }
-    
-    private func loadView() {
-        
-        let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer, delegate: self)
-        
         self.singleRadioBtnViewModels = radioBtnsFactory.getViewModels()
         self.view = radioBtnsFactory.getView()
+        
+        _ = self.view.findViews(subclassOf: UIButton.self).map {
+            $0.addTarget(self, action: #selector(RadioBtnsViewModel.btnTapped), for: .touchUpInside)
+        }
     }
     
     func getView() -> UIView {

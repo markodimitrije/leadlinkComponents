@@ -38,7 +38,7 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
         let placeholderText = self.question.description ?? ""
         //self.view = LabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 398.0, delegate: self).getView()
         let labelFactory = CodeLabelFactory(text: question.title)
-        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText, delegate: self)
+        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText)
 
 //        self.view = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory).getView()
 //        view.backgroundColor = .green

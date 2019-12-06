@@ -18,7 +18,7 @@ class CodeTextViewFactory: GetViewProtocol {
         return myView
     }
     
-    init(inputText: String, placeholderText: String, delegate: UITextViewDelegate?) {
+    init(inputText: String, placeholderText: String) {
         
         func getTextColor(inputText: String, placeholderText: String) -> UIColor {
             if inputText == "" { return .lightGray }
@@ -45,7 +45,6 @@ class CodeTextViewFactory: GetViewProtocol {
         stackView.addArrangedSubview(textView)
         stackView.translatesAutoresizingMaskIntoConstraints = false;
 
-        textView.delegate = delegate
         myView = stackView
         
     }

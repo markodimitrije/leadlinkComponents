@@ -53,7 +53,7 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         
         let initialText = getNonOptionTextAnswer(question: question, answer: answer)
         
-        let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText, delegate: textViewDelegate).getView()
+        let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText).getView()
         
         let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()
         
