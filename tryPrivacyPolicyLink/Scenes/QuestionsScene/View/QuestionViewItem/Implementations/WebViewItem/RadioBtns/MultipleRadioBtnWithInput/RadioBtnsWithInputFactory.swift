@@ -31,15 +31,10 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         var radioBtnsViews: [UIView] = radioBtnsViewStackView.subviews
         
         let lastRadioBtnView = radioBtnsViews.removeLast()
-//        let bigBtn = (lastRadioBtnView.subviews.filter {$0 is UIButton} as! [UIButton]).last!
-//        let bigBtnConstraint = bigBtn.constraints.first(where: {$0.identifier == "width"})!
-//        bigBtnConstraint.isActive = false
         let singleRadioBtnsView = CodeVerticalStacker(views: radioBtnsViews).getView()
         
         let initialText = getNonOptionTextAnswer(question: question, answer: answer)
-        //let isPlaceholderText = initialText == (question.description ?? "")
         
-//        let textView = StackViewContainingTextViewFactory(text: initialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
         let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText, delegate: textViewDelegate).getView()
         
         let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()

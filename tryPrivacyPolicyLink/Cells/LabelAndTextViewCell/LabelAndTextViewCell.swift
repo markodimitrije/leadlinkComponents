@@ -10,5 +10,4 @@ import UIKit
 
 class LabelAndTextViewCell: UITableViewCell {
     @IBOutlet weak var childView: LabelAndTextView!
-    
 }
