@@ -21,9 +21,9 @@ class CheckboxBtnsWithInputFactory: GetViewProtocol {
         return self.singleCheckboxBtnViewModels
     }
     
-    init(question: Question, answer: Answer?, delegate: BtnTapListening?, textViewDelegate: UITextViewDelegate?) {
+    init(question: Question, answer: Answer?) {
         
-        let checkboxBtnsFactory = CheckboxBtnsFactory(question: question, answer: answer, delegate: delegate)
+        let checkboxBtnsFactory = CheckboxBtnsFactory(question: question, answer: answer)
         let checkboxBtnsViewModels: [SingleCheckboxBtnViewModel] = checkboxBtnsFactory.getViewModels()
         self.singleCheckboxBtnViewModels = checkboxBtnsViewModels
         
@@ -37,9 +37,11 @@ class CheckboxBtnsWithInputFactory: GetViewProtocol {
         let inialText = getNonOptionTextAnswer(question: question, answer: answer)
         let isPlaceholderText = inialText == question.description ?? ""
         
-        let textView = StackViewContainingTextViewFactory(text: inialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
+        let textView = StackViewContainingTextViewFactory(text: inialText,
+                                                          isPlaceholderText: isPlaceholderText).getView()
         
-        let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView], width: 398.0).getView()
+        let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView],
+                                                                 width: 398.0).getView()
         
         self.myView = CodeVerticalStacker(views: [singleCheckboxBtnsView, lastCheckboxBtnWithInputView]).getView()
         

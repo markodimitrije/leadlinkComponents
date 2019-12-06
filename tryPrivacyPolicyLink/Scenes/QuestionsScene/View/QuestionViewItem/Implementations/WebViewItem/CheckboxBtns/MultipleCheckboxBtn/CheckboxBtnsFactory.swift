@@ -21,7 +21,7 @@ class CheckboxBtnsFactory: GetViewProtocol {
         return self.singleCheckboxBtnViewModels
     }
     
-    init(question: Question, answer: Answer?, delegate: BtnTapListening?) {
+    init(question: Question, answer: Answer?) {
         
         let titles = question.settings.options ?? [ ]
         
@@ -31,9 +31,7 @@ class CheckboxBtnsFactory: GetViewProtocol {
             (index, title) -> SingleCheckboxBtnViewModel in
                 let checkboxBtnFactory = SingleCheckboxBtnViewFactory(tag: index,
                                                                       isOn: selected[index],
-                                                                      titleText: title,
-                                                                      width: 414.0,
-                                                                      delegate: delegate)
+                                                                      titleText: title)
             let checkboxBtnViewModel = SingleCheckboxBtnViewModel(viewFactory: checkboxBtnFactory, isOn: selected[index])
             return checkboxBtnViewModel
         }

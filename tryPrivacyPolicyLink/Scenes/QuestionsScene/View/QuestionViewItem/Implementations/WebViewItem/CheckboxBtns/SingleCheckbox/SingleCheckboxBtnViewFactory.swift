@@ -19,14 +19,7 @@ class SingleCheckboxBtnViewFactory: GetViewProtocol {
         return myView
     }
     
-    private func hookUpButtonTapEventWithMultipleCheckboxInstance(btns: [UIButton],
-                                                                  delegate: BtnTapListening?) {
-        _ = btns.map {
-            $0.addTarget(delegate, action: #selector(CheckboxBtnsViewModel.btnTapped), for: .touchUpInside)
-        }
-    }
-    
-    init(tag: Int, isOn: Bool, titleText: String, width: CGFloat, delegate: BtnTapListening?) {
+    init(tag: Int, isOn: Bool, titleText: String) {
         
         let radioButton = UIButton()
         radioButton.backgroundColor   = .blue
@@ -65,8 +58,6 @@ class SingleCheckboxBtnViewFactory: GetViewProtocol {
         _ = [radioButton, button, myView].map {
             $0.tag = tag
         }
-        
-        hookUpButtonTapEventWithMultipleCheckboxInstance(btns:  [radioButton, button], delegate: delegate)
 
     }
     

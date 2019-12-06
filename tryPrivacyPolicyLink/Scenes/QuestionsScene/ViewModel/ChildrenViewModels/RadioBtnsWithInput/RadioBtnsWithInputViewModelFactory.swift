@@ -21,15 +21,11 @@ class RadioBtnsWithInputViewModelFactory: RadioBtnsWithInput_ViewModel_FactoryPr
         let question = questionInfo.getQuestion()
         let answer = questionInfo.getAnswer()
         
-//        let radioBtnsWithInputFactory = RadioBtnsWithInputFactory(question: question, answer: answer, delegate: nil, textViewDelegate: nil)
-        
         let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer, delegate: nil)
         let textViewFactory = CodeTextViewFactory(inputText: answer?.content.first ?? "", placeholderText: question.description ?? "", delegate: nil)
         
         let radioBtnsWithInputFactory
-            = RadioBtnsWithInputFactory(delegate: nil,
-                                        textViewDelegate: nil,
-                                        radioBtnsFactory: radioBtnsFactory,
+            = RadioBtnsWithInputFactory(radioBtnsFactory: radioBtnsFactory,
                                         textViewFactory: textViewFactory)
         
         let viewmodel = RadioBtnsWithInputViewModel(questionInfo: questionInfo,

@@ -37,9 +37,7 @@ class CheckboxBtnsViewModel: NSObject, QuestionPageViewModelProtocol, BtnTapList
         let singleCheckboxBtnViewModel = titles.enumerated().map { (index, title) -> SingleCheckboxBtnViewModel in
             let checkboxBtnFactory = SingleCheckboxBtnViewFactory(tag: index,
                                                                isOn: selected[index],
-                                                               titleText: title,
-                                                               width: 398.0,
-                                                               delegate: self)
+                                                               titleText: title)
             let checkboxBtnViewModel = SingleCheckboxBtnViewModel(viewFactory: checkboxBtnFactory, isOn: selected[index])
             return checkboxBtnViewModel
         }

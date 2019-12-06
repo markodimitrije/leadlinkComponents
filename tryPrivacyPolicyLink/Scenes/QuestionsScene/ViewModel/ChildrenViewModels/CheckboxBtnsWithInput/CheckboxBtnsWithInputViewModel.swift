@@ -64,9 +64,14 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
     
     private func loadView() {
         
-        let checkboxBtnsFactory = CheckboxBtnsWithInputFactory(question: question, answer: answer, delegate: self, textViewDelegate: self)
+        let checkboxBtnsFactory = CheckboxBtnsWithInputFactory(question: question, answer: answer)
         self.singleCheckboxBtnViewModels = checkboxBtnsFactory.getViewModels()
         self.view = checkboxBtnsFactory.getView()
+        
+        _ = self.view.findViews(subclassOf: UITextView.self).map {$0.delegate = self}
+        _ = self.view.findViews(subclassOf: UIButton.self).map {
+            $0.addTarget(self, action: #selector(CheckboxBtnsViewModel.btnTapped), for: .touchUpInside)
+        }
     }
 
 }

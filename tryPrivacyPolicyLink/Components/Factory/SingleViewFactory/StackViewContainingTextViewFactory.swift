@@ -17,7 +17,7 @@ class StackViewContainingTextViewFactory: GetViewProtocol {
         return self.myView
     }
     
-    init(text: String, isPlaceholderText: Bool, delegate: UITextViewDelegate?) {
+    init(text: String, isPlaceholderText: Bool) {
         
         let textView = UITextView()
         textView.textContainer.lineBreakMode = .byCharWrapping
@@ -26,7 +26,6 @@ class StackViewContainingTextViewFactory: GetViewProtocol {
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
         textView.text = text
         textView.textColor = isPlaceholderText ? .lightGray : .black
-        textView.delegate = delegate
 
         self.myView = UIStackView(arrangedSubviews: [textView])
     }
