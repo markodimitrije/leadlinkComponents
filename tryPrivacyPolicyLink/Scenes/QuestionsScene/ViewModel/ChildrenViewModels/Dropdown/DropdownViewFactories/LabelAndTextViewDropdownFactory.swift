@@ -8,7 +8,10 @@
 
 import UIKit
 
-class LabelAndTextViewDropdownFactory: GetViewProtocol {
+protocol DropdownFactoryProtocol: GetViewProtocol {}
+
+//class LabelAndTextViewDropdownFactory: GetViewProtocol {
+class LabelAndTextViewDropdownFactory:  DropdownFactoryProtocol {
     
     private let labelFactory: CodeLabelFactory
     private let textViewFactory: CodeTextViewFactory

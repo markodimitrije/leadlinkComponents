@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeTextViewFactory {
+class CodeTextViewFactory: GetViewProtocol {
     
     private var myView: UIView
     
@@ -18,8 +18,7 @@ class CodeTextViewFactory {
         return myView
     }
     
-    //init(text: String, width: CGFloat) {
-    init(inputText: String, placeholderText: String, width: CGFloat, delegate: UITextViewDelegate?) {
+    init(inputText: String, placeholderText: String, delegate: UITextViewDelegate?) {
         
         func getTextColor(inputText: String, placeholderText: String) -> UIColor {
             if inputText == "" { return .lightGray }
@@ -37,8 +36,6 @@ class CodeTextViewFactory {
         let textView             = UITextView()
         textView.isScrollEnabled = false
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
-//        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44.0).isActive = true
-//        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)

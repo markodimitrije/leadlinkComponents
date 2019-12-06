@@ -21,6 +21,11 @@
 		7C26FFBB2399200C00A78DB6 /* WrapIntoBorderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFBA2399200C00A78DB6 /* WrapIntoBorderFactory.swift */; };
 		7C26FFBD239939C400A78DB6 /* StackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFBC239939C400A78DB6 /* StackViewFactory.swift */; };
 		7C26FFBF239939E700A78DB6 /* StackInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFBE239939E700A78DB6 /* StackInfoProtocol.swift */; };
+		7C26FFE4239A61D800A78DB6 /* GroupViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFE3239A61D800A78DB6 /* GroupViewFactory.swift */; };
+		7C26FFE6239A668900A78DB6 /* PresentQuestionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFE5239A668900A78DB6 /* PresentQuestionInfo.swift */; };
+		7C26FFE9239A66C000A78DB6 /* PresentQuestionInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFE8239A66C000A78DB6 /* PresentQuestionInfoProtocol.swift */; };
+		7C26FFED239A73DF00A78DB6 /* DropdownViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFEC239A73DF00A78DB6 /* DropdownViewModelFactory.swift */; };
+		7C26FFF1239A741C00A78DB6 /* GetViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FFF0239A741C00A78DB6 /* GetViewModelProtocol.swift */; };
 		7C27FC0E2390161300BB67D9 /* GetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */; };
 		7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */; };
 		7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */; };
@@ -123,6 +128,11 @@
 		7C26FFBA2399200C00A78DB6 /* WrapIntoBorderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapIntoBorderFactory.swift; sourceTree = "<group>"; };
 		7C26FFBC239939C400A78DB6 /* StackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewFactory.swift; sourceTree = "<group>"; };
 		7C26FFBE239939E700A78DB6 /* StackInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackInfoProtocol.swift; sourceTree = "<group>"; };
+		7C26FFE3239A61D800A78DB6 /* GroupViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewFactory.swift; sourceTree = "<group>"; };
+		7C26FFE5239A668900A78DB6 /* PresentQuestionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestionInfo.swift; sourceTree = "<group>"; };
+		7C26FFE8239A66C000A78DB6 /* PresentQuestionInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestionInfoProtocol.swift; sourceTree = "<group>"; };
+		7C26FFEC239A73DF00A78DB6 /* DropdownViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownViewModelFactory.swift; sourceTree = "<group>"; };
+		7C26FFF0239A741C00A78DB6 /* GetViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewModelProtocol.swift; sourceTree = "<group>"; };
 		7C27FC0D2390161300BB67D9 /* GetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1223901C5500BB67D9 /* CheckboxOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxOptionProtocol.swift; sourceTree = "<group>"; };
 		7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextViewProtocol.swift; sourceTree = "<group>"; };
@@ -277,6 +287,51 @@
 			path = StackViewFactory;
 			sourceTree = "<group>";
 		};
+		7C26FFE2239A61C800A78DB6 /* GroupViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */,
+				7C26FFE3239A61D800A78DB6 /* GroupViewFactory.swift */,
+			);
+			path = GroupViewItem;
+			sourceTree = "<group>";
+		};
+		7C26FFE7239A66B700A78DB6 /* PresentQuestionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7C26FFE8239A66C000A78DB6 /* PresentQuestionInfoProtocol.swift */,
+				7C26FFE5239A668900A78DB6 /* PresentQuestionInfo.swift */,
+			);
+			path = PresentQuestionInfo;
+			sourceTree = "<group>";
+		};
+		7C26FFEA239A73A800A78DB6 /* ChildrenViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7C26FFF0239A741C00A78DB6 /* GetViewModelProtocol.swift */,
+				7C26FFF2239A744500A78DB6 /* Dropdown */,
+			);
+			path = ChildrenViewModels;
+			sourceTree = "<group>";
+		};
+		7C26FFF2239A744500A78DB6 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDA9D22391639000CC1D85 /* DropdownViewModel.swift */,
+				7C26FFEC239A73DF00A78DB6 /* DropdownViewModelFactory.swift */,
+				7C26FFF3239A753C00A78DB6 /* DropdownViewFactories */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		7C26FFF3239A753C00A78DB6 /* DropdownViewFactories */ = {
+			isa = PBXGroup;
+			children = (
+				7C1C7763238EC3C80011DA1F /* LabelAndTextViewDropdownFactory.swift */,
+			);
+			path = DropdownViewFactories;
+			sourceTree = "<group>";
+		};
 		7C27FC0C239015EE00BB67D9 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,15 +360,6 @@
 				7C3044F12396751100BA640D /* MultipleCheckboxBtnWithInput */,
 			);
 			path = CheckboxBtns;
-			sourceTree = "<group>";
-		};
-		7C3044ED2396717400BA640D /* Dropdown */ = {
-			isa = PBXGroup;
-			children = (
-				7CDDA9D22391639000CC1D85 /* DropdownViewModel.swift */,
-				7C1C7763238EC3C80011DA1F /* LabelAndTextViewDropdownFactory.swift */,
-			);
-			path = Dropdown;
 			sourceTree = "<group>";
 		};
 		7C3044EE2396718C00BA640D /* TextArea */ = {
@@ -610,9 +656,10 @@
 		7CDDA9BD2391616000CC1D85 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
-				7CDDA9BE2391616C00CC1D85 /* Question.swift */,
 				7C374B912393CBEA002D4892 /* PresentQuestion.swift */,
+				7CDDA9BE2391616C00CC1D85 /* Question.swift */,
 				7CDDA9C02391617A00CC1D85 /* Answer.swift */,
+				7C26FFE7239A66B700A78DB6 /* PresentQuestionInfo */,
 				7CDDA9C22391619A00CC1D85 /* GlobalVarsData.swift */,
 				7C374B932393CC45002D4892 /* QuestionType.swift */,
 				7C3045012396C5A900BA640D /* OptIn.swift */,
@@ -643,6 +690,7 @@
 			isa = PBXGroup;
 			children = (
 				7CDDA9C92391623300CC1D85 /* QuestionsViewModel.swift */,
+				7C26FFEA239A73A800A78DB6 /* ChildrenViewModels */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -669,7 +717,6 @@
 			isa = PBXGroup;
 			children = (
 				7C3044EE2396718C00BA640D /* TextArea */,
-				7C3044ED2396717400BA640D /* Dropdown */,
 				7C41B2972395513300268861 /* RadioBtns */,
 				7C3044EC2396709E00BA640D /* CheckboxBtns */,
 			);
@@ -679,7 +726,7 @@
 		7CDDA9D4239164FC00CC1D85 /* LocalViewItem */ = {
 			isa = PBXGroup;
 			children = (
-				7CDDA9CF2391636600CC1D85 /* GroupViewItem.swift */,
+				7C26FFE2239A61C800A78DB6 /* GroupViewItem */,
 				7CDDA9D52391651500CC1D85 /* SaveBtnViewItem.swift */,
 				7C3044FE2396C1D300BA640D /* OptInViewItem */,
 			);
@@ -829,6 +876,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C1D999F238808E6003ED654 /* CodeViewAndLabelFactory.swift in Sources */,
+				7C26FFE6239A668900A78DB6 /* PresentQuestionInfo.swift in Sources */,
 				7C374B922393CBEA002D4892 /* PresentQuestion.swift in Sources */,
 				7C1D99A5238810DC003ED654 /* CodeSingleCheckmarkViewFactory.swift in Sources */,
 				7C374BAD2395174C002D4892 /* SingleCheckboxBtnViewFactory.swift in Sources */,
@@ -838,6 +886,7 @@
 				7CDDA9BF2391616C00CC1D85 /* Question.swift in Sources */,
 				7CDDA9B82391481800CC1D85 /* ScannerVC.swift in Sources */,
 				7CDDA9CD2391633600CC1D85 /* QuestionPageViewModelProtocol.swift in Sources */,
+				7C26FFF1239A741C00A78DB6 /* GetViewModelProtocol.swift in Sources */,
 				7C3044EB23966DDE00BA640D /* RadioBtnsWithInputViewModel.swift in Sources */,
 				7CDDA9BA23915FAE00CC1D85 /* CodeLabelFactory.swift in Sources */,
 				7C374B9F2394149F002D4892 /* UIImage+Extension.swift in Sources */,
@@ -853,6 +902,7 @@
 				7C26FFB82397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift in Sources */,
 				7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */,
 				7C374BAB2395171F002D4892 /* SingleCheckboxBtnViewModel.swift in Sources */,
+				7C26FFE4239A61D800A78DB6 /* GroupViewFactory.swift in Sources */,
 				7C374BA9239516E4002D4892 /* CheckboxBtnsViewModel.swift in Sources */,
 				7C3045042396C83400BA640D /* ColoredViewFactory.swift in Sources */,
 				7CDDA9D62391651500CC1D85 /* SaveBtnViewItem.swift in Sources */,
@@ -888,12 +938,14 @@
 				7C374B902393BFBB002D4892 /* TextAreaViewModel.swift in Sources */,
 				7C3A3F8822ACEB1B003C079E /* AppDelegate.swift in Sources */,
 				7CEB33AA239552D70038C26A /* RadioBtnsFactory.swift in Sources */,
+				7C26FFED239A73DF00A78DB6 /* DropdownViewModelFactory.swift in Sources */,
 				7CDDA9CA2391623300CC1D85 /* QuestionsViewModel.swift in Sources */,
 				7C3045022396C5A900BA640D /* OptIn.swift in Sources */,
 				7C374BAF23952502002D4892 /* CheckboxBtnImage.swift in Sources */,
 				7CDDA9D02391636600CC1D85 /* GroupViewItem.swift in Sources */,
 				7C26FFBD239939C400A78DB6 /* StackViewFactory.swift in Sources */,
 				7C374B942393CC45002D4892 /* QuestionType.swift in Sources */,
+				7C26FFE9239A66C000A78DB6 /* PresentQuestionInfoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

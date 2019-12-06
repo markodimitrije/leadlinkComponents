@@ -16,6 +16,15 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
     
     private var view: UIView!
     
+    init(presentQuestionInfo: PresentQuestionInfoProtocol, viewFactory: DropdownFactoryProtocol) {
+        self.question = presentQuestionInfo.getQuestion()
+        self.answer = presentQuestionInfo.getAnswer()
+        self.code = presentQuestionInfo.getCode()
+        self.view = viewFactory.getView()
+        super.init()
+        self.view.findViews(subclassOf: UITextView.self).first!.delegate = self
+    }
+    
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
         self.answer = answer
@@ -28,8 +37,8 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
         let inputText = answer?.content.first ?? ""
         let placeholderText = self.question.description ?? ""
         //self.view = LabelAndTextViewDropdownFactory(headlineText: question.title, inputText: inputText, placeholderText: placeholderText, width: 398.0, delegate: self).getView()
-        let labelFactory = CodeLabelFactory(text: question.title, width: 398.0)
-        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText, width: 398.0, delegate: self)
+        let labelFactory = CodeLabelFactory(text: question.title)
+        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText, delegate: self)
 
 //        self.view = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory).getView()
 //        view.backgroundColor = .green

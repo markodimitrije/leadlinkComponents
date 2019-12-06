@@ -40,7 +40,7 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         //let isPlaceholderText = initialText == (question.description ?? "")
         
 //        let textView = StackViewContainingTextViewFactory(text: initialText, isPlaceholderText: isPlaceholderText, delegate: textViewDelegate).getView()
-        let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText, width: 10.0, delegate: textViewDelegate).getView()
+        let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText, delegate: textViewDelegate).getView()
         
         let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()
         

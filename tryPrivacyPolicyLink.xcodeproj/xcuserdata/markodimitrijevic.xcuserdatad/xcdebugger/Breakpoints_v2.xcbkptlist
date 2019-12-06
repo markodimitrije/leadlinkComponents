@@ -55,48 +55,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF4FB667-429C-49ED-96AA-4F42BBC864DC"
+            uuid = "77008CC7-5D6F-471D-A3D2-9ECE759D7638"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tryPrivacyPolicyLink/Scenes/QuestionsScene/View/QuestionViewItem/Implementations/WebViewItem/Dropdown/DropdownViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getActualAnswer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9F3BAC7E-C2A1-4FED-B4F0-036E3366B157"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tryPrivacyPolicyLink/Scenes/QuestionsScene/View/QuestionViewItem/Implementations/WebViewItem/Dropdown/DropdownViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "textViewDidBeginEditing(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6AC55665-0DD9-4144-9D67-0B5CD7594127"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tryPrivacyPolicyLink/Scenes/QuestionsScene/View/QuestionViewItem/Implementations/WebViewItem/Dropdown/DropdownViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "deletePlaceholderAndSetTxtColorToBlack(textView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3FC239E-A7B4-423E-BBB6-452A8510E0BC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tryPrivacyPolicyLink/Scenes/QuestionsScene/View/QuestionViewItem/Implementations/WebViewItem/Dropdown/DropdownViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "textViewDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CodeLabelFactory {
+protocol GroupViewFactoryProtocol: GetViewProtocol {}
+
+class CodeLabelFactory: GroupViewFactoryProtocol {
     
     private var myView: UIView
     
@@ -16,12 +18,11 @@ class CodeLabelFactory {
         return myView
     }
     
-    init(text: String, width: CGFloat) {
+    init(text: String) {
         
         //Text Label
         let textLabel               = UILabel()
         textLabel.backgroundColor   = .blue
-//        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
         textLabel.numberOfLines = 0
         textLabel.text  = text
         textLabel.textAlignment = .center
