@@ -21,6 +21,24 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         return self.singleRadioBtnViewModels
     }
     
+    init(delegate: BtnTapListening?, textViewDelegate: UITextViewDelegate?, radioBtnsFactory: RadioBtnsFactory, textViewFactory: CodeTextViewFactory) {
+        
+        let radioBtnsViewModels: [SingleRadioBtnViewModel] = radioBtnsFactory.getViewModels()
+        let radioBtnsViewStackView = radioBtnsFactory.getView()
+        var radioBtnsViews: [UIView] = radioBtnsViewStackView.subviews
+        
+        let lastRadioBtnView = radioBtnsViews.removeLast()
+        let singleRadioBtnsView = CodeVerticalStacker(views: radioBtnsViews).getView()
+        
+        let textView = textViewFactory.getView()
+        
+        let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()
+        
+        self.singleRadioBtnViewModels = radioBtnsViewModels
+        self.myView = CodeVerticalStacker(views: [singleRadioBtnsView, lastRadioBtnWithInputView]).getView()
+        
+    }
+    
     init(question: Question, answer: Answer?, delegate: BtnTapListening?, textViewDelegate: UITextViewDelegate?) {
         
         let placeholderText = question.description ?? ""
