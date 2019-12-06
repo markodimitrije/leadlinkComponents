@@ -56,6 +56,24 @@ class RadioBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
         return answer
     }
     
+    init(questionInfo: PresentQuestionInfoProtocol, radioBtnsWithInputViewFactory: RadioBtnsWithInputFactory) {
+        
+        self.question = questionInfo.getQuestion()
+        self.answer = questionInfo.getAnswer()
+        self.code = questionInfo.getCode()
+        
+        super.init()
+        
+        self.singleRadioBtnViewModels = radioBtnsWithInputViewFactory.getViewModels()
+        self.view = radioBtnsWithInputViewFactory.getView()
+        
+        _ = self.view.findViews(subclassOf: UITextView.self).map {$0.delegate = self}
+        _ = self.view.findViews(subclassOf: UIButton.self).map {
+            $0.addTarget(self, action: #selector(RadioBtnsViewModel.btnTapped), for: .touchUpInside)
+        }
+        
+    }
+    
     init(question: Question, answer: Answer?, code: String) {
         self.question = question
         self.answer = answer

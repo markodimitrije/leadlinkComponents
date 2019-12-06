@@ -31,18 +31,11 @@ class QuestionsViewModel : QuestionsViewItemManaging {
     // particular questionViewmodel ima i view (getView) i model (answer)
     func getQuestionPageViewItems() -> [QuestionPageGetViewProtocol] {
         
-        let groupViewFactory = GroupViewFactory(text: longTitle)
-        let groupItem = GroupViewItem(viewFactory: groupViewFactory)
+//        let groupViewFactory = GroupViewFactory(text: longTitle)
+//        let groupItem = GroupViewItem(viewFactory: groupViewFactory)
         
-        let questionInfo = PresentQuestionInfo(question: dropdownQuestion, answer: dropdownAnswer, code: code)
-//        let labelFactory = CodeLabelFactory(text: dropdownQuestion.title)
-//        let textViewFactory = CodeTextViewFactory(inputText: dropdownAnswer.content.first ?? "", placeholderText: dropdownQuestion.description ?? "", delegate: nil)
-//
-//        let embededViewFactory = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory)
-//
-//        let dropdownItem = DropdownViewModel(presentQuestionInfo: questionInfo, viewFactory: embededViewFactory)
-        let dropdownItem = DropdownViewModelFactory(questionInfo: questionInfo).getViewModel()
-        
+//        let questionInfo = PresentQuestionInfo(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+//        let dropdownItem = DropdownViewModelFactory(questionInfo: questionInfo).getViewModel()
         //let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
 //        let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: nil, code: code)
         
@@ -55,10 +48,12 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let checkboxBtnsViewModel = CheckboxBtnsViewModel(question: checkboxQuestion, answer: nil, code: code)
 //        let checkboxBtnsViewModel = CheckboxBtnsViewModel(question: checkboxQuestion, answer: checkboxAnswer, code: code)
         
-        let radioBtnsWithInputViewModel = RadioBtnsWithInputViewModel(question: radioWithInputQuestion, answer: nil, code: code)
+        let questionInfo = PresentQuestionInfo(question: radioWithInputQuestion, answer: radioWithInputAnswer, code: code)
+        let radioBtnsWithInputViewModel = RadioBtnsWithInputViewModelFactory(questionInfo: questionInfo).getViewModel()
+        //let radioBtnsWithInputViewModel = RadioBtnsWithInputViewModel(question: radioWithInputQuestion, answer: nil, code: code)
         //let radioBtnsWithInputViewModel = RadioBtnsWithInputViewModel(question: radioWithInputQuestion, answer: radioWithInputAnswer, code: code)
         
-        let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModel(question: checkboxWithInputQuestion, answer: nil, code: code)
+//        let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModel(question: checkboxWithInputQuestion, answer: nil, code: code)
 //        let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModel(question: checkboxWithInputQuestion, answer: checkboxWithInputAnswer, code: code)
         
         let optInViewModel = OptInViewModel(optIn: optIn)
@@ -67,7 +62,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         
 //        let items: [QuestionPageGetViewProtocol] = [groupItem, radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewModel, saveButtonItem]
         
-        let items: [QuestionPageGetViewProtocol] = [groupItem, dropdownItem, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, saveButtonItem]
         
 //        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, saveButtonItem]
         
