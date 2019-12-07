@@ -20,7 +20,7 @@ class CodeTextViewFactory: CodeTextViewFactoryProtocol {
         return myView
     }
     
-    init(inputText: String, placeholderText: String, width: CGFloat) {
+    init(inputText: String, placeholderText: String) {
         
         func getTextColor(inputText: String, placeholderText: String) -> UIColor {
             if inputText == "" { return .lightGray }
@@ -49,8 +49,6 @@ class CodeTextViewFactory: CodeTextViewFactoryProtocol {
 
         myView = stackView
         
-        textView.widthAnchor.constraint(greaterThanOrEqualToConstant: width/2).isActive = true
-        textView.widthAnchor.constraint(lessThanOrEqualToConstant: width).isActive = true
         textView.textContainerInset = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
         
     }

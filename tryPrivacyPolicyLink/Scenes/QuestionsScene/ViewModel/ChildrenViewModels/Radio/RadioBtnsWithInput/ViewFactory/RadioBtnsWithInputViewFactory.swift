@@ -32,10 +32,13 @@ class RadioBtnsWithInputViewFactory: GetViewProtocol {
         
         let textView = textViewFactory.getView()
         
-        let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: allowedWidth).getView()
+        let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView]).getView()
         
         self.singleRadioBtnViewModels = radioBtnsViewModels
         self.myView = CodeVerticalStacker(views: [singleRadioBtnsView, lastRadioBtnWithInputView]).getView()
+        
+        lastRadioBtnWithInputView.leadingAnchor.constraint(equalTo: lastRadioBtnWithInputView.superview!.leadingAnchor).isActive = true
+        lastRadioBtnWithInputView.superview!.trailingAnchor.constraint(equalTo: lastRadioBtnWithInputView.trailingAnchor).isActive = true
         
     }
     

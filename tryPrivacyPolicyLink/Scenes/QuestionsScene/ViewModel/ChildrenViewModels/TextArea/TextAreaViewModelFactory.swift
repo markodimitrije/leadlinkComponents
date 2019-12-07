@@ -24,7 +24,8 @@ class TextAreaViewModelFactory: NSObject, GetViewModelProtocol {
         let placeholderText = question.description ?? ""
         
         let labelFactory = CodeLabelFactory(text: question.title)
-        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText, width: allowedWidth)//200.0)
+        let textViewFactory = CodeTextViewFactory(inputText: inputText,
+                                                  placeholderText: placeholderText)
         
         let factory = LabelAndTextViewFactory(labelFactory: labelFactory, textViewFactory: textViewFactory, heightGreaterOrEqual: 200.0)
         

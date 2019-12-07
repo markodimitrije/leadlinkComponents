@@ -35,9 +35,12 @@ class CheckboxBtnsWithInputViewFactory: GetViewProtocol {
         
         let textView = textViewFactory.getView()
         
-        let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView], width: allowedWidth).getView()
+        let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView]).getView()
         
         self.myView = CodeVerticalStacker(views: [singleCheckboxBtnsView, lastCheckboxBtnWithInputView]).getView()
+        
+        lastCheckboxBtnWithInputView.leadingAnchor.constraint(equalTo: lastCheckboxBtnWithInputView.superview!.leadingAnchor).isActive = true
+        lastCheckboxBtnWithInputView.superview!.trailingAnchor.constraint(equalTo: lastCheckboxBtnWithInputView.trailingAnchor).isActive = true
         
     }
     

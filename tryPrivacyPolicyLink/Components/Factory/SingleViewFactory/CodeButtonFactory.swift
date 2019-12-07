@@ -20,7 +20,7 @@ class CodeButtonFactory {
         
         let button = UIButton()
         button.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-        button.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
+//        button.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
         
         button.backgroundColor = .green
         button.setTitle(title, for: .normal)

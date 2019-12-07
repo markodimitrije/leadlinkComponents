@@ -29,23 +29,20 @@ class CodeHorizontalStacker: GetViewProtocol {
         return myView
     }
     
-    init(views: [UIView], width: CGFloat) {
+    init(views: [UIView]) {
 
         //Stack View
-        let stackView   = UIStackView()
-        stackView.axis  = .horizontal
-        stackView.distribution  = .fill
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
         stackView.alignment = .center
-        stackView.spacing   = 8.0
+        stackView.spacing = 8.0
 
         stackView.translatesAutoresizingMaskIntoConstraints = false;
 
         _ = views.map { subview -> () in
             stackView.addArrangedSubview(subview)
         }
-
-        //stackView.widthAnchor.constraint(equalToConstant: width).isActive = true
-//        stackView.widthAnchor.constraint(lessThanOrEqualToConstant: width).isActive = true
         
         myView = stackView
 
