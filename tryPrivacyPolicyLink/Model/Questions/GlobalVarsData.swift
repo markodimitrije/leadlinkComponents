@@ -56,7 +56,7 @@ let checkboxWithInputQuestion = Question(id: 1,
                                         required: false,
                                         description: shortDescription,
                                         order: 1, element_id: nil,
-                                        settings: QuestionSettings(options: ["OptionA","OptionB","OptionCC"]))
+                                        settings: QuestionSettings(options: ["OptionA","OptionB","OptionCCOptionCCOptionCC"]))
 
 let dropdownAnswer = Answer(question: dropdownQuestion, code: "12", content:  [longTitle], optionIds: nil)
 let radioAnswer = Answer(question: radioQuestion, code: "12", content: ["OptionC"], optionIds: [0,1,2])

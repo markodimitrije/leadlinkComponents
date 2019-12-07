@@ -33,19 +33,22 @@ class CodeTextViewFactory: GetViewProtocol {
         }
         
         //textField
-        let textView             = UITextView()
+        let textView = UITextView()
         textView.isScrollEnabled = false
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
+        textView.makeRoundedBorder(color: .darkGray, cornerRadius: 5.0)
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)
 
         //Stack View
-        let stackView   = UIStackView()
+        let stackView = UIStackView()
         stackView.addArrangedSubview(textView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
 
         myView = stackView
+        
+        textView.widthAnchor.constraint(greaterThanOrEqualToConstant: 398.0/2).isActive = true
+        textView.superview!.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 0).isActive = true
         
     }
 

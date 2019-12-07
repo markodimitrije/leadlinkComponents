@@ -44,9 +44,10 @@ class CodeHorizontalStacker: GetViewProtocol {
             stackView.addArrangedSubview(subview)
         }
 
-//        stackView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        stackView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        
         myView = stackView
-        //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
+
     }
     
 }

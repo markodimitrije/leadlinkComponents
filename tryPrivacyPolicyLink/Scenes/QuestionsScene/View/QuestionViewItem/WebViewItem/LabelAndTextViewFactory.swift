@@ -18,7 +18,7 @@ class LabelAndTextViewFactory: GetViewProtocol {
         return myView
     }
     
-    init(headlineText: String, inputText: String, placeholderText: String, width: CGFloat, delegate: UITextViewDelegate?) {
+    init(headlineText: String, inputText: String, placeholderText: String, heightGreaterOrEqual: CGFloat) {
         
         func getTextColor(inputText: String, placeholderText: String) -> UIColor {
             if inputText == "" { return .lightGray }
@@ -33,19 +33,18 @@ class LabelAndTextViewFactory: GetViewProtocol {
         }
         
         //textField
-        let textView             = UITextView()
+        let textView = UITextView()
         textView.isScrollEnabled = false
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
-        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44.0).isActive = true
-//        textView.widthAnchor.constraint(equalToConstant: width*0.9).isActive = true
+        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: heightGreaterOrEqual).isActive = true
+        textView.makeRoundedBorder(color: .darkGray, cornerRadius: 5)
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)
-
+        
         //Text Label
-        let textLabel               = UILabel()
-        textLabel.backgroundColor   = .yellow
-//        textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+        let textLabel = UILabel()
+        textLabel.backgroundColor = .yellow
         textLabel.numberOfLines = 0
         textLabel.text  = headlineText
         textLabel.textAlignment = .center
@@ -60,12 +59,21 @@ class LabelAndTextViewFactory: GetViewProtocol {
         stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(textView)
         stackView.translatesAutoresizingMaskIntoConstraints = false;
-
-        textView.delegate = delegate
+        
         myView = stackView
+        
+        textView.leadingAnchor.constraint(equalTo: textView.superview!.leadingAnchor, constant: 8).isActive = true
+        textView.superview!.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 8).isActive = true
         
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
     }
     
 }
 
+extension UIView {
+    func makeRoundedBorder(color: UIColor, cornerRadius: CGFloat) {
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = color.cgColor
+        self.layer.cornerRadius = cornerRadius
+    }
+}
