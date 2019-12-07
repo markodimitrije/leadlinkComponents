@@ -38,8 +38,10 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let dropdownItem = DropdownViewModelFactory(questionInfo: dropdownQuestionInfo).getViewModel()
         //let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
 //        let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: nil, code: code)
-        
-        let textAreaItem = TextAreaViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+        dropdownQuestion
+        let textAreaInfo = PresentQuestionInfo(question: dropdownQuestion, answer: dropdownAnswer, code: code)
+        let textAreaItem = TextAreaViewModelFactory(questionInfo: textAreaInfo).getViewModel()
+        //let textAreaItem = TextAreaViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
         //let textAreaItem = TextAreaViewModel(question: dropdownQuestion, answer: nil, code: code)
         
         let radioBtnsQuestionInfo = PresentQuestionInfo(question: radioQuestion, answer: radioAnswer, code: code)
@@ -68,7 +70,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         
 //        let items: [QuestionPageGetViewProtocol] = [groupItem, radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewItem, saveButtonItem]
         
-        let items: [QuestionPageGetViewProtocol] = [radioBtnsItem, radioBtnsWithInputViewModel, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [textAreaItem, saveButtonItem]
         
 //        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, saveButtonItem]
         

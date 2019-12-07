@@ -46,6 +46,7 @@
 		7C356F09239BCBEA009DA526 /* RadioBtnsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F08239BCBE9009DA526 /* RadioBtnsViewModelFactory.swift */; };
 		7C356F0E239BCCEE009DA526 /* CheckboxBtnsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F0D239BCCEE009DA526 /* CheckboxBtnsViewModelFactory.swift */; };
 		7C356F14239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F13239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift */; };
+		7C356F18239BE432009DA526 /* TextAreaViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F17239BE432009DA526 /* TextAreaViewModelFactory.swift */; };
 		7C374B902393BFBB002D4892 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */; };
 		7C374B922393CBEA002D4892 /* PresentQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B912393CBEA002D4892 /* PresentQuestion.swift */; };
 		7C374B942393CC45002D4892 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B932393CC45002D4892 /* QuestionType.swift */; };
@@ -160,6 +161,7 @@
 		7C356F08239BCBE9009DA526 /* RadioBtnsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBtnsViewModelFactory.swift; sourceTree = "<group>"; };
 		7C356F0D239BCCEE009DA526 /* CheckboxBtnsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnsViewModelFactory.swift; sourceTree = "<group>"; };
 		7C356F13239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPageGetViewProtocol.swift; sourceTree = "<group>"; };
+		7C356F17239BE432009DA526 /* TextAreaViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModelFactory.swift; sourceTree = "<group>"; };
 		7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		7C374B912393CBEA002D4892 /* PresentQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestion.swift; sourceTree = "<group>"; };
 		7C374B932393CC45002D4892 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			children = (
 				7C26FFF0239A741C00A78DB6 /* GetViewModelProtocol.swift */,
 				7C26FFF2239A744500A78DB6 /* Dropdown */,
+				7C356F16239BE3D3009DA526 /* TextArea */,
 				7C356F07239BCAFC009DA526 /* Radio */,
 				7C356F0B239BCC64009DA526 /* Checkbox */,
 			);
@@ -419,15 +422,6 @@
 				7C27FC1423901C6800BB67D9 /* LabelTextViewProtocol.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		7C3044EE2396718C00BA640D /* TextArea */ = {
-			isa = PBXGroup;
-			children = (
-				7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */,
-				7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */,
-			);
-			path = TextArea;
 			sourceTree = "<group>";
 		};
 		7C3044EF2396722C00BA640D /* SingleCheckbox */ = {
@@ -545,6 +539,15 @@
 				7CDDA9CC2391633600CC1D85 /* QuestionPageViewModelProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7C356F16239BE3D3009DA526 /* TextArea */ = {
+			isa = PBXGroup;
+			children = (
+				7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */,
+				7C356F17239BE432009DA526 /* TextAreaViewModelFactory.swift */,
+			);
+			path = TextArea;
 			sourceTree = "<group>";
 		};
 		7C374B9923941408002D4892 /* CodeAssets */ = {
@@ -803,7 +806,7 @@
 		7CDDA9D12391637F00CC1D85 /* WebViewItem */ = {
 			isa = PBXGroup;
 			children = (
-				7C3044EE2396718C00BA640D /* TextArea */,
+				7C1D99A223880DA6003ED654 /* LabelAndTextViewFactory.swift */,
 				7C3044F02396728B00BA640D /* SingleRadioBtn */,
 				7C3044EF2396722C00BA640D /* SingleCheckbox */,
 			);
@@ -980,6 +983,7 @@
 				7CA27BA32386A0B4008A8CE4 /* CheckboxViewCell.swift in Sources */,
 				7CA27B8C23869334008A8CE4 /* DescriptionCell.swift in Sources */,
 				7C27FC1323901C5500BB67D9 /* CheckboxOptionProtocol.swift in Sources */,
+				7C356F18239BE432009DA526 /* TextAreaViewModelFactory.swift in Sources */,
 				7C26FFB82397FBF400A78DB6 /* StackViewContainingTextViewFactory.swift in Sources */,
 				7C27FC1523901C6800BB67D9 /* LabelTextViewProtocol.swift in Sources */,
 				7C374BAB2395171F002D4892 /* SingleCheckboxBtnViewModel.swift in Sources */,
