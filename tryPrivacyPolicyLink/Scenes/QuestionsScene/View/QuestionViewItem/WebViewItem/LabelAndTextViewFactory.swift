@@ -38,6 +38,7 @@ class LabelAndTextViewFactory: GetViewProtocol {
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
         textView.heightAnchor.constraint(greaterThanOrEqualToConstant: heightGreaterOrEqual).isActive = true
         textView.makeRoundedBorder(color: .darkGray, cornerRadius: 5)
+        textView.textContainerInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)

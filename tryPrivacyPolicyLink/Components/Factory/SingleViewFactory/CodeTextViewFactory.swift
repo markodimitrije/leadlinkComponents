@@ -35,6 +35,7 @@ class CodeTextViewFactory: GetViewProtocol {
         //textField
         let textView = UITextView()
         textView.isScrollEnabled = false
+        //textView.contentInset = UIEdgeInsets(top: 2.0, left: 4.0, bottom: 2.0, right: 4.0)
         textView.font = UIFont(name: "Helvetica", size: CGFloat.init(24))
         textView.makeRoundedBorder(color: .darkGray, cornerRadius: 5.0)
         
@@ -48,7 +49,7 @@ class CodeTextViewFactory: GetViewProtocol {
         myView = stackView
         
         textView.widthAnchor.constraint(greaterThanOrEqualToConstant: width).isActive = true
-        textView.superview!.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 0).isActive = true
+        textView.textContainerInset = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
         
     }
 
