@@ -28,6 +28,10 @@ class RadioBtnsFactory: GetViewProtocol {
         let selected = titles.map {(answer?.content ?? [ ]).contains($0)}
         
         let singleRadioBtnViewModels = titles.enumerated().map { (index, title) -> SingleRadioBtnViewModel in
+//            let onOffImages = [RadioBtnImage().onImage!, RadioBtnImage().offImage!]
+//            let radioBtnFactory = RadioBtnFactory(tag: index, isOn: selected[index], onAndOffImages: onOffImages)
+//            let extendedBtnFactory = ExtendedRadioBtnFactory(tag: index, titleText: title)
+//            let viewFactory = SingleRadioBtnViewFactory(radioBtnFactory: radioBtnFactory, extendedRadioBtnFactory: extendedBtnFactory)
             let radioBtnFactory = SingleRadioBtnViewFactory(tag: index,
                                                             isOn: selected[index],
                                                             titleText: title)

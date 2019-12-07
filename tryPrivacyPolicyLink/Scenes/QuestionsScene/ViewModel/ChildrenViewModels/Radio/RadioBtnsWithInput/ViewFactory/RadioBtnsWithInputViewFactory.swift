@@ -32,7 +32,7 @@ class RadioBtnsWithInputViewFactory: GetViewProtocol {
         
         let textView = textViewFactory.getView()
         
-        let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()
+        let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: allowedWidth).getView()
         
         self.singleRadioBtnViewModels = radioBtnsViewModels
         self.myView = CodeVerticalStacker(views: [singleRadioBtnsView, lastRadioBtnWithInputView]).getView()

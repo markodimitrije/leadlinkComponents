@@ -13,7 +13,7 @@ class SaveBtnViewItem: QuestionPageGetViewProtocol {
     private var view: UIView
     
     init() {
-        let saveBtnView = CodeButtonFactory(title: "Save", width: 398.0).getView()
+        let saveBtnView = CodeButtonFactory(title: "Save", width: allowedWidth).getView()
         self.view = saveBtnView
     }
     

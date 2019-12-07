@@ -6,7 +6,7 @@
 //  Copyright © 2019 Marko Dimitrijevic. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let dropdownQuestion = Question(id: 1,
                                 campaign_id: 7520,
@@ -76,3 +76,9 @@ let shortDescription = "sdjkkjdsa jcajcdas dsjkjcjz"
 let optIn = OptIn(text: "Für mehr können Sie unsere lesen\n(Pour plus vous pouvez lire notre",
                   url: "https://navus.e-materials.com/assets/PDFs/Privacy-and-Cookies-Policy-Navus-16062018.pdf",
                   privacyPolicy: "Datenschutz-Bestimmungen\nPolitique de Confidentialité")
+
+var allowedWidth: CGFloat {
+    let width = (UIApplication.topViewController() as? QuestionsViewController)?.stackView.bounds.width ?? UIApplication.topViewController()!.view.bounds.width
+    print("allowedWidth = \(width)")
+    return width
+}

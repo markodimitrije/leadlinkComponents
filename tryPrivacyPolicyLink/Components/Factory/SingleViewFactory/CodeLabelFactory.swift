@@ -22,10 +22,10 @@ class CodeLabelFactory: LabelFactoryProtocol {
     init(text: String) {
         
         //Text Label
-        let textLabel               = UILabel()
+        let textLabel = UILabel()
         textLabel.backgroundColor   = .blue
         textLabel.numberOfLines = 0
-        textLabel.text  = text
+        textLabel.text = text
         textLabel.textAlignment = .center
 
         //Stack View

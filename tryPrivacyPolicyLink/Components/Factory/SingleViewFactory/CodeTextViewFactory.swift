@@ -49,7 +49,8 @@ class CodeTextViewFactory: CodeTextViewFactoryProtocol {
 
         myView = stackView
         
-        textView.widthAnchor.constraint(greaterThanOrEqualToConstant: width).isActive = true
+        textView.widthAnchor.constraint(greaterThanOrEqualToConstant: width/2).isActive = true
+        textView.widthAnchor.constraint(lessThanOrEqualToConstant: width).isActive = true
         textView.textContainerInset = UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
         
     }

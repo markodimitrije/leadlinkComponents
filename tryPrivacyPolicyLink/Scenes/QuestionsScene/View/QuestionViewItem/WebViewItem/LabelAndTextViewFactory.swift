@@ -39,8 +39,8 @@ class LabelAndTextViewFactory: GetViewProtocol {
         
         myView = stackView
         
-        textView.leadingAnchor.constraint(equalTo: textView.superview!.leadingAnchor, constant: 8).isActive = true
-        textView.superview!.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 8).isActive = true
+//        textView.leadingAnchor.constraint(equalTo: textView.superview!.leadingAnchor, constant: 8).isActive = true
+//        textView.superview!.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 8).isActive = true
         
         //myView = LabelAndTextField(frame: stackView.bounds) // pukne layout, i nema nicega...
     }

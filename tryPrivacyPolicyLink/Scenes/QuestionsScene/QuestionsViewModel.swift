@@ -68,9 +68,9 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         
         let saveButtonItem = SaveBtnViewItem()
         
-//        let items: [QuestionPageGetViewProtocol] = [groupItem, radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewItem, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewItem, saveButtonItem]
         
-        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, textAreaItem, dropdownItem, saveButtonItem]
+//        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, textAreaItem, dropdownItem, saveButtonItem]
         
 //        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, saveButtonItem]
         
