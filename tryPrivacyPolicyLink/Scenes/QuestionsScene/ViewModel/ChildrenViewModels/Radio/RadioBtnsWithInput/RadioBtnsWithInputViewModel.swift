@@ -74,22 +74,6 @@ class RadioBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
         
     }
     
-//    init(question: Question, answer: Answer?, code: String) {
-//        self.question = question
-//        self.answer = answer
-//        self.code = code
-//        super.init()
-//        loadView()
-//    }
-//
-//    private func loadView() {
-//
-//        let radioBtnsFactory = RadioBtnsWithInputFactory(question: question, answer: answer, delegate: self, textViewDelegate: self)
-//        self.singleRadioBtnViewModels = radioBtnsFactory.getViewModels()
-//        self.view = radioBtnsFactory.getView()
-//
-//    }
-    
 }
 
 extension RadioBtnsWithInputViewModel: BtnTapListening {

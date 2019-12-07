@@ -61,7 +61,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let questionInfo = PresentQuestionInfo(question: checkboxWithInputQuestion, answer: checkboxWithInputAnswer, code: code)
         let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModelFactory(questionInfo: questionInfo).getViewModel()
         
-//        let optInViewModel = OptInViewModel(optIn: optIn)
+        let optInViewModel = OptInViewModel(optIn: optIn)
         
         let saveButtonItem = SaveBtnViewItem()
         
