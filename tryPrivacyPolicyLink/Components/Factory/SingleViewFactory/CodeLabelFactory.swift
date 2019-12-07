@@ -8,7 +8,10 @@
 
 import UIKit
 
-class CodeLabelFactory: GroupViewFactoryProtocol {
+protocol LabelFactoryProtocol: GetViewProtocol {}
+
+//class CodeLabelFactory: GroupViewFactoryProtocol {
+class CodeLabelFactory: LabelFactoryProtocol {
     
     private var myView: UIView
     
@@ -26,11 +29,11 @@ class CodeLabelFactory: GroupViewFactoryProtocol {
         textLabel.textAlignment = .center
 
         //Stack View
-        let stackView   = UIStackView()
-        stackView.axis  = .vertical
-        stackView.distribution  = .equalSpacing
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
-        stackView.spacing   = 8.0
+        stackView.spacing = 8.0
 
         stackView.addArrangedSubview(textLabel)
         

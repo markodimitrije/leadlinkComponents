@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CodeTextViewFactory: GetViewProtocol {
+protocol CodeTextViewFactoryProtocol: GetViewProtocol {}
+
+class CodeTextViewFactory: CodeTextViewFactoryProtocol {
     
     private var myView: UIView
     
