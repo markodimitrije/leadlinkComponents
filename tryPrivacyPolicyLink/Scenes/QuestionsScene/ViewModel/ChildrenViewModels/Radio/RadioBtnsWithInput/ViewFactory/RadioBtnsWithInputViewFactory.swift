@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioBtnsWithInputFactory: GetViewProtocol {
+class RadioBtnsWithInputViewFactory: GetViewProtocol {
    
     private var myView: UIView!
     private var singleRadioBtnViewModels: [SingleRadioBtnViewModel]!
@@ -31,29 +31,6 @@ class RadioBtnsWithInputFactory: GetViewProtocol {
         let singleRadioBtnsView = CodeVerticalStacker(views: radioBtnsViews).getView()
         
         let textView = textViewFactory.getView()
-        
-        let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()
-        
-        self.singleRadioBtnViewModels = radioBtnsViewModels
-        self.myView = CodeVerticalStacker(views: [singleRadioBtnsView, lastRadioBtnWithInputView]).getView()
-        
-    }
-    
-    init(question: Question, answer: Answer?, delegate: BtnTapListening?, textViewDelegate: UITextViewDelegate?) {
-        
-        let placeholderText = question.description ?? ""
-        
-        let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer, delegate: delegate)
-        let radioBtnsViewModels: [SingleRadioBtnViewModel] = radioBtnsFactory.getViewModels()
-        let radioBtnsViewStackView = radioBtnsFactory.getView()
-        var radioBtnsViews: [UIView] = radioBtnsViewStackView.subviews
-        
-        let lastRadioBtnView = radioBtnsViews.removeLast()
-        let singleRadioBtnsView = CodeVerticalStacker(views: radioBtnsViews).getView()
-        
-        let initialText = getNonOptionTextAnswer(question: question, answer: answer)
-        
-        let textView = CodeTextViewFactory(inputText: initialText, placeholderText: placeholderText).getView()
         
         let lastRadioBtnWithInputView = CodeHorizontalStacker(views: [lastRadioBtnView, textView], width: 398.0).getView()
         

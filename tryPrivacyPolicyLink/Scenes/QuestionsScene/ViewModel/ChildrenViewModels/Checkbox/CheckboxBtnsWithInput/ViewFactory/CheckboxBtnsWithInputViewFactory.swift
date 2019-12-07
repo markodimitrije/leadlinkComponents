@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckboxBtnsWithInputFactory: GetViewProtocol {
+class CheckboxBtnsWithInputViewFactory: GetViewProtocol {
    
     private var myView: UIView!
     private var singleCheckboxBtnViewModels: [SingleCheckboxBtnViewModel]!

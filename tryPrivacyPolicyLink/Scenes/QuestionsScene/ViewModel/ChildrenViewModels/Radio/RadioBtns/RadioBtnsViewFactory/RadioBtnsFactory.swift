@@ -21,7 +21,7 @@ class RadioBtnsFactory: GetViewProtocol {
         return self.singleRadioBtnViewModels
     }
     
-    init(question: Question, answer: Answer?, delegate: BtnTapListening?) {
+    init(question: Question, answer: Answer?) {
         
         let titles = question.settings.options ?? [ ]
         
@@ -30,9 +30,7 @@ class RadioBtnsFactory: GetViewProtocol {
         let singleRadioBtnViewModels = titles.enumerated().map { (index, title) -> SingleRadioBtnViewModel in
             let radioBtnFactory = SingleRadioBtnViewFactory(tag: index,
                                                             isOn: selected[index],
-                                                            titleText: title,
-                                                            width: 398.0,
-                                                            delegate: delegate)
+                                                            titleText: title)
             let radioBtnViewModel = SingleRadioBtnViewModel(viewFactory: radioBtnFactory, isOn: selected[index])
             return radioBtnViewModel
         }

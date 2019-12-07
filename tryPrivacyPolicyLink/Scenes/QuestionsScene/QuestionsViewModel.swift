@@ -61,13 +61,14 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let questionInfo = PresentQuestionInfo(question: checkboxWithInputQuestion, answer: checkboxWithInputAnswer, code: code)
         let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModelFactory(questionInfo: questionInfo).getViewModel()
         
-        let optInViewModel = OptInViewModel(optIn: optIn)
+        let optInViewFactory = OptInViewFactory(optIn: optIn)
+        let optInViewItem = OptInViewItem(optInViewFactory: optInViewFactory)
         
         let saveButtonItem = SaveBtnViewItem()
         
-//        let items: [QuestionPageGetViewProtocol] = [groupItem, radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewModel, saveButtonItem]
+//        let items: [QuestionPageGetViewProtocol] = [groupItem, radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewItem, saveButtonItem]
         
-        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsViewModel, checkboxBtnsWithInputViewModel, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [radioBtnsItem, radioBtnsWithInputViewModel, saveButtonItem]
         
 //        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, saveButtonItem]
         
@@ -75,7 +76,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         //let items: [QuestionPageGetViewProtocol] = [radioBtnsItem, checkboxBtnsViewModel, saveButtonItem]
 //        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, saveButtonItem]
 //        let items: [QuestionPageGetViewProtocol] = [radioBtnsItem, checkboxBtnsWithInputViewModel, saveButtonItem]
-//        let items: [QuestionPageGetViewProtocol] = [optInViewModel, saveButtonItem]
+//        let items: [QuestionPageGetViewProtocol] = [optInViewItem, saveButtonItem]
         viewItems.append(contentsOf: items)
         
         hookUpSaveEvent()

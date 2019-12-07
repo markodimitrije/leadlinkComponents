@@ -8,8 +8,6 @@
 
 import UIKit
 
-protocol GroupViewFactoryProtocol: GetViewProtocol {}
-
 class CodeLabelFactory: GroupViewFactoryProtocol {
     
     private var myView: UIView

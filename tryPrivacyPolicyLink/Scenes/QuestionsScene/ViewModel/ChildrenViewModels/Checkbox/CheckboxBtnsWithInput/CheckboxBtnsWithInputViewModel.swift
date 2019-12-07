@@ -55,7 +55,7 @@ class CheckboxBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
     }
     
     init(questionInfo: PresentQuestionInfoProtocol,
-         checkboxBtnsWithInputViewFactory: CheckboxBtnsWithInputFactory) {
+         checkboxBtnsWithInputViewFactory: CheckboxBtnsWithInputViewFactory) {
         
         self.question = questionInfo.getQuestion()
         self.answer = questionInfo.getAnswer()

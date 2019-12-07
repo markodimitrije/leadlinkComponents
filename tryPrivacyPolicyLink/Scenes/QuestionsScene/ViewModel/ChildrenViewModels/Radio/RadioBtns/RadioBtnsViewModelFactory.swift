@@ -19,8 +19,7 @@ class RadioBtnsViewModelFactory: RadioBtns_ViewModel_FactoryProtocol {
         let question = questionInfo.getQuestion()
         let answer = questionInfo.getAnswer()
         
-        let radioBtnsFactory
-            = RadioBtnsFactory(question: question, answer: answer, delegate: nil)
+        let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer)
         
         let viewmodel = RadioBtnsViewModel(questionInfo: questionInfo, radioBtnsFactory: radioBtnsFactory)
         

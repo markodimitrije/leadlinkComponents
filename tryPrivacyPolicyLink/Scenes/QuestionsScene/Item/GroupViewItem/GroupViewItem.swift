@@ -8,21 +8,9 @@
 
 import UIKit
 
-//class GroupViewItem: QuestionPageGetViewProtocol {
-//
-//    private var view: UIView
-//
-//    init() {
-//        let groupView = CodeLabelFactory(text: longTitle).getView()
-//        self.view = groupView
-//    }
-//
-//    func getView() -> UIView {
-//        return view
-//    }
-//}
+protocol GroupViewFactoryProtocol: QuestionPageGetViewProtocol {}
 
-class GroupViewItem: QuestionPageGetViewProtocol {
+class GroupViewItem: GroupViewFactoryProtocol {
 
     private let viewFactory: GroupViewFactoryProtocol
     private var view: UIView

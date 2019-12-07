@@ -22,11 +22,12 @@ class CheckboxBtnsWithInputViewModelFactory: CheckboxBtnsWithInput_ViewModel_Fac
         let answer = questionInfo.getAnswer()
         
         let checkboxBtnsFactory = CheckboxBtnsFactory(question: question, answer: answer)
-        let textViewFactory = CodeTextViewFactory(inputText: answer?.content.first ?? "", placeholderText: question.description ?? "")
+        let textViewFactory = CodeTextViewFactory(inputText: answer?.content.first ?? "",
+                                                  placeholderText: question.description ?? "")
         
-        let mainFactory = CheckboxBtnsWithInputFactory(questionInfo: questionInfo, checkboxBtnsFactory: checkboxBtnsFactory, textViewFactory: textViewFactory)
-        
-//        let radioBtnsWithInputFactory = CheckboxBtnsWithInputFactory(question: question, answer: answer)
+        let mainFactory = CheckboxBtnsWithInputViewFactory(questionInfo: questionInfo,
+                                                           checkboxBtnsFactory: checkboxBtnsFactory,
+                                                           textViewFactory: textViewFactory)
         
         let viewmodel = CheckboxBtnsWithInputViewModel(questionInfo: questionInfo, checkboxBtnsWithInputViewFactory: mainFactory)
         

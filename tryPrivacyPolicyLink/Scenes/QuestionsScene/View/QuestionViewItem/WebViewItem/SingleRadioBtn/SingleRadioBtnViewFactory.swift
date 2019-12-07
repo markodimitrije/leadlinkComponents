@@ -19,7 +19,7 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
         return myView
     }
     
-    init(tag: Int, isOn: Bool, titleText: String, width: CGFloat, delegate: BtnTapListening?) {
+    init(tag: Int, isOn: Bool, titleText: String) {
         
         let radioButton               = UIButton()
         radioButton.backgroundColor   = .blue
@@ -55,10 +55,6 @@ class SingleRadioBtnViewFactory: GetViewProtocol {
         
         _ = [radioButton, button, myView].map {
             $0.tag = tag
-        }
-        
-        _ = [radioButton, button].map {
-            $0.addTarget(delegate, action: #selector(RadioBtnsViewModel.btnTapped), for: .touchUpInside)
         }
 
     }

@@ -56,7 +56,7 @@ class RadioBtnsWithInputViewModel: NSObject, QuestionPageViewModelProtocol {
         return answer
     }
     
-    init(questionInfo: PresentQuestionInfoProtocol, radioBtnsWithInputViewFactory: RadioBtnsWithInputFactory) {
+    init(questionInfo: PresentQuestionInfoProtocol, radioBtnsWithInputViewFactory: RadioBtnsWithInputViewFactory) {
         
         self.question = questionInfo.getQuestion()
         self.answer = questionInfo.getAnswer()

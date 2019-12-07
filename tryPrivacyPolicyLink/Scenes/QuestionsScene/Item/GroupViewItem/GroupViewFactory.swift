@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupViewFactory: GroupViewFactoryProtocol {
+class GroupViewFactory: GetViewProtocol {
     private let myView: UIView
     func getView() -> UIView {
         return myView
