@@ -21,7 +21,7 @@ class DropdownViewModelFactory: DropdownViewModelFactoryProtocol {
         let question = questionInfo.getQuestion()
         
         let labelFactory = CodeLabelFactory(text: question.title)
-        let textViewFactory = CodeTextViewFactory(inputText: questionInfo.getAnswer()?.content.first ?? "", placeholderText: question.description ?? "")
+        let textViewFactory = CodeTextViewFactory(inputText: questionInfo.getAnswer()?.content.first ?? "", placeholderText: question.description ?? "", width: 398.0)
 
         let embededViewFactory = LabelAndTextViewDropdownFactory(labelFactory: labelFactory,
                                                                  textViewFactory: textViewFactory)

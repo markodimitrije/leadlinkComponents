@@ -6,6 +6,9 @@
 //  Copyright © 2019 Marko Dimitrijevic. All rights reserved.
 //
 
+// textView cija je sirina od width/2 - koliko mu je dozvolio 2.element
+// textView cija je sirina: width (kao superview)
+
 import UIKit
 
 class TextAreaViewModel: NSObject, QuestionPageViewModelProtocol {

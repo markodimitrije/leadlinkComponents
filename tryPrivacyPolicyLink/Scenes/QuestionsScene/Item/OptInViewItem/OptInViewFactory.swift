@@ -24,7 +24,7 @@ class OptInViewFactory: GetViewProtocol {
     }
     
     private func loadView() {
-        self.myView = CodeTextViewFactory(inputText: "", placeholderText: "").getView()
+        self.myView = CodeTextViewFactory(inputText: "", placeholderText: "", width: 398.0).getView()
         self.textView = self.myView.subviews.first(where: {$0 is UITextView}) as? UITextView
         configureTxtViewWithHyperlinkText(tag: 4, optIn: optIn)
     }

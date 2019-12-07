@@ -18,7 +18,7 @@ class CodeTextViewFactory: GetViewProtocol {
         return myView
     }
     
-    init(inputText: String, placeholderText: String) {
+    init(inputText: String, placeholderText: String, width: CGFloat) {
         
         func getTextColor(inputText: String, placeholderText: String) -> UIColor {
             if inputText == "" { return .lightGray }
@@ -47,7 +47,7 @@ class CodeTextViewFactory: GetViewProtocol {
 
         myView = stackView
         
-        textView.widthAnchor.constraint(greaterThanOrEqualToConstant: 398.0/2).isActive = true
+        textView.widthAnchor.constraint(greaterThanOrEqualToConstant: width).isActive = true
         textView.superview!.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 0).isActive = true
         
     }
