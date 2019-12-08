@@ -78,7 +78,6 @@ let optIn = OptIn(text: "Für mehr können Sie unsere lesen\n(Pour plus vous pou
                   privacyPolicy: "Datenschutz-Bestimmungen\nPolitique de Confidentialité")
 
 var allowedWidth: CGFloat {
-    let width = (UIApplication.topViewController() as? QuestionsViewController)?.stackView.bounds.width ?? UIApplication.topViewController()!.view.bounds.width
-    print("allowedWidth = \(width)")
-    return width
+    let myAllowedWidth = UIScreen.main.bounds.width - 16
+    return myAllowedWidth
 }
