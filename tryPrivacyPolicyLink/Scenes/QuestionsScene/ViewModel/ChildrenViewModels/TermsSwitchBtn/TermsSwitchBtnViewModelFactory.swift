@@ -48,6 +48,11 @@ class TermsSwitchBtnViewFactory: GetViewProtocol {
             TitleWithHiperlinkViewFactory(title: options.first!,
                                           hiperlinkText: options.last!,
                                           urlString: "https://navus.e-materials.com/assets/PDFs/Privacy-and-Cookies-Policy-Navus-16062018.pdf")
-        self.myView = titleWithHiperlinkViewFactory.getView()
+        let textsView = titleWithHiperlinkViewFactory.getView()
+        //self.myView = titleWithHiperlinkViewFactory.getView()
+        let switchBtn = UISwitch()
+        let stackView = CodeHorizontalStacker(views: [textsView, switchBtn], distribution: .fill).getView()
+        self.myView = stackView
+        
     }
 }

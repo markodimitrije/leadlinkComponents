@@ -29,7 +29,7 @@ class CodeHorizontalStacker: GetViewProtocol {
         return myView
     }
     
-    init(views: [UIView]) {
+    init(views: [UIView], distribution: UIStackView.Distribution) {
 
         //Stack View
         let stackView = UIStackView()

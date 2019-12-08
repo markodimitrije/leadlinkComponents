@@ -35,7 +35,7 @@ class CheckboxBtnsWithInputViewFactory: GetViewProtocol {
         
         let textView = textViewFactory.getView()
         
-        let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView]).getView()
+        let lastCheckboxBtnWithInputView = CodeHorizontalStacker(views: [lastCheckboxBtnView, textView], distribution: .fillEqually).getView()
         
         self.myView = CodeVerticalStacker(views: [singleCheckboxBtnsView, lastCheckboxBtnWithInputView]).getView()
         
