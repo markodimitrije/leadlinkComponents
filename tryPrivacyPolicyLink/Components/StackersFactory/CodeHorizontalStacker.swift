@@ -34,7 +34,7 @@ class CodeHorizontalStacker: GetViewProtocol {
         //Stack View
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = distribution
         stackView.alignment = .center
         stackView.spacing = 8.0
 

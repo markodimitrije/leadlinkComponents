@@ -21,16 +21,30 @@ class TermsSwitchBtnViewModelFactory: TermsSwitchBtnViewModelFactoryProtocol {
 }
 
 class TermsSwitchBtnViewModel: QuestionPageViewModelProtocol {
+    private let question: Question
+    private var answer: Answer?
+    private let code: String
     private let myView: UIView
     func getView() -> UIView {
         return self.myView
     }
     
     func getActualAnswer() -> Answer? {
-        return nil
+        let switchBtn = myView.findViews(subclassOf: UISwitch.self).first!
+        let content = ["\(switchBtn.isOn)"]
+        if answer != nil {
+            answer?.content = content
+        } else {
+            answer = Answer(question: question, code: code, content: content, optionIds: nil)
+        }
+        return answer
     }
     init(questionInfo: PresentQuestionInfoProtocol) {
-        let factory = TermsSwitchBtnViewFactory(questionInfo: questionInfo)
+        self.question = questionInfo.getQuestion()
+        self.answer = questionInfo.getAnswer()
+        self.code = questionInfo.getCode()
+        let isOn = !(self.answer?.content.isEmpty ?? true)
+        let factory = TermsSwitchBtnViewFactory(questionInfo: questionInfo, isOn: isOn)
         self.myView = factory.getView()
     }
     
@@ -42,15 +56,15 @@ class TermsSwitchBtnViewFactory: GetViewProtocol {
         return self.myView
     }
 
-    init(questionInfo: PresentQuestionInfoProtocol) {
+    init(questionInfo: PresentQuestionInfoProtocol, isOn: Bool) {
         let options = questionInfo.getQuestion().settings.options!
         let titleWithHiperlinkViewFactory =
             TitleWithHiperlinkViewFactory(title: options.first!,
                                           hiperlinkText: options.last!,
-                                          urlString: "https://navus.e-materials.com/assets/PDFs/Privacy-and-Cookies-Policy-Navus-16062018.pdf")
+                                          urlString: navusTermsUrl)
         let textsView = titleWithHiperlinkViewFactory.getView()
-        //self.myView = titleWithHiperlinkViewFactory.getView()
         let switchBtn = UISwitch()
+        switchBtn.isOn = isOn
         let stackView = CodeHorizontalStacker(views: [textsView, switchBtn], distribution: .fill).getView()
         self.myView = stackView
         

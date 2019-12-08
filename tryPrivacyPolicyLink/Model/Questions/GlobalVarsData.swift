@@ -88,9 +88,12 @@ let termsQuestion = Question(id: 100,
                              settings: QuestionSettings(options: [
                                 "Ich habe die gelesen und akzeptiere sie \n(J'ai lu et accepte le)",
                                 "Begriffe & Bedingungen \n(Termes et Conditions)"]))
-let termsAnswer: Answer? = nil
+//let termsAnswer: Answer? = nil
+let termsAnswer: Answer? = Answer(question: termsQuestion, code: "12", content: ["true"], optionIds: nil)
 
 var allowedWidth: CGFloat {
     let myAllowedWidth = UIScreen.main.bounds.width - 16
     return myAllowedWidth
 }
+
+let navusTermsUrl = "https://navus.e-materials.com/assets/PDFs/Privacy-and-Cookies-Policy-Navus-16062018.pdf"
