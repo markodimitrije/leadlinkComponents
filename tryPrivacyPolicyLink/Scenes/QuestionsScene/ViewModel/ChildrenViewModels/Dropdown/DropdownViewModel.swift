@@ -25,29 +25,6 @@ class DropdownViewModel: NSObject, QuestionPageViewModelProtocol {
         self.view.findViews(subclassOf: UITextView.self).first!.delegate = self
     }
     
-//    init(question: Question, answer: Answer?, code: String) {
-//        self.question = question
-//        self.answer = answer
-//        self.code = code
-//        super.init()
-//        loadView()
-//    }
-//
-//    private func loadView() {
-//        let inputText = answer?.content.first ?? ""
-//        let placeholderText = self.question.description ?? ""
-//
-//        let labelFactory = CodeLabelFactory(text: question.title)
-//        let textViewFactory = CodeTextViewFactory(inputText: inputText, placeholderText: placeholderText)
-//
-//        let embededViewFactory = LabelAndTextViewDropdownFactory(labelFactory: labelFactory, textViewFactory: textViewFactory)
-//        let insets = UIEdgeInsets(top: 16, left: 8, bottom: 16, right: 8)
-//        let borderLayout = BorderLayout(cornerRadius: 10.0, borderWidth: 1.0, borderColor: .green)
-//
-//        self.view = WrapIntoBorderFactory(embededViewFactory: embededViewFactory, insets: insets, borderLayout: borderLayout).getView()
-//
-//    }
-    
     func getView() -> UIView {
         return self.view
     }

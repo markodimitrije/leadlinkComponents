@@ -38,7 +38,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let dropdownItem = DropdownViewModelFactory(questionInfo: dropdownQuestionInfo).getViewModel()
         //let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
 //        let dropdownItem = DropdownViewModel(question: dropdownQuestion, answer: nil, code: code)
-        dropdownQuestion
+        
         let textAreaInfo = PresentQuestionInfo(question: dropdownQuestion, answer: nil, code: code)
         let textAreaItem = TextAreaViewModelFactory(questionInfo: textAreaInfo).getViewModel()
         //let textAreaItem = TextAreaViewModel(question: dropdownQuestion, answer: dropdownAnswer, code: code)
@@ -63,12 +63,20 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let questionInfo = PresentQuestionInfo(question: checkboxWithInputQuestion, answer: checkboxWithInputAnswer, code: code)
         let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModelFactory(questionInfo: questionInfo).getViewModel()
         
-        let optInViewFactory = OptInViewFactory(optIn: optIn)
+        // MARK:- OPT-IN
+        let titleWithHiperlinkViewFactory = TitleWithHiperlinkViewFactory(title: optIn.text, hiperlinkText: optIn.privacyPolicy, urlString: optIn.url)
+        let optInViewFactory = OptInViewFactory(optIn: optIn, titleWithHiperlinkViewFactory: titleWithHiperlinkViewFactory)
         let optInViewItem = OptInViewItem(optInViewFactory: optInViewFactory)
         
+        // MARK:- TERMS
+        
+        let termsInfo = PresentQuestionInfo(question: termsQuestion, answer: termsAnswer, code: code)
+        let termsSwitchItem = TermsSwitchBtnViewModelFactory(questionInfo: termsInfo).getViewModel()
+        
+        // MARK:- SAVE
         let saveButtonItem = SaveBtnViewItem()
         
-        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewItem, saveButtonItem]
+        let items: [QuestionPageGetViewProtocol] = [radioBtnsWithInputViewModel, checkboxBtnsWithInputViewModel, dropdownItem, textAreaItem, radioBtnsItem, checkboxBtnsViewModel, optInViewItem, termsSwitchItem, saveButtonItem]
         
 //        let items: [QuestionPageGetViewProtocol] = [checkboxBtnsWithInputViewModel, textAreaItem, dropdownItem, saveButtonItem]
         
@@ -106,11 +114,11 @@ class QuestionsViewModel : QuestionsViewItemManaging {
 
 /*
 to do:
-    case radioBtn = "radio"//"radioBtn"
-    case checkbox = "checkbox"
-    case radioBtnWithInput = "radioBtnWithInput"
-    case checkboxSingleWithInput = "checkbox_single_with_input"
-    case checkboxMultipleWithInput = "checkbox_with_input"
+    case radioBtn = "radio"//"radioBtn" OK OK OK OK OK OK OK OK OK OK OK OK
+    case checkbox = "checkbox" OK OK OK OK OK OK OK OK OK OK OK OK
+    case radioBtnWithInput = "radioBtnWithInput" OK OK OK OK OK OK OK OK OK OK OK OK
+    case checkboxSingleWithInput = "checkbox_single_with_input" OK OK OK OK OK OK OK OK OK OK OK OK
+    case checkboxMultipleWithInput = "checkbox_with_input" OK OK OK OK OK OK OK OK OK OK OK OK
     case switchBtn = "switchBtn"
     case textField = "text"//"textField" OK OK OK OK OK OK OK OK OK OK OK OK
     case textArea = "textarea"           OK OK OK OK OK OK OK OK OK OK OK OK

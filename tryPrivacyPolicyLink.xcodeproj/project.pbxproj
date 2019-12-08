@@ -45,6 +45,9 @@
 		7C356F14239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F13239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift */; };
 		7C356F18239BE432009DA526 /* TextAreaViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F17239BE432009DA526 /* TextAreaViewModelFactory.swift */; };
 		7C356F1A239C2F59009DA526 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F19239C2F59009DA526 /* UIApplication+Extension.swift */; };
+		7C356F1E239D16FE009DA526 /* TermsSwitchBtnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F1D239D16FE009DA526 /* TermsSwitchBtnViewModel.swift */; };
+		7C356F20239D1716009DA526 /* TermsSwitchBtnViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F1F239D1716009DA526 /* TermsSwitchBtnViewModelFactory.swift */; };
+		7C356F22239D174D009DA526 /* TermsSwitchBtnViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C356F21239D174D009DA526 /* TermsSwitchBtnViewFactory.swift */; };
 		7C374B902393BFBB002D4892 /* TextAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */; };
 		7C374B922393CBEA002D4892 /* PresentQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B912393CBEA002D4892 /* PresentQuestion.swift */; };
 		7C374B942393CC45002D4892 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C374B932393CC45002D4892 /* QuestionType.swift */; };
@@ -158,6 +161,9 @@
 		7C356F13239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPageGetViewProtocol.swift; sourceTree = "<group>"; };
 		7C356F17239BE432009DA526 /* TextAreaViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModelFactory.swift; sourceTree = "<group>"; };
 		7C356F19239C2F59009DA526 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		7C356F1D239D16FE009DA526 /* TermsSwitchBtnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsSwitchBtnViewModel.swift; sourceTree = "<group>"; };
+		7C356F1F239D1716009DA526 /* TermsSwitchBtnViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsSwitchBtnViewModelFactory.swift; sourceTree = "<group>"; };
+		7C356F21239D174D009DA526 /* TermsSwitchBtnViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsSwitchBtnViewFactory.swift; sourceTree = "<group>"; };
 		7C374B8F2393BFBB002D4892 /* TextAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaViewModel.swift; sourceTree = "<group>"; };
 		7C374B912393CBEA002D4892 /* PresentQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentQuestion.swift; sourceTree = "<group>"; };
 		7C374B932393CC45002D4892 /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 				7C356F16239BE3D3009DA526 /* TextArea */,
 				7C356F07239BCAFC009DA526 /* Radio */,
 				7C356F0B239BCC64009DA526 /* Checkbox */,
+				7C356F1B239D16CB009DA526 /* TermsSwitchBtn */,
 			);
 			path = ChildrenViewModels;
 			sourceTree = "<group>";
@@ -543,6 +550,24 @@
 				7C356F17239BE432009DA526 /* TextAreaViewModelFactory.swift */,
 			);
 			path = TextArea;
+			sourceTree = "<group>";
+		};
+		7C356F1B239D16CB009DA526 /* TermsSwitchBtn */ = {
+			isa = PBXGroup;
+			children = (
+				7C356F1D239D16FE009DA526 /* TermsSwitchBtnViewModel.swift */,
+				7C356F1F239D1716009DA526 /* TermsSwitchBtnViewModelFactory.swift */,
+				7C356F1C239D16E0009DA526 /* ViewFactory */,
+			);
+			path = TermsSwitchBtn;
+			sourceTree = "<group>";
+		};
+		7C356F1C239D16E0009DA526 /* ViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				7C356F21239D174D009DA526 /* TermsSwitchBtnViewFactory.swift */,
+			);
+			path = ViewFactory;
 			sourceTree = "<group>";
 		};
 		7C374B9923941408002D4892 /* CodeAssets */ = {
@@ -958,6 +983,7 @@
 				7CA27B9E2386A01C008A8CE4 /* CheckboxView.swift in Sources */,
 				7C3044F723968B6700BA640D /* CheckboxBtnsFactory.swift in Sources */,
 				7C356F14239BDAC7009DA526 /* QuestionPageGetViewProtocol.swift in Sources */,
+				7C356F20239D1716009DA526 /* TermsSwitchBtnViewModelFactory.swift in Sources */,
 				7C3045062396D09D00BA640D /* CodeTextViewFactory.swift in Sources */,
 				7CDDA9BF2391616C00CC1D85 /* Question.swift in Sources */,
 				7CDDA9B82391481800CC1D85 /* ScannerVC.swift in Sources */,
@@ -967,6 +993,7 @@
 				7CDDA9BA23915FAE00CC1D85 /* CodeLabelFactory.swift in Sources */,
 				7C26FFF9239A794A00A78DB6 /* LabelWithTextFieldCell.swift in Sources */,
 				7C374B9F2394149F002D4892 /* UIImage+Extension.swift in Sources */,
+				7C356F1E239D16FE009DA526 /* TermsSwitchBtnViewModel.swift in Sources */,
 				7CA27B9723869C57008A8CE4 /* LabelAndTextViewCell.swift in Sources */,
 				7CDDA9B6239141A600CC1D85 /* QuestionsViewController.swift in Sources */,
 				7C27FC0E2390161300BB67D9 /* GetViewProtocol.swift in Sources */,
@@ -1019,6 +1046,7 @@
 				7CEB33AA239552D70038C26A /* RadioBtnsFactory.swift in Sources */,
 				7C26FFED239A73DF00A78DB6 /* DropdownViewModelFactory.swift in Sources */,
 				7C26000A239AC60000A78DB6 /* CheckboxBtnsWithInputViewModelFactory.swift in Sources */,
+				7C356F22239D174D009DA526 /* TermsSwitchBtnViewFactory.swift in Sources */,
 				7CDDA9CA2391623300CC1D85 /* QuestionsViewModel.swift in Sources */,
 				7C3045022396C5A900BA640D /* OptIn.swift in Sources */,
 				7C374BAF23952502002D4892 /* CheckboxBtnImage.swift in Sources */,

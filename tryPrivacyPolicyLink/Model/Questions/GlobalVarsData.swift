@@ -77,6 +77,19 @@ let optIn = OptIn(text: "Für mehr können Sie unsere lesen\n(Pour plus vous pou
                   url: "https://navus.e-materials.com/assets/PDFs/Privacy-and-Cookies-Policy-Navus-16062018.pdf",
                   privacyPolicy: "Datenschutz-Bestimmungen\nPolitique de Confidentialité")
 
+let termsQuestion = Question(id: 100,
+                             campaign_id: 122,
+                             title: "",
+                             type: "termsSwitchBtn",
+                             group: "Terms",
+                             required: true,
+                             description: "whatever",
+                             order: 14, element_id: nil,
+                             settings: QuestionSettings(options: [
+                                "Ich habe die gelesen und akzeptiere sie \n(J'ai lu et accepte le)",
+                                "Begriffe & Bedingungen \n(Termes et Conditions)"]))
+let termsAnswer: Answer? = nil
+
 var allowedWidth: CGFloat {
     let myAllowedWidth = UIScreen.main.bounds.width - 16
     return myAllowedWidth
