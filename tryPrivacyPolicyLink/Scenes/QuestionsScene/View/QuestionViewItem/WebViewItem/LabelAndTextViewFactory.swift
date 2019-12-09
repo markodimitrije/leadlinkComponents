@@ -8,9 +8,13 @@
 
 import UIKit
 
-class LabelAndTextViewFactory: GetViewProtocol {
+protocol TextAreaViewFactoryProtocol: GetViewProtocol {}
+
+class TextAreaViewFactory: TextAreaViewFactoryProtocol {
     
-    var myView: UIView!
+    private let labelFactory: CodeLabelFactory
+    private let textViewFactory: CodeTextViewFactory
+    private var myView: UIView!
     
     weak var delegate: UITextViewDelegate?
     
@@ -18,35 +22,34 @@ class LabelAndTextViewFactory: GetViewProtocol {
         return myView
     }
     
-    init(labelFactory: CodeLabelFactory, textViewFactory: CodeTextViewFactory, heightGreaterOrEqual: CGFloat) {
+    init(labelFactory: CodeLabelFactory, textViewFactory: CodeTextViewFactory) {
+        self.labelFactory = labelFactory
+        self.textViewFactory = textViewFactory
+        loadView()
+    }
+    
+    private func loadView() {
         
-        //textField
-        let textView = (textViewFactory.getView()).findViews(subclassOf: UITextView.self).first!
-        let textLabel = (labelFactory.getView()).findViews(subclassOf: UILabel.self).first!
+        let textLabel = labelFactory.getView()
+        let textView = textViewFactory.getView()
         
-        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: heightGreaterOrEqual).isActive = true
+        // set constraints to max width...
+        textLabel.widthAnchor.constraint(equalToConstant: allowedWidth).isActive = true
+        textView.widthAnchor.constraint(equalToConstant: allowedWidth).isActive = true
+        textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 200.0).isActive = true
         
         //Stack View
-        let stackView   = UIStackView()
-        stackView.axis  = .vertical
-        stackView.distribution  = .equalSpacing
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
-        stackView.spacing   = 8.0
+        stackView.spacing = 8.0
 
         stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(textView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
         
-        myView = stackView
-        
-    }
-    
-}
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
-extension UIView {
-    func makeRoundedBorder(color: UIColor, cornerRadius: CGFloat) {
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = color.cgColor
-        self.layer.cornerRadius = cornerRadius
+        myView = stackView
     }
 }

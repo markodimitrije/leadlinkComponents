@@ -38,8 +38,8 @@ class CodeHorizontalStacker: GetViewProtocol {
         stackView.alignment = .center
         stackView.spacing = 8.0
 
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
-
+        //stackView.translatesAutoresizingMaskIntoConstraints = false;
+        
         _ = views.map { subview -> () in
             stackView.addArrangedSubview(subview)
         }

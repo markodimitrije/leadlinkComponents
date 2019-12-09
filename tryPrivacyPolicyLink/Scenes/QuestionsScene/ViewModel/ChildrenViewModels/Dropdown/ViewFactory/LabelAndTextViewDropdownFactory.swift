@@ -37,12 +37,17 @@ class LabelAndTextViewDropdownFactory:  DropdownFactoryProtocol {
         //textField
         let textView = textViewFactory.getView()
         
+        // set constraints to max width...
+        textLabel.widthAnchor.constraint(equalToConstant: allowedWidth).isActive = true
+        textView.widthAnchor.constraint(equalToConstant: allowedWidth).isActive = true
+        
+        
         //Stack View
-        let stackView   = UIStackView()
-        stackView.axis  = .vertical
-        stackView.distribution  = .equalSpacing
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
-        stackView.spacing   = 8.0
+        stackView.spacing = 8.0
 
         stackView.addArrangedSubview(textLabel)
         stackView.addArrangedSubview(textView)

@@ -28,6 +28,12 @@ class QuestionsViewController: UIViewController {
         let items = viewmodel.getQuestionPageViewItems()
         let views = items.map({$0.getView()})
         _ = views.map(stackView.addArrangedSubview(_:))
+        
+        _ = views.map({ (childView) in
+            self.stackView.leadingAnchor.constraint(equalTo: childView.leadingAnchor, constant: 0).isActive = true
+            childView.trailingAnchor.constraint(equalTo: self.stackView.trailingAnchor, constant: 0).isActive = true
+        })
+        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

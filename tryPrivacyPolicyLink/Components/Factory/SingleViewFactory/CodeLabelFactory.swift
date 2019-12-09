@@ -23,10 +23,10 @@ class CodeLabelFactory: LabelFactoryProtocol {
         
         //Text Label
         let textLabel = UILabel()
-        textLabel.backgroundColor   = .blue
+        textLabel.backgroundColor = .blue
         textLabel.numberOfLines = 0
         textLabel.text = text
-        textLabel.textAlignment = .center
+        textLabel.textAlignment = .left
 
         //Stack View
         let stackView = UIStackView()

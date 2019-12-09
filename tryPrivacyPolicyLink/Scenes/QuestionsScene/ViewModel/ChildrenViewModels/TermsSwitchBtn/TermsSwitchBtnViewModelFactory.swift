@@ -62,11 +62,18 @@ class TermsSwitchBtnViewFactory: GetViewProtocol {
             TitleWithHiperlinkViewFactory(title: options.first!,
                                           hiperlinkText: options.last!,
                                           urlString: navusTermsUrl)
-        let textsView = titleWithHiperlinkViewFactory.getView()
+        
         let switchBtn = UISwitch()
         switchBtn.isOn = isOn
+        
+        let textsView = titleWithHiperlinkViewFactory.getView()
+        let textViewWidth = allowedWidth - 8.0 - switchBtn.bounds.width
+        textsView.widthAnchor.constraint(equalToConstant: textViewWidth).isActive = true
+        
         let stackView = CodeHorizontalStacker(views: [textsView, switchBtn], distribution: .fill).getView()
+        
         self.myView = stackView
+        switchBtn.trailingAnchor.constraint(equalTo: self.myView.trailingAnchor, constant: 0).isActive = true
         
     }
 }

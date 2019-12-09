@@ -19,7 +19,7 @@ class LabelTextView: HasViewPropertyProtocol, LabelTextViewProtocol {
     
     var view: UIView
     
-    init(factory: LabelAndTextViewFactory) {
+    init(factory: TextAreaViewFactory) {
         self.view = factory.getView()
     }
     
