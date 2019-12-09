@@ -119,6 +119,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="und-Oo-cTI"/>
                     <connections>
+                        <outlet property="scrollView" destination="dUL-B3-JRQ" id="eyK-dK-aPj"/>
                         <outlet property="stackView" destination="Zln-3F-rhE" id="Iu7-en-4j9"/>
                     </connections>
                 </viewController>
