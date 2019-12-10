@@ -14,7 +14,7 @@ class GroupViewFactory: GetViewProtocol {
         return myView
     }
     init(text: String) {
-        self.myView = CodeLabelFactory(text: text).getView()
+        self.myView = LabelFactory(text: text).getView()
         let label = self.myView.findViews(subclassOf: UILabel.self).first!
         label.backgroundColor = .darkGray
     }

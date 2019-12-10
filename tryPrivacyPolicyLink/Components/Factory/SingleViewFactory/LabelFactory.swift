@@ -1,5 +1,5 @@
 //
-//  CodeLabelFactory.swift
+//  LabelFactory.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 29/11/2019.
@@ -10,8 +10,7 @@ import UIKit
 
 protocol LabelFactoryProtocol: GetViewProtocol {}
 
-//class CodeLabelFactory: GroupViewFactoryProtocol {
-class CodeLabelFactory: LabelFactoryProtocol {
+class LabelFactory: LabelFactoryProtocol {
     
     private var myView: UIView
     

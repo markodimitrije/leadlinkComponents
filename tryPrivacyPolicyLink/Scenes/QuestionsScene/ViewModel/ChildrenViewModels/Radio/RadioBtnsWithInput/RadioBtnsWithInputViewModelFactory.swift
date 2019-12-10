@@ -22,7 +22,7 @@ class RadioBtnsWithInputViewModelFactory: RadioBtnsWithInput_ViewModel_FactoryPr
         let answer = questionInfo.getAnswer()
         
         let radioBtnsFactory = RadioBtnsFactory(question: question, answer: answer)
-        let textViewFactory = CodeTextViewFactory(inputText: answer?.content.first ?? "", placeholderText: question.description ?? "")
+        let textViewFactory = TextViewFactory(inputText: answer?.content.first ?? "", placeholderText: question.description ?? "")
         
         let mainFactory = RadioBtnsWithInputViewFactory(radioBtnsFactory: radioBtnsFactory,
                                                         textViewFactory: textViewFactory)

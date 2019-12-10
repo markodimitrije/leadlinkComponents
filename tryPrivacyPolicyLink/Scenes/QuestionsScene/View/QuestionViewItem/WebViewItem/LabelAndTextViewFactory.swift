@@ -12,8 +12,8 @@ protocol TextAreaViewFactoryProtocol: GetViewProtocol {}
 
 class TextAreaViewFactory: TextAreaViewFactoryProtocol {
     
-    private let labelFactory: CodeLabelFactory
-    private let textViewFactory: CodeTextViewFactory
+    private let labelFactory: LabelFactory
+    private let textViewFactory: TextViewFactory
     private var myView: UIView!
     
     weak var delegate: UITextViewDelegate?
@@ -22,7 +22,7 @@ class TextAreaViewFactory: TextAreaViewFactoryProtocol {
         return myView
     }
     
-    init(labelFactory: CodeLabelFactory, textViewFactory: CodeTextViewFactory) {
+    init(labelFactory: LabelFactory, textViewFactory: TextViewFactory) {
         self.labelFactory = labelFactory
         self.textViewFactory = textViewFactory
         loadView()

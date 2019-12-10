@@ -1,5 +1,5 @@
 //
-//  CodeButtonFactory.swift
+//  SaveButtonFactory.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 29/11/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeButtonFactory {
+class SaveButtonFactory {
     
     private var myView: UIView
     

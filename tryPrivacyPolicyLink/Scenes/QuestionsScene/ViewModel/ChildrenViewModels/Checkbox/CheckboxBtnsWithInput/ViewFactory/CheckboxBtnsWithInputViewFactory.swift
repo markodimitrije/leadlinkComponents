@@ -21,7 +21,7 @@ class CheckboxBtnsWithInputViewFactory: GetViewProtocol {
         return self.singleCheckboxBtnViewModels
     }
     
-    init(questionInfo: PresentQuestionInfoProtocol, checkboxBtnsFactory: CheckboxBtnsFactory, textViewFactory: CodeTextViewFactory) {
+    init(questionInfo: PresentQuestionInfoProtocol, checkboxBtnsFactory: CheckboxBtnsFactory, textViewFactory: TextViewFactory) {
         
         let checkboxBtnsViewModels: [SingleCheckboxBtnViewModel] = checkboxBtnsFactory.getViewModels()
         self.singleCheckboxBtnViewModels = checkboxBtnsViewModels

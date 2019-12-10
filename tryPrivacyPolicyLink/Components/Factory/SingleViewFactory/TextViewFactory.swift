@@ -1,5 +1,5 @@
 //
-//  CodeTextViewFactory.swift
+//  TextViewFactory.swift
 //  tryPrivacyPolicyLink
 //
 //  Created by Marko Dimitrijevic on 03/12/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol CodeTextViewFactoryProtocol: GetViewProtocol {}
+protocol TextViewFactoryProtocol: GetViewProtocol {}
 
-class CodeTextViewFactory: CodeTextViewFactoryProtocol {
+class TextViewFactory: TextViewFactoryProtocol {
     
     private var myView: UIView
     

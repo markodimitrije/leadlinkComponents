@@ -59,7 +59,7 @@ class TermsSwitchBtnViewFactory: GetViewProtocol {
     init(questionInfo: PresentQuestionInfoProtocol, isOn: Bool) {
         let options = questionInfo.getQuestion().settings.options!
         let titleWithHiperlinkViewFactory =
-            TitleWithHiperlinkViewFactory(title: options.first!,
+            TextWithHiperlinkViewFactory(text: options.first!,
                                           hiperlinkText: options.last!,
                                           urlString: navusTermsUrl)
         

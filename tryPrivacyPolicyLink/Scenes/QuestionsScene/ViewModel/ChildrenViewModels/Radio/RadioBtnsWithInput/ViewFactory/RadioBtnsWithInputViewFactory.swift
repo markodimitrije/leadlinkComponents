@@ -21,7 +21,7 @@ class RadioBtnsWithInputViewFactory: GetViewProtocol {
         return self.singleRadioBtnViewModels
     }
     
-    init(radioBtnsFactory: RadioBtnsFactory, textViewFactory: CodeTextViewFactory) {
+    init(radioBtnsFactory: RadioBtnsFactory, textViewFactory: TextViewFactory) {
         
         let radioBtnsViewModels: [SingleRadioBtnViewModel] = radioBtnsFactory.getViewModels()
         let radioBtnsViewStackView = radioBtnsFactory.getView()

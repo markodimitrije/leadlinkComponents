@@ -64,7 +64,7 @@ class QuestionsViewModel : QuestionsViewItemManaging {
         let checkboxBtnsWithInputViewModel = CheckboxBtnsWithInputViewModelFactory(questionInfo: questionInfo).getViewModel()
         
         // MARK:- OPT-IN
-        let titleWithHiperlinkViewFactory = TitleWithHiperlinkViewFactory(title: optIn.text, hiperlinkText: optIn.privacyPolicy, urlString: optIn.url)
+        let titleWithHiperlinkViewFactory = TextWithHiperlinkViewFactory(text: optIn.text, hiperlinkText: optIn.privacyPolicy, urlString: optIn.url)
         let optInViewFactory = OptInViewFactory(optIn: optIn, titleWithHiperlinkViewFactory: titleWithHiperlinkViewFactory)
         let optInViewItem = OptInViewItem(optInViewFactory: optInViewFactory)
         

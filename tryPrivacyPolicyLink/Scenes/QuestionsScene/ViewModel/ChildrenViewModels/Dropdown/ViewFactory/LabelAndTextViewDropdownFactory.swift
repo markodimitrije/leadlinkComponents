@@ -13,8 +13,8 @@ protocol DropdownFactoryProtocol: GetViewProtocol {}
 //class LabelAndTextViewDropdownFactory: GetViewProtocol {
 class LabelAndTextViewDropdownFactory:  DropdownFactoryProtocol {
     
-    private let labelFactory: CodeLabelFactory
-    private let textViewFactory: CodeTextViewFactory
+    private let labelFactory: LabelFactory
+    private let textViewFactory: TextViewFactory
     private var myView: UIView!
     
     weak var delegate: UITextViewDelegate?
@@ -23,7 +23,7 @@ class LabelAndTextViewDropdownFactory:  DropdownFactoryProtocol {
         return myView
     }
     
-    init(labelFactory: CodeLabelFactory, textViewFactory: CodeTextViewFactory) {
+    init(labelFactory: LabelFactory, textViewFactory: TextViewFactory) {
         self.labelFactory = labelFactory
         self.textViewFactory = textViewFactory
         loadView()

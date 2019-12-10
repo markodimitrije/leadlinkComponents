@@ -20,8 +20,8 @@ class DropdownViewModelFactory: DropdownViewModelFactoryProtocol {
     init(questionInfo: PresentQuestionInfoProtocol) {
         let question = questionInfo.getQuestion()
         
-        let labelFactory = CodeLabelFactory(text: question.title)
-        let textViewFactory = CodeTextViewFactory(inputText: questionInfo.getAnswer()?.content.first ?? "", placeholderText: question.description ?? "")
+        let labelFactory = LabelFactory(text: question.title)
+        let textViewFactory = TextViewFactory(inputText: questionInfo.getAnswer()?.content.first ?? "", placeholderText: question.description ?? "")
 
         let viewFactory = LabelAndTextViewDropdownFactory(labelFactory: labelFactory,
                                                           textViewFactory: textViewFactory)
