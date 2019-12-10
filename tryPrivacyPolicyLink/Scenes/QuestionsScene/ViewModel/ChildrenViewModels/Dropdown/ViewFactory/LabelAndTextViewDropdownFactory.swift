@@ -46,7 +46,7 @@ class LabelAndTextViewDropdownFactory:  DropdownFactoryProtocol {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
-        stackView.alignment = .center
+        stackView.alignment = .leading
         stackView.spacing = 8.0
 
         stackView.addArrangedSubview(textLabel)
