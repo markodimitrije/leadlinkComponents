@@ -18,7 +18,7 @@ class LabelFactory: LabelFactoryProtocol {
         return myView
     }
     
-    init(text: String) {
+    init(text: String, width: CGFloat? = nil) {
         
         //Text Label
         let textLabel = UILabel()
@@ -26,6 +26,10 @@ class LabelFactory: LabelFactoryProtocol {
         textLabel.numberOfLines = 0
         textLabel.text = text
         textLabel.textAlignment = .left
+        
+        if let width = width {
+            textLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
 
         //Stack View
         let stackView = UIStackView()

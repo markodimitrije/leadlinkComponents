@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WrapIntoBorderFactory: GetViewProtocol {
+class WrapIntoBorderFactory: GetViewProtocol, DropdownFactoryProtocol {
     
     private let embededView: UIView
     private let insets: UIEdgeInsets

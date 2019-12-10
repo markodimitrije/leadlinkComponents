@@ -20,7 +20,7 @@ class TextViewFactory: TextViewFactoryProtocol {
         return myView
     }
     
-    init(inputText: String, placeholderText: String) {
+    init(inputText: String, placeholderText: String, width: CGFloat? = nil) {
         
         func getTextColor(inputText: String, placeholderText: String) -> UIColor {
             if inputText == "" { return .lightGray }
@@ -42,10 +42,16 @@ class TextViewFactory: TextViewFactoryProtocol {
         
         textView.text = getText(inputText: inputText, placeholderText: placeholderText)
         textView.textColor = getTextColor(inputText: inputText, placeholderText: placeholderText)
+        
+        if let width = width {
+            textView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
 
         //Stack View
         let stackView = UIStackView()
         stackView.addArrangedSubview(textView)
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
         myView = stackView
         
